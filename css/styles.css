@@ -357,9 +357,9 @@ button {
   inset: 0;
   z-index: 0;
   background-color: #BDB0A0;
-  background-image:
-    radial-gradient(ellipse at 32% 42%, rgba(228, 218, 202, 0.65) 0%, transparent 55%),
-    linear-gradient(150deg, #CFC2AF 0%, #BEB09A 35%, #AE9D87 58%, #A3907C 80%, #BFAF9E 100%);
+  background-image: url("https://images.unsplash.com/photo-1683660107856-cdad7a562d12?auto=format&fit=crop&w=1920&h=1080&q=85");
+  background-size: cover;
+  background-position: center top;
 }
 
 /* Bottom-weighted dark veil for text contrast (functional, not decorative) */
@@ -606,23 +606,17 @@ button {
 /* Warm-neutral editorial palettes per collection */
 .collection-tile__img--linen {
   background-color: #BDB49E;
-  background-image:
-    radial-gradient(ellipse at 38% 36%, rgba(220, 210, 190, 0.55) 0%, transparent 60%),
-    linear-gradient(158deg, #CEC3AF 0%, #BDB49E 38%, #ADA08D 68%, #B8AFA0 100%);
+  background-image: url("https://images.unsplash.com/photo-1700317440744-a126fc87b900?auto=format&fit=crop&w=900&h=1200&q=85");
 }
 
 .collection-tile__img--cotton {
   background-color: #C4A99C;
-  background-image:
-    radial-gradient(ellipse at 62% 28%, rgba(226, 210, 200, 0.5) 0%, transparent 55%),
-    linear-gradient(142deg, #D0B8AA 0%, #C4A99C 42%, #B4998B 72%, #BFAD9F 100%);
+  background-image: url("https://images.unsplash.com/photo-1659297949927-06fa02629af0?auto=format&fit=crop&w=800&h=600&q=85");
 }
 
 .collection-tile__img--silk {
   background-color: #A4ABA1;
-  background-image:
-    radial-gradient(ellipse at 34% 42%, rgba(195, 205, 195, 0.5) 0%, transparent 55%),
-    linear-gradient(152deg, #B4BEB0 0%, #A4ABA1 44%, #949D91 70%, #AAAFAA 100%);
+  background-image: url("https://images.unsplash.com/photo-1694971112579-464e82f35a13?auto=format&fit=crop&w=800&h=600&q=85");
 }
 
 /* ─── Text block beneath image ───────────────────── */
@@ -858,61 +852,45 @@ button {
   transform: scale(1.03);
 }
 
-/* 8 distinct editorial warm-neutral palettes */
+/* 8 product photos — editorial fashion, person in each garment */
 .product-img--kantha {
   background-color: #C8BFB0;
-  background-image:
-    radial-gradient(ellipse at 40% 32%, rgba(226, 218, 206, 0.6) 0%, transparent 58%),
-    linear-gradient(152deg, #D4CBBC 0%, #C8BFB0 38%, #B8AF9E 68%, #C2BBB0 100%);
+  background-image: url("https://images.unsplash.com/photo-1700317440740-627b8c533120?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--linen-shirt {
   background-color: #D0CBC0;
-  background-image:
-    radial-gradient(ellipse at 55% 30%, rgba(238, 233, 225, 0.55) 0%, transparent 55%),
-    linear-gradient(160deg, #DAD5CC 0%, #D0CBC0 40%, #C4BFB4 70%, #CCCAC3 100%);
+  background-image: url("https://images.unsplash.com/photo-1700235162827-fb30a9774dd6?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--muslin-kurta {
   background-color: #C5AFA6;
-  background-image:
-    radial-gradient(ellipse at 38% 35%, rgba(228, 214, 208, 0.55) 0%, transparent 55%),
-    linear-gradient(148deg, #D0BDB5 0%, #C5AFA6 40%, #B89F96 70%, #C0B0A8 100%);
+  background-image: url("https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--linen-trouser {
   background-color: #C2BAA0;
-  background-image:
-    radial-gradient(ellipse at 48% 28%, rgba(222, 216, 200, 0.55) 0%, transparent 55%),
-    linear-gradient(155deg, #CEC6AC 0%, #C2BAA0 40%, #B4AA8E 70%, #BEB8A4 100%);
+  background-image: url("https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--dupatta {
   background-color: #C4B4AE;
-  background-image:
-    radial-gradient(ellipse at 60% 38%, rgba(228, 218, 214, 0.5) 0%, transparent 58%),
-    linear-gradient(145deg, #CEC0BA 0%, #C4B4AE 42%, #B6A49E 72%, #BFBAB7 100%);
+  background-image: url("https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--tunic {
   background-color: #BEC0BA;
-  background-image:
-    radial-gradient(ellipse at 35% 40%, rgba(208, 210, 204, 0.5) 0%, transparent 55%),
-    linear-gradient(158deg, #CACCC6 0%, #BEC0BA 40%, #B0B2AA 70%, #BABBBA 100%);
+  background-image: url("https://images.unsplash.com/photo-1538331269258-6c97a6bdeae0?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--lawn {
   background-color: #CCC5B8;
-  background-image:
-    radial-gradient(ellipse at 52% 30%, rgba(234, 229, 222, 0.55) 0%, transparent 55%),
-    linear-gradient(150deg, #D4CFC4 0%, #CCC5B8 40%, #C0BAA8 70%, #C8C4BA 100%);
+  background-image: url("https://images.unsplash.com/photo-1773574488221-08b2883a1c80?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--muslin-dress {
   background-color: #B8BEBC;
-  background-image:
-    radial-gradient(ellipse at 42% 35%, rgba(204, 210, 208, 0.5) 0%, transparent 55%),
-    linear-gradient(155deg, #C4CACA 0%, #B8BEBC 40%, #AAAFAE 70%, #B4B8B8 100%);
+  background-image: url("https://images.unsplash.com/photo-1726591383658-37fc19442523?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 /* ─── Wishlist button — top-right of image ───────── */
@@ -1158,15 +1136,15 @@ button {
   opacity: 1;
 }
 
-/* Gradient placeholders — editorial warm neutrals */
+/* Artisan craft photography */
 .craft__img--process {
-  background-image:
-    linear-gradient(135deg, #B09A88 0%, #A8907C 35%, #9C8470 65%, #907A66 100%);
+  background-color: #A8907C;
+  background-image: url("https://images.unsplash.com/photo-1707994894479-d36c67b2613f?auto=format&fit=crop&w=900&h=1000&q=85");
 }
 
 .craft__img--loom {
-  background-image:
-    linear-gradient(155deg, #A09286 0%, #9A9280 35%, #908878 65%, #867E6E 100%);
+  background-color: #9A9280;
+  background-image: url("https://images.unsplash.com/photo-1517839439283-d2e29fd3db65?auto=format&fit=crop&w=900&h=1000&q=85");
 }
 
 /* Text column */
