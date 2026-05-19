@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Crafted with Intention</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- No-JS: ensure scroll-reveal elements are visible without JS -->
+  <noscript>
+    <style>
+      .collection-tile, .product-card,
+      .craft__img-col, .craft__text-col,
+      .voice { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <!-- ─── Announcement Bar ─────────────────────────────────── -->
+  <div class="announcement" id="announcement" role="status" aria-live="polite">
+    <span class="announcement__text">
+      Complimentary delivery on all orders above $150 &nbsp;&middot;&nbsp; New Arrivals: The Linen Edit
+    </span>
+    <button class="announcement__close" id="announcement-close" aria-label="Dismiss announcement">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="1" y1="1" x2="9" y2="9"/>
+        <line x1="9" y1="1" x2="1" y2="9"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ─── Site Header ──────────────────────────────────────── -->
+  <header class="header" id="header" role="banner">
+    <div class="header__inner">
+
+      <!-- Wordmark -->
+      <a href="/" class="header__logo" aria-label="Atelier — Return to homepage">
+        ATELIER
+      </a>
+
+      <!-- Primary Nav -->
+      <nav class="header__nav" aria-label="Primary navigation">
+        <a href="#shop" class="header__nav-link">Shop</a>
+        <a href="#collections" class="header__nav-link">Collections</a>
+        <a href="#journal" class="header__nav-link">Journal</a>
+        <a href="#atelier" class="header__nav-link">Atelier</a>
+        <a href="#contact" class="header__nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Icons -->
+      <div class="header__actions">
+        <!-- Search -->
+        <button class="header__action" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7.5"/>
+            <path d="M17 17 L22.5 22.5"/>
+          </svg>
+        </button>
+
+        <!-- Account -->
+        <button class="header__action" aria-label="My account">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-3.8 3.6-6.5 8-6.5s8 2.7 8 6.5"/>
+          </svg>
+        </button>
+
+        <!-- Cart -->
+        <button class="header__action header__cart-btn" aria-label="Shopping bag, 2 items">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="header__cart-count" aria-hidden="true">2</span>
+        </button>
+
+        <!-- Mobile menu toggle -->
+        <button class="header__toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6"  x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="4" x2="20" y2="20"/>
+            <line x1="20" y1="4" x2="4" y2="20"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav (revealed when menu-open) -->
+    <nav class="header__mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#shop" class="header__mobile-link">Shop</a>
+      <a href="#collections" class="header__mobile-link">Collections</a>
+      <a href="#journal" class="header__mobile-link">Journal</a>
+      <a href="#atelier" class="header__mobile-link">Atelier</a>
+      <a href="#contact" class="header__mobile-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ─── Hero Section ─────────────────────────────────────── -->
+  <section class="hero" aria-label="Hero — Crafted in silence. Worn with intention.">
+    <!-- Editorial image placeholder -->
+    <div class="hero__bg" aria-hidden="true"></div>
+    <!-- Contrast overlay for text legibility -->
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <h1 class="hero__headline">
+        Crafted in silence.<br>Worn with intention.
+      </h1>
+      <p class="hero__subline">Rooted in craft. Refined by time.</p>
+      <a href="#collections" class="hero__cta">Discover the Collection</a>
+    </div>
+  </section>
+
+  <!-- ─── Remaining page sections go here ─────────────────── -->
+  <main id="main-content">
+
+    <!-- ─── Curated Collections ──────────────────────────── -->
+    <section class="collections" id="collections" aria-labelledby="collections-title">
+      <div class="collections__header">
+        <span class="collections__eyebrow">Explore</span>
+        <h2 class="collections__title" id="collections-title">The Collections</h2>
+      </div>
+
+      <div class="collections__grid">
+
+        <!-- Tile 1: Feature — spans full height on left -->
+        <a href="#" class="collection-tile collection-tile--feature">
+          <div class="collection-tile__img-wrap">
+            <div class="collection-tile__img collection-tile__img--linen"
+                 role="img" aria-label="The Linen Edit — warm woven fabric editorial"></div>
+          </div>
+          <div class="collection-tile__body">
+            <div class="collection-tile__text">
+              <h3 class="collection-tile__name">The Linen Edit</h3>
+              <p class="collection-tile__desc">Breathable weaves for languid afternoons</p>
+            </div>
+            <span class="collection-tile__cta" aria-hidden="true">View Collection &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Tile 2: Heritage Cotton — top right -->
+        <a href="#" class="collection-tile">
+          <div class="collection-tile__img-wrap">
+            <div class="collection-tile__img collection-tile__img--cotton"
+                 role="img" aria-label="Heritage Cotton — handwoven textile editorial"></div>
+          </div>
+          <div class="collection-tile__body">
+            <div class="collection-tile__text">
+              <h3 class="collection-tile__name">Heritage Cotton</h3>
+              <p class="collection-tile__desc">Woven stories, rooted in tradition</p>
+            </div>
+            <span class="collection-tile__cta" aria-hidden="true">View Collection &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Tile 3: Silk & Muslin — bottom right -->
+        <a href="#" class="collection-tile">
+          <div class="collection-tile__img-wrap">
+            <div class="collection-tile__img collection-tile__img--silk"
+                 role="img" aria-label="Silk and Muslin — draping fabric editorial"></div>
+          </div>
+          <div class="collection-tile__body">
+            <div class="collection-tile__text">
+              <h3 class="collection-tile__name">Silk &amp; Muslin</h3>
+              <p class="collection-tile__desc">The quietest luxury, against the skin</p>
+            </div>
+            <span class="collection-tile__cta" aria-hidden="true">View Collection &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ─── The Atelier Selection ──────────────────────── -->
+    <section class="selection" id="shop" aria-labelledby="selection-title">
+
+      <div class="selection__header">
+        <span class="selection__eyebrow">The Atelier Selection</span>
+        <h2 class="selection__title" id="selection-title">Pieces we return to.</h2>
+      </div>
+
+      <div class="selection__grid">
+
+        <!-- 1 -->
+        <article class="product-card">
+          <div class="product-card__img-wrap">
+            <div class="product-card__img product-img--kantha"
+                 role="img" aria-label="Kantha Wrap Jacket editorial photo"></div>
+            <button class="product-card__wish" aria-label="Save Kantha Wrap Jacket to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="#">Kantha Wrap Jacket</a></h3>
+            <p class="product-card__material">Handloomed Cotton &middot; Rajshahi</p>
+            <p class="product-card__price">$285</p>
+            <button class="product-card__atb" aria-label="Add Kantha Wrap Jacket to bag">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="product-card">
+          <div class="product-card__img-wrap">
+            <div class="product-card__img product-img--linen-shirt"
+                 role="img" aria-label="Linen Drawstring Shirt editorial photo"></div>
+            <button class="product-card__wish" aria-label="Save Linen Drawstring Shirt to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="#">Linen Drawstring Shirt</a></h3>
+            <p class="product-card__material">Pure Belgian Linen &middot; Dhaka</p>
+            <p class="product-card__price">$145</p>
+            <button class="product-card__atb" aria-label="Add Linen Drawstring Shirt to bag">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="product-card">
+          <div class="product-card__img-wrap">
+            <div class="product-card__img product-img--muslin-kurta"
+                 role="img" aria-label="Jamdani Muslin Kurta editorial photo"></div>
+            <button class="product-card__wish" aria-label="Save Jamdani Muslin Kurta to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="#">Jamdani Muslin Kurta</a></h3>
+            <p class="product-card__material">Jamdani Weave &middot; Tangail</p>
+            <p class="product-card__price">$210</p>
+            <button class="product-card__atb" aria-label="Add Jamdani Muslin Kurta to bag">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="product-card">
+          <div class="product-card__img-wrap">
+            <div class="product-card__img product-img--linen-trouser"
+                 role="img" aria-label="Washed Linen Trouser editorial photo"></div>
+            <button class="product-card__wish" aria-label="Save Washed Linen Trouser to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="#">Washed Linen Trouser</a></h3>
+            <p class="product-card__material">Stonewashed Linen &middot; Dhaka</p>
+            <p class="product-card__price">$175</p>
+            <button class="product-card__atb" aria-label="Add Washed Linen Trouser to bag">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="product-card">
+          <div class="product-card__img-wrap">
+            <div class="product-card__img product-img--dupatta"
+                 role="img" aria-label="Block-Print Dupatta editorial photo"></div>
+            <button class="product-card__wish" aria-label="Save Block-Print Dupatta to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="#">Block-Print Dupatta</a></h3>
+            <p class="product-card__material">Endi Silk &middot; Rajshahi</p>
+            <p class="product-card__price">$195</p>
+            <button class="product-card__atb" aria-label="Add Block-Print Dupatta to bag">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="product-card">
+          <div class="product-card__img-wrap">
+            <div class="product-card__img product-img--tunic"
+                 role="img" aria-label="Heritage Cotton Tunic editorial photo"></div>
+            <button class="product-card__wish" aria-label="Save Heritage Cotton Tunic to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="#">Heritage Cotton Tunic</a></h3>
+            <p class="product-card__material">Handloomed Cotton &middot; Comilla</p>
+            <p class="product-card__price">$155</p>
+            <button class="product-card__atb" aria-label="Add Heritage Cotton Tunic to bag">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="product-card">
+          <div class="product-card__img-wrap">
+            <div class="product-card__img product-img--lawn"
+                 role="img" aria-label="Embroidered Lawn Blouse editorial photo"></div>
+            <button class="product-card__wish" aria-label="Save Embroidered Lawn Blouse to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="#">Embroidered Lawn Blouse</a></h3>
+            <p class="product-card__material">Nakshi Cotton &middot; Dhaka</p>
+            <p class="product-card__price">$165</p>
+            <button class="product-card__atb" aria-label="Add Embroidered Lawn Blouse to bag">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="product-card">
+          <div class="product-card__img-wrap">
+            <div class="product-card__img product-img--muslin-dress"
+                 role="img" aria-label="Pleated Muslin Dress editorial photo"></div>
+            <button class="product-card__wish" aria-label="Save Pleated Muslin Dress to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="#">Pleated Muslin Dress</a></h3>
+            <p class="product-card__material">Endi Silk Blend &middot; Rajshahi</p>
+            <p class="product-card__price">$240</p>
+            <button class="product-card__atb" aria-label="Add Pleated Muslin Dress to bag">Add to Bag</button>
+          </div>
+        </article>
+
+      </div><!-- /.selection__grid -->
+
+      <div class="selection__footer">
+        <a href="#" class="selection__view-all">View All Pieces &rarr;</a>
+      </div>
+
+    </section>
+
+    <!-- ─── Heritage & Craft ────────────────────────────────── -->
+    <section class="craft" id="atelier" aria-labelledby="craft-title-1">
+
+      <!-- Block 1: image left / text right -->
+      <div class="craft__block">
+        <div class="craft__img-col craft__img--process"
+             role="img" aria-label="Artisan hands at work, weaving cotton on a traditional loom"></div>
+
+        <div class="craft__text-col">
+          <span class="craft__eyebrow">Our Craft</span>
+          <h2 class="craft__headline" id="craft-title-1">Made slowly.<br>Made once.</h2>
+          <p class="craft__body">Each piece begins at the loom. It takes one of our weavers three full days to produce enough fabric for a single garment — a pace we have never tried to accelerate. At Atelier, slowness is not a constraint. It is the work itself, made visible in every thread.</p>
+          <a href="#" class="craft__cta">Read Our Story &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Block 2: text left / image right — DOM order places text first -->
+      <div class="craft__block craft__block--reverse">
+        <div class="craft__text-col">
+          <span class="craft__eyebrow">Heritage</span>
+          <h2 class="craft__headline" id="craft-title-2">Fifty years of quiet making.</h2>
+          <p class="craft__body">Our founders arrived in Dhaka with a single belief: that enduring things demand time. Since 1975, we have worked with the same families of weavers, passing techniques not through manuals, but through hands. The knowledge lives in the fabric. You carry it with you.</p>
+        </div>
+
+        <div class="craft__img-col craft__img--loom"
+             role="img" aria-label="Traditional handloom inside a heritage weaving studio, warm light on threads"></div>
+      </div>
+
+    </section>
+
+    <!-- ─── Voices ────────────────────────────────────────────── -->
+    <section class="voices" aria-label="What our customers say">
+
+      <div class="voices__rule" aria-hidden="true"></div>
+
+      <div class="voices__inner">
+        <div class="voices__list">
+
+          <blockquote class="voice">
+            <p class="voice__quote">It is the most considered thing I own. I reach for it without thinking — which means it is doing its job.</p>
+            <footer class="voice__attr">
+              <cite>Nadia R. &mdash; Dhaka</cite>
+            </footer>
+          </blockquote>
+
+          <blockquote class="voice">
+            <p class="voice__quote">I wore it every day for three weeks. It only became more itself.</p>
+            <footer class="voice__attr">
+              <cite>Priya S. &mdash; London</cite>
+            </footer>
+          </blockquote>
+
+          <blockquote class="voice">
+            <p class="voice__quote">There is something in the cloth that makes you slow down.</p>
+            <footer class="voice__attr">
+              <cite>Mei L. &mdash; Singapore</cite>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+
+      <div class="voices__rule" aria-hidden="true"></div>
+
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
