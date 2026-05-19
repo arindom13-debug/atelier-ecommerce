@@ -140,3 +140,6 @@ document.querySelectorAll('.craft__block').forEach(function (block) {
 
 /* ── Voices: 3 quotes, 80 ms stagger ───────────────────────── */
 revealOnScroll('.voices', '.voice', 80);
+
+/* ── Invitation: single block, gentle fade-rise ─────────────── */
+revealOnScroll('.invitation', '.invitation__inner', 0);

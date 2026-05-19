@@ -16,7 +16,7 @@
     <style>
       .collection-tile, .product-card,
       .craft__img-col, .craft__text-col,
-      .voice { opacity: 1 !important; transform: none !important; }
+      .voice, .invitation__inner { opacity: 1 !important; transform: none !important; }
     </style>
   </noscript>
 </head>
@@ -418,7 +418,125 @@
 
     </section>
 
+    <!-- ─── Invitation / The Private Circle ─────────────── -->
+    <section class="invitation" id="contact" aria-labelledby="invitation-title">
+      <div class="invitation__inner">
+
+        <span class="invitation__eyebrow">The Private Circle</span>
+        <h2 class="invitation__title" id="invitation-title">Receive our quietest stories.</h2>
+        <p class="invitation__subline">Letters from the atelier — written slowly, sent rarely.</p>
+
+        <form class="invitation__form" action="#" method="post" novalidate>
+          <label for="invite-email" class="invitation__label">Your email</label>
+          <div class="invitation__row">
+            <input
+              type="email"
+              id="invite-email"
+              name="email"
+              class="invitation__input"
+              placeholder="your@email.com"
+              autocomplete="email"
+              required
+              aria-required="true"
+              aria-describedby="invite-note"
+            >
+            <button type="submit" class="invitation__submit">Subscribe &rarr;</button>
+          </div>
+        </form>
+
+        <p class="invitation__microcopy" id="invite-note">No noise. Only what matters.</p>
+
+      </div>
+    </section>
+
   </main>
+
+  <!-- ─── Footer ───────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+
+      <!-- 4-column link grid -->
+      <div class="footer__grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer__col footer__col--brand">
+          <a href="/" class="footer__wordmark" aria-label="Atelier — Return to homepage">ATELIER</a>
+          <p class="footer__tagline">Crafted slowly.<br>Worn with intention.</p>
+          <div class="footer__social" aria-label="Follow us">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4.5"/>
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.2 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83l1.24-5.26c0 0-.32-.63-.32-1.57 0-1.47.85-2.57 1.91-2.57.9 0 1.34.68 1.34 1.49 0 .91-.58 2.27-.88 3.53-.25 1.06.53 1.92 1.56 1.92 1.87 0 3.13-2.37 3.13-5.18 0-2.15-1.45-3.65-3.53-3.65-2.4 0-3.81 1.81-3.81 3.67 0 .73.28 1.5.63 1.93"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Shop -->
+        <div class="footer__col">
+          <h3 class="footer__col-title">Shop</h3>
+          <nav aria-label="Shop navigation">
+            <a href="#collections" class="footer__link">Collections</a>
+            <a href="#shop"        class="footer__link">New Arrivals</a>
+            <a href="#shop"        class="footer__link">Best Sellers</a>
+            <a href="#"            class="footer__link">Sale</a>
+          </nav>
+        </div>
+
+        <!-- Col 3: Atelier -->
+        <div class="footer__col">
+          <h3 class="footer__col-title">Atelier</h3>
+          <nav aria-label="Atelier navigation">
+            <a href="#atelier" class="footer__link">Our Story</a>
+            <a href="#atelier" class="footer__link">Craft</a>
+            <a href="#"        class="footer__link">Journal</a>
+            <a href="#contact" class="footer__link">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Col 4: Help -->
+        <div class="footer__col">
+          <h3 class="footer__col-title">Help</h3>
+          <nav aria-label="Help navigation">
+            <a href="#" class="footer__link">Shipping</a>
+            <a href="#" class="footer__link">Returns</a>
+            <a href="#" class="footer__link">FAQ</a>
+            <a href="#" class="footer__link">Care Guide</a>
+          </nav>
+        </div>
+
+      </div><!-- /.footer__grid -->
+
+      <!-- Bottom utility row -->
+      <div class="footer__bottom">
+
+        <p class="footer__copy">&copy; 2026 Atelier. All rights reserved.</p>
+
+        <div class="footer__payments" aria-label="Accepted payment methods">
+          <span class="footer__pay-badge">Visa</span>
+          <span class="footer__pay-badge">MC</span>
+          <span class="footer__pay-badge">Amex</span>
+          <span class="footer__pay-badge">PayPal</span>
+        </div>
+
+        <label for="footer-locale" class="footer__locale-label">Language &amp; currency</label>
+        <select id="footer-locale" class="footer__locale">
+          <option>EN / USD</option>
+          <option>EN / GBP</option>
+          <option>EN / SGD</option>
+          <option>EN / BDT</option>
+        </select>
+
+      </div><!-- /.footer__bottom -->
+
+    </div><!-- /.footer__inner -->
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
