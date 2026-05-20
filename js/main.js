@@ -136,6 +136,29 @@ function revealOnScroll(sectionSel, cardSel, staggerMs) {
 /* ── Collections: 3 tiles, 90 ms stagger ───────────────────── */
 revealOnScroll('.collections', '.collection-tile', 90);
 
+/* ── Featured Story: image fades first, content rises after ─── */
+(function () {
+  var section = document.querySelector('.feature-story');
+  if (!section) return;
+
+  function observeEl(el, threshold) {
+    if (!('IntersectionObserver' in window)) {
+      el.classList.add('is-visible');
+      return;
+    }
+    new IntersectionObserver(function (entries, obs) {
+      if (!entries[0].isIntersecting) return;
+      el.classList.add('is-visible');
+      obs.disconnect();
+    }, { threshold: threshold || 0.08 }).observe(el);
+  }
+
+  var imgWrap = section.querySelector('.feature-story__img-wrap');
+  var content = section.querySelector('.feature-story__content');
+  if (imgWrap) observeEl(imgWrap, 0.05);
+  if (content) observeEl(content, 0.12);
+})();
+
 /* ── Atelier Selection: 8 cards, 50 ms stagger ─────────────── */
 revealOnScroll('.selection', '.product-card', 50);
 
