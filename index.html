@@ -61,29 +61,39 @@
       <!-- Action Icons -->
       <div class="header__actions">
         <!-- Search -->
-        <button class="header__action" aria-label="Search">
+        <button class="header__action" id="btn-search" aria-label="Open search" aria-expanded="false">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="11" cy="11" r="7.5"/>
             <path d="M17 17 L22.5 22.5"/>
           </svg>
         </button>
 
-        <!-- Account -->
-        <button class="header__action" aria-label="My account">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20c0-3.8 3.6-6.5 8-6.5s8 2.7 8 6.5"/>
-          </svg>
-        </button>
+        <!-- Account (wrapper needed for dropdown positioning) -->
+        <div class="header__action-wrap" id="account-wrap">
+          <button class="header__action" id="btn-account" aria-label="My account" aria-expanded="false" aria-haspopup="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-3.8 3.6-6.5 8-6.5s8 2.7 8 6.5"/>
+            </svg>
+          </button>
+          <!-- Account dropdown -->
+          <div class="account-dropdown" id="account-dropdown" role="dialog" aria-label="Account options" hidden>
+            <p class="account-dropdown__welcome">Welcome</p>
+            <p class="account-dropdown__sub">Sign in to your account</p>
+            <a href="#" class="account-dropdown__link">Sign In &rarr;</a>
+            <hr class="account-dropdown__divider" aria-hidden="true">
+            <a href="#" class="account-dropdown__link">Create Account &rarr;</a>
+          </div>
+        </div>
 
         <!-- Cart -->
-        <button class="header__action header__cart-btn" aria-label="Shopping bag, 2 items">
+        <button class="header__action header__cart-btn" id="btn-cart" aria-label="Shopping bag" aria-expanded="false">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
             <line x1="3" y1="6" x2="21" y2="6"/>
             <path d="M16 10a4 4 0 0 1-8 0"/>
           </svg>
-          <span class="header__cart-count" aria-hidden="true">2</span>
+          <span class="header__cart-count" id="cart-count" aria-hidden="true" data-count="0"></span>
         </button>
 
         <!-- Mobile menu toggle -->
@@ -212,7 +222,10 @@
             <h3 class="product-card__name"><a href="#">Kantha Wrap Jacket</a></h3>
             <p class="product-card__material">Handloomed Cotton &middot; Rajshahi</p>
             <p class="product-card__price">$285</p>
-            <button class="product-card__atb" aria-label="Add Kantha Wrap Jacket to bag">Add to Bag</button>
+            <button class="product-card__atb" aria-label="Add Kantha Wrap Jacket to bag"
+                    data-id="kantha-wrap-jacket" data-name="Kantha Wrap Jacket"
+                    data-material="Handloomed Cotton · Rajshahi" data-price="285"
+                    data-img="product-img--kantha">Add to Bag</button>
           </div>
         </article>
 
@@ -231,7 +244,10 @@
             <h3 class="product-card__name"><a href="#">Linen Drawstring Shirt</a></h3>
             <p class="product-card__material">Pure Belgian Linen &middot; Dhaka</p>
             <p class="product-card__price">$145</p>
-            <button class="product-card__atb" aria-label="Add Linen Drawstring Shirt to bag">Add to Bag</button>
+            <button class="product-card__atb" aria-label="Add Linen Drawstring Shirt to bag"
+                    data-id="linen-drawstring-shirt" data-name="Linen Drawstring Shirt"
+                    data-material="Pure Belgian Linen · Dhaka" data-price="145"
+                    data-img="product-img--linen-shirt">Add to Bag</button>
           </div>
         </article>
 
@@ -250,7 +266,10 @@
             <h3 class="product-card__name"><a href="#">Jamdani Muslin Kurta</a></h3>
             <p class="product-card__material">Jamdani Weave &middot; Tangail</p>
             <p class="product-card__price">$210</p>
-            <button class="product-card__atb" aria-label="Add Jamdani Muslin Kurta to bag">Add to Bag</button>
+            <button class="product-card__atb" aria-label="Add Jamdani Muslin Kurta to bag"
+                    data-id="jamdani-muslin-kurta" data-name="Jamdani Muslin Kurta"
+                    data-material="Jamdani Weave · Tangail" data-price="210"
+                    data-img="product-img--muslin-kurta">Add to Bag</button>
           </div>
         </article>
 
@@ -269,7 +288,10 @@
             <h3 class="product-card__name"><a href="#">Washed Linen Trouser</a></h3>
             <p class="product-card__material">Stonewashed Linen &middot; Dhaka</p>
             <p class="product-card__price">$175</p>
-            <button class="product-card__atb" aria-label="Add Washed Linen Trouser to bag">Add to Bag</button>
+            <button class="product-card__atb" aria-label="Add Washed Linen Trouser to bag"
+                    data-id="washed-linen-trouser" data-name="Washed Linen Trouser"
+                    data-material="Stonewashed Linen · Dhaka" data-price="175"
+                    data-img="product-img--linen-trouser">Add to Bag</button>
           </div>
         </article>
 
@@ -288,7 +310,10 @@
             <h3 class="product-card__name"><a href="#">Block-Print Dupatta</a></h3>
             <p class="product-card__material">Endi Silk &middot; Rajshahi</p>
             <p class="product-card__price">$195</p>
-            <button class="product-card__atb" aria-label="Add Block-Print Dupatta to bag">Add to Bag</button>
+            <button class="product-card__atb" aria-label="Add Block-Print Dupatta to bag"
+                    data-id="block-print-dupatta" data-name="Block-Print Dupatta"
+                    data-material="Endi Silk · Rajshahi" data-price="195"
+                    data-img="product-img--dupatta">Add to Bag</button>
           </div>
         </article>
 
@@ -307,7 +332,10 @@
             <h3 class="product-card__name"><a href="#">Heritage Cotton Tunic</a></h3>
             <p class="product-card__material">Handloomed Cotton &middot; Comilla</p>
             <p class="product-card__price">$155</p>
-            <button class="product-card__atb" aria-label="Add Heritage Cotton Tunic to bag">Add to Bag</button>
+            <button class="product-card__atb" aria-label="Add Heritage Cotton Tunic to bag"
+                    data-id="heritage-cotton-tunic" data-name="Heritage Cotton Tunic"
+                    data-material="Handloomed Cotton · Comilla" data-price="155"
+                    data-img="product-img--tunic">Add to Bag</button>
           </div>
         </article>
 
@@ -326,7 +354,10 @@
             <h3 class="product-card__name"><a href="#">Embroidered Lawn Blouse</a></h3>
             <p class="product-card__material">Nakshi Cotton &middot; Dhaka</p>
             <p class="product-card__price">$165</p>
-            <button class="product-card__atb" aria-label="Add Embroidered Lawn Blouse to bag">Add to Bag</button>
+            <button class="product-card__atb" aria-label="Add Embroidered Lawn Blouse to bag"
+                    data-id="embroidered-lawn-blouse" data-name="Embroidered Lawn Blouse"
+                    data-material="Nakshi Cotton · Dhaka" data-price="165"
+                    data-img="product-img--lawn">Add to Bag</button>
           </div>
         </article>
 
@@ -345,7 +376,10 @@
             <h3 class="product-card__name"><a href="#">Pleated Muslin Dress</a></h3>
             <p class="product-card__material">Endi Silk Blend &middot; Rajshahi</p>
             <p class="product-card__price">$240</p>
-            <button class="product-card__atb" aria-label="Add Pleated Muslin Dress to bag">Add to Bag</button>
+            <button class="product-card__atb" aria-label="Add Pleated Muslin Dress to bag"
+                    data-id="pleated-muslin-dress" data-name="Pleated Muslin Dress"
+                    data-material="Endi Silk Blend · Rajshahi" data-price="240"
+                    data-img="product-img--muslin-dress">Add to Bag</button>
           </div>
         </article>
 
@@ -543,6 +577,64 @@
     </div><!-- /.footer__inner -->
   </footer>
 
+  <!-- ── Shared backdrop ──────────────────────────────────── -->
+  <div class="ui-backdrop" id="ui-backdrop" aria-hidden="true"></div>
+
+  <!-- ── Search Overlay ───────────────────────────────────── -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search the atelier" hidden>
+    <div class="search-overlay__inner">
+      <button class="search-overlay__close" id="btn-search-close" aria-label="Close search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
+        </svg>
+      </button>
+      <div class="search-overlay__input-wrap">
+        <input type="search" class="search-overlay__input" id="search-input"
+               placeholder="Search the atelier..." autocomplete="off" aria-label="Search the atelier">
+      </div>
+      <div class="search-overlay__suggestions">
+        <div class="search-overlay__group">
+          <span class="search-overlay__group-label">Recent Searches</span>
+          <div class="search-overlay__recent">
+            <button class="search-overlay__recent-btn">Linen shirting</button>
+            <button class="search-overlay__recent-btn">Kantha jacket</button>
+            <button class="search-overlay__recent-btn">Silk dupatta</button>
+          </div>
+        </div>
+        <div class="search-overlay__group">
+          <span class="search-overlay__group-label">Suggested Collections</span>
+          <div class="search-overlay__links">
+            <a href="#collections" class="search-overlay__link">The Linen Edit</a>
+            <a href="#" class="search-overlay__link">Heritage Cotton</a>
+            <a href="#" class="search-overlay__link">Silk &amp; Muslin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Cart Drawer ───────────────────────────────────────── -->
+  <div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping bag" hidden>
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Your Bag</h2>
+      <button class="cart-drawer__close" id="btn-cart-close" aria-label="Close bag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-drawer__body" id="cart-body"></div>
+    <div class="cart-drawer__footer" id="cart-footer" hidden>
+      <div class="cart-drawer__subtotal">
+        <span class="cart-drawer__subtotal-label">Subtotal</span>
+        <span class="cart-drawer__subtotal-amount" id="cart-subtotal">$0</span>
+      </div>
+      <p class="cart-drawer__shipping-note">Shipping calculated at checkout</p>
+      <a href="#" class="cart-drawer__checkout">Proceed to Checkout &rarr;</a>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
+  <script src="js/interactions.js"></script>
 </body>
 </html>
