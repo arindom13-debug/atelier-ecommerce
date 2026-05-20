@@ -1811,11 +1811,163 @@ button {
 
 
 /* =====================================================
+   9b. MAKER'S MARK — Craftsmanship Pillars
+   Four promises on pure white. No card backgrounds —
+   icons + type on open field. Generous vertical air.
+   ===================================================== */
+
+.makers-mark {
+  background: var(--white);
+  padding: 128px 84px 100px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ─── Header ─────────────────────────────────────── */
+.makers-mark__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.makers-mark__eyebrow {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.makers-mark__title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 2.6vw, 44px);
+  font-weight: 600;
+  font-style: normal;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--track-head);
+  color: var(--charcoal);
+}
+
+/* ─── Four-column pillar row ─────────────────────── */
+.makers-mark__pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.makers-mark__pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* Scroll reveal */
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity   0.65s var(--ease-out),
+    transform 0.65s var(--ease-out);
+}
+
+.makers-mark__pillar.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 80ms stagger across the four pillars */
+.makers-mark__pillars .makers-mark__pillar:nth-child(1) { transition-delay:   0ms; }
+.makers-mark__pillars .makers-mark__pillar:nth-child(2) { transition-delay:  80ms; }
+.makers-mark__pillars .makers-mark__pillar:nth-child(3) { transition-delay: 160ms; }
+.makers-mark__pillars .makers-mark__pillar:nth-child(4) { transition-delay: 240ms; }
+
+/* ─── Line icon ──────────────────────────────────── */
+/* 36×36 SVG, stroke-width 1, no fill — hand-drawn feel */
+.makers-mark__icon {
+  width: 36px;
+  height: 36px;
+  color: var(--charcoal);
+  opacity: 0.55;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+
+.makers-mark__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Pillar name — italic serif ─────────────────── */
+.makers-mark__pillar-name {
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+}
+
+/* ─── Supporting desc — muted sans, max 12 words ─── */
+.makers-mark__pillar-desc {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 22ch;
+}
+
+/* ─── Thin divider at section base ──────────────── */
+.makers-mark__rule {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* ─── Reduced motion ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .makers-mark__pillar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── Responsive ─────────────────────────────────── */
+
+/* Tablet: 2×2 grid */
+@media (max-width: 900px) {
+  .makers-mark {
+    padding: 96px 52px 80px;
+  }
+
+  .makers-mark__pillars {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 52px 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .makers-mark {
+    padding: 80px 28px 72px;
+  }
+
+  .makers-mark__pillars {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 44px 24px;
+  }
+}
+
+
+/* =====================================================
    10. HERITAGE & CRAFT
    ===================================================== */
 
 .craft {
-  background: var(--white);
+  background: var(--ivory);   /* differentiated from adjacent white sections */
   overflow: hidden;
 }
 
@@ -1868,6 +2020,19 @@ button {
 /* Reverse block: text left / image right */
 .craft__block--reverse .craft__text-col {
   padding: 80px 84px 80px 84px;
+}
+
+/* Date stamp — italic serif, above headline in Heritage block */
+.craft__datestamp {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  opacity: 0.7;
+  margin-bottom: 14px;
 }
 
 /* Eyebrow */
@@ -1925,6 +2090,26 @@ button {
 
 .craft__cta:hover { opacity: 0.55; }
 
+/* Secondary CTA — quieter weight, sits below primary */
+.craft__cta--secondary {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+  opacity: 0.38;
+  transition: opacity var(--t-fast);
+  margin-top: 14px;
+  align-self: flex-start;
+}
+
+.craft__cta--secondary:hover { opacity: 0.7; }
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .craft__img-col,
@@ -1966,6 +2151,208 @@ button {
   .craft__text-col,
   .craft__block--reverse .craft__text-col {
     padding: 56px 28px;
+  }
+}
+
+
+/* =====================================================
+   10b. JOURNAL PREVIEW
+   ===================================================== */
+
+.journal {
+  background: var(--white);
+  padding: 120px 84px 140px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.journal__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.journal__eyebrow {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.journal__title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(30px, 3vw, 48px);
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.journal__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 72px;
+}
+
+/* ── Journal card ────────────────────────────────────── */
+
+.journal-card {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.journal-card:nth-child(2) { transition-delay: 80ms; }
+.journal-card:nth-child(3) { transition-delay: 160ms; }
+
+.journal-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.journal-card__img-wrap {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--ivory);
+  margin-bottom: 24px;
+}
+
+.journal-card__img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.55s var(--ease-out);
+}
+
+.journal-card:hover .journal-card__img {
+  transform: scale(1.04);
+}
+
+/* Journal card image placeholders */
+.journal-img--01 {
+  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80');
+  background-color: #d4c9bb;
+}
+
+.journal-img--02 {
+  background-image: url('https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?w=600&q=80');
+  background-color: #c8bfb3;
+}
+
+.journal-img--03 {
+  background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80');
+  background-color: #bfb8ae;
+}
+
+.journal-card__category {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.journal-card__title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(17px, 1.4vw, 22px);
+  line-height: 1.3;
+  color: var(--charcoal);
+  margin: 0 0 14px;
+}
+
+.journal-card__title a {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  transition: background-size 0.4s var(--ease-out);
+}
+
+.journal-card__title a:hover {
+  background-size: 100% 1px;
+}
+
+.journal-card__meta {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  opacity: 0.72;
+  margin-top: auto;
+}
+
+/* ── Journal footer CTA ──────────────────────────────── */
+
+.journal__footer {
+  text-align: center;
+}
+
+.journal__cta {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  transition: background-size 0.35s var(--ease-out), opacity 0.2s ease;
+  opacity: 0.55;
+}
+
+.journal__cta:hover {
+  background-size: 100% 1px;
+  opacity: 1;
+}
+
+/* ── Journal responsive ──────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .journal {
+    padding: 96px 56px 112px;
+  }
+}
+
+@media (max-width: 768px) {
+  .journal {
+    padding: 80px 32px 96px;
+  }
+
+  .journal__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 56px;
+  }
+
+  .journal-card__img-wrap {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journal-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 

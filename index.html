@@ -245,7 +245,7 @@
          Full-width cinematic image + narrow text block.
          Pure white background; breath moment between sections.
     ─────────────────────────────────────────────────── -->
-    <section class="feature-story" id="journal" aria-labelledby="feature-story-title">
+    <section class="feature-story" id="feature" aria-labelledby="feature-story-title">
 
       <!-- Cinematic image — fade-in on scroll -->
       <div class="feature-story__img-wrap">
@@ -580,6 +580,88 @@
 
     </section>
 
+    <!-- ─── Maker's Mark — Craftsmanship Pillars ────────────
+         Four brand promises, expressed through thin line icons
+         and short italic serif titles. Pure white, no cards.
+    ─────────────────────────────────────────────────────── -->
+    <section class="makers-mark" aria-labelledby="makers-mark-title">
+
+      <div class="makers-mark__header">
+        <em class="makers-mark__eyebrow">The Maker's Mark</em>
+        <h2 class="makers-mark__title" id="makers-mark-title">Four promises, kept by hand.</h2>
+      </div>
+
+      <div class="makers-mark__pillars">
+
+        <!-- Pillar 1: Hand-loomed -->
+        <div class="makers-mark__pillar">
+          <div class="makers-mark__icon">
+            <!-- Loom: uprights, rails, warp threads, weft curve -->
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="5"  x2="5"  y2="31"/>
+              <line x1="31" y1="5" x2="31" y2="31"/>
+              <line x1="5" y1="7"  x2="31" y2="7"/>
+              <line x1="5" y1="29" x2="31" y2="29"/>
+              <line x1="12" y1="7" x2="12" y2="29"/>
+              <line x1="18" y1="7" x2="18" y2="29"/>
+              <line x1="24" y1="7" x2="24" y2="29"/>
+              <path d="M5 18 Q18 15 31 18"/>
+            </svg>
+          </div>
+          <h3 class="makers-mark__pillar-name">Hand-loomed</h3>
+          <p class="makers-mark__pillar-desc">Every thread placed by a single weaver's hands.</p>
+        </div>
+
+        <!-- Pillar 2: Naturally dyed -->
+        <div class="makers-mark__pillar">
+          <div class="makers-mark__icon">
+            <!-- Leaf: outline with central vein and two side veins -->
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 33 C10 27 6 21 6 15 C6 8 11 4 18 4 C25 4 30 8 30 15 C30 21 26 27 18 33Z"/>
+              <line x1="18" y1="33" x2="18" y2="9"/>
+              <path d="M18 23 C14 20 11 20 9 22"/>
+              <path d="M18 16 C22 13 25 13 27 15"/>
+            </svg>
+          </div>
+          <h3 class="makers-mark__pillar-name">Naturally dyed</h3>
+          <p class="makers-mark__pillar-desc">Colour drawn from roots, bark, and indigo leaves.</p>
+        </div>
+
+        <!-- Pillar 3: Small batches -->
+        <div class="makers-mark__pillar">
+          <div class="makers-mark__icon">
+            <!-- Scissors: two ringed handles, crossing blades -->
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="10" cy="26" r="4"/>
+              <circle cx="10" cy="10" r="4"/>
+              <line x1="13.8" y1="23"  x2="32" y2="6"/>
+              <line x1="13.8" y1="13"  x2="32" y2="30"/>
+            </svg>
+          </div>
+          <h3 class="makers-mark__pillar-name">Small batches</h3>
+          <p class="makers-mark__pillar-desc">Never more than forty pieces cut per pattern.</p>
+        </div>
+
+        <!-- Pillar 4: Mended for life -->
+        <div class="makers-mark__pillar">
+          <div class="makers-mark__icon">
+            <!-- Needle with thread loop: shaft, eye, loose thread arc -->
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="6" y1="32" x2="27" y2="7"/>
+              <path d="M24 4 Q30 6 27 11 Q23 9 24 4"/>
+              <path d="M26 9 C33 16 33 26 25 31 C20 35 12 34 8 30"/>
+            </svg>
+          </div>
+          <h3 class="makers-mark__pillar-name">Mended for life</h3>
+          <p class="makers-mark__pillar-desc">We repair every piece, free, without question.</p>
+        </div>
+
+      </div><!-- /.makers-mark__pillars -->
+
+      <div class="makers-mark__rule" aria-hidden="true"></div>
+
+    </section>
+
     <!-- ─── Heritage & Craft ────────────────────────────────── -->
     <section class="craft" id="atelier" aria-labelledby="craft-title-1">
 
@@ -593,6 +675,7 @@
           <h2 class="craft__headline" id="craft-title-1">Made slowly.<br>Made once.</h2>
           <p class="craft__body">Each piece begins at the loom. It takes one of our weavers three full days to produce enough fabric for a single garment — a pace we have never tried to accelerate. At Atelier, slowness is not a constraint. It is the work itself, made visible in every thread.</p>
           <a href="#" class="craft__cta">Read Our Story &rarr;</a>
+          <a href="#" class="craft__cta craft__cta--secondary">Meet the makers &rarr;</a>
         </div>
       </div>
 
@@ -600,12 +683,79 @@
       <div class="craft__block craft__block--reverse">
         <div class="craft__text-col">
           <span class="craft__eyebrow">Heritage</span>
+          <em class="craft__datestamp">Est. Dhaka &mdash; 1975</em>
           <h2 class="craft__headline" id="craft-title-2">Fifty years of quiet making.</h2>
           <p class="craft__body">Our founders arrived in Dhaka with a single belief: that enduring things demand time. Since 1975, we have worked with the same families of weavers, passing techniques not through manuals, but through hands. The knowledge lives in the fabric. You carry it with you.</p>
         </div>
 
         <div class="craft__img-col craft__img--loom"
              role="img" aria-label="Traditional handloom inside a heritage weaving studio, warm light on threads"></div>
+      </div>
+
+    </section>
+
+    <!-- ─── Journal Preview ─────────────────────────────────────
+         3 article cards: image + category + title + metadata.
+         Title reveals an underline on hover; image scales 1.02.
+    ─────────────────────────────────────────────────────────── -->
+    <section class="journal" id="journal" aria-labelledby="journal-title">
+
+      <div class="journal__header">
+        <em class="journal__eyebrow">The Journal</em>
+        <h2 class="journal__title" id="journal-title">Stories from the atelier.</h2>
+      </div>
+
+      <div class="journal__grid">
+
+        <!-- Article 1: Notes -->
+        <article class="journal-card">
+          <div class="journal-card__img-wrap">
+            <div class="journal-card__img journal-img--01"
+                 role="img" aria-label="A person in white linen seated by a sunlit window, reading"></div>
+          </div>
+          <div class="journal-card__body">
+            <span class="journal-card__category">Notes</span>
+            <h3 class="journal-card__title">
+              <a href="#">On wearing the same shirt for a hundred days.</a>
+            </h3>
+            <p class="journal-card__meta">12 May 2026 &nbsp;&middot;&nbsp; 4 min read</p>
+          </div>
+        </article>
+
+        <!-- Article 2: People -->
+        <article class="journal-card">
+          <div class="journal-card__img-wrap">
+            <div class="journal-card__img journal-img--02"
+                 role="img" aria-label="Weaver Rina Akter at her loom, warm studio light, Tangail"></div>
+          </div>
+          <div class="journal-card__body">
+            <span class="journal-card__category">People</span>
+            <h3 class="journal-card__title">
+              <a href="#">Rina Akter has been weaving since she was twelve.</a>
+            </h3>
+            <p class="journal-card__meta">28 Apr 2026 &nbsp;&middot;&nbsp; 6 min read</p>
+          </div>
+        </article>
+
+        <!-- Article 3: Process -->
+        <article class="journal-card">
+          <div class="journal-card__img-wrap">
+            <div class="journal-card__img journal-img--03"
+                 role="img" aria-label="Clay pots of natural dye, deep indigo and amber in an open courtyard"></div>
+          </div>
+          <div class="journal-card__body">
+            <span class="journal-card__category">Process</span>
+            <h3 class="journal-card__title">
+              <a href="#">Why we still dye in clay pots.</a>
+            </h3>
+            <p class="journal-card__meta">14 Apr 2026 &nbsp;&middot;&nbsp; 3 min read</p>
+          </div>
+        </article>
+
+      </div><!-- /.journal__grid -->
+
+      <div class="journal__footer">
+        <a href="#" class="journal__cta">Read the Journal &rarr;</a>
       </div>
 
     </section>

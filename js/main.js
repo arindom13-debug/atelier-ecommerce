@@ -179,6 +179,12 @@ revealOnScroll('.selection', '.product-card', 50);
   });
 })();
 
+/* ── Maker's Mark: 4 pillars, 80 ms stagger ────────────────── */
+revealOnScroll('.makers-mark', '.makers-mark__pillar', 80);
+
+/* ── Journal Preview: 3 cards, 80 ms stagger ───────────────── */
+revealOnScroll('.journal', '.journal-card', 80);
+
 /* ── Heritage & Craft: each block reveals img + text together ── */
 document.querySelectorAll('.craft__block').forEach(function (block) {
   if (!('IntersectionObserver' in window)) {
