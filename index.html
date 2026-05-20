@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atelier — Crafted with Intention</title>
 
-  <!-- Playfair Display: high-contrast British serif (Google Fonts) -->
+  <!-- Cormorant Infant: ultra-high-contrast editorial serif (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
   <!-- General Sans: humanist sans (Fontshare) -->
   <link rel="preconnect" href="https://api.fontshare.com">
@@ -27,17 +27,35 @@
 </head>
 <body>
 
-  <!-- ─── Announcement Bar ─────────────────────────────────── -->
-  <div class="announcement" id="announcement" role="status" aria-live="polite">
-    <span class="announcement__text">
-      Complimentary delivery on all orders above $150 &nbsp;&middot;&nbsp; New Arrivals: The Linen Edit
-    </span>
-    <button class="announcement__close" id="announcement-close" aria-label="Dismiss announcement">
-      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-        <line x1="1" y1="1" x2="9" y2="9"/>
-        <line x1="9" y1="1" x2="1" y2="9"/>
-      </svg>
-    </button>
+  <!-- ─── Utility Strip ───────────────────────────────────────
+       Slides away on scroll; header stays fixed below it.
+  ─────────────────────────────────────────────────────────── -->
+  <div class="utility-strip" id="utility-strip" role="complementary" aria-label="Service information">
+
+    <!-- Left: locale / currency -->
+    <div class="utility-strip__col utility-strip__col--left">
+      <label for="util-locale" class="sr-only">Language &amp; currency</label>
+      <select class="utility-strip__select" id="util-locale">
+        <option>EN / USD</option>
+        <option>EN / GBP</option>
+        <option>EN / SGD</option>
+        <option>EN / BDT</option>
+      </select>
+    </div>
+
+    <!-- Center: rotating micro-messages -->
+    <div class="utility-strip__col utility-strip__col--center"
+         aria-live="polite" aria-atomic="true">
+      <span class="utility-strip__msg is-active">Complimentary shipping on orders over $150</span>
+      <span class="utility-strip__msg">Book a private appointment at the Atelier</span>
+      <span class="utility-strip__msg">Visit us &mdash; Dhaka &nbsp;&middot;&nbsp; Singapore &nbsp;&middot;&nbsp; London</span>
+    </div>
+
+    <!-- Right: appointment CTA -->
+    <div class="utility-strip__col utility-strip__col--right">
+      <a href="#contact" class="utility-strip__appt">Book Appointment</a>
+    </div>
+
   </div>
 
   <!-- ─── Site Header ──────────────────────────────────────── -->
@@ -121,20 +139,42 @@
     </nav>
   </header>
 
-  <!-- ─── Hero Section ─────────────────────────────────────── -->
-  <section class="hero" aria-label="Hero — Crafted in silence. Worn with intention.">
-    <!-- Editorial image placeholder -->
-    <div class="hero__bg" aria-hidden="true"></div>
-    <!-- Contrast overlay for text legibility -->
-    <div class="hero__overlay" aria-hidden="true"></div>
+  <!-- ─── Hero Section — Editorial Collage ────────────────────
+       Two-column layout: main image (62%) · ivory panel (38%)
+       Stagger: main → detail tile → text card → scroll indicator
+  ─────────────────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-headline">
 
-    <div class="hero__content">
-      <h1 class="hero__headline">
-        Crafted in silence.<br>Worn with intention.
-      </h1>
-      <p class="hero__subline">Rooted in craft. Refined by time.</p>
-      <a href="#collections" class="hero__cta">Discover the Collection</a>
+    <!-- Left: primary editorial image -->
+    <div class="hero__main" aria-hidden="true">
+      <div class="hero__main-img"></div>
     </div>
+
+    <!-- Right: ivory panel — detail tile + text card -->
+    <div class="hero__aside">
+
+      <!-- Small offset detail shot — overlaps into the main image -->
+      <div class="hero__detail"
+           role="img"
+           aria-label="Artisan textile detail — handwoven cotton threads"></div>
+
+      <!-- Text card — season label, headline, subline, CTA -->
+      <div class="hero__card">
+        <span class="hero__season">SS26 &mdash; The Linen Edit</span>
+        <h1 class="hero__headline" id="hero-headline">
+          Crafted in silence.<br><em>Worn with intention.</em>
+        </h1>
+        <p class="hero__subline">Rooted in craft. Refined by time.</p>
+        <a href="#collections" class="hero__cta">Discover the Collection</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator — thin line + tracked label -->
+    <div class="hero__scroll-indicator" aria-hidden="true">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-label">Scroll</span>
+    </div>
+
   </section>
 
   <!-- ─── Remaining page sections go here ─────────────────── -->

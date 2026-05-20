@@ -1,26 +1,27 @@
 (function () {
   'use strict';
 
-  const header      = document.getElementById('header');
-  const announcement = document.getElementById('announcement');
-  const closeBtn    = document.getElementById('announcement-close');
-  const menuToggle  = document.getElementById('menu-toggle');
-  const mobileNav   = document.getElementById('mobile-nav');
+  const header       = document.getElementById('header');
+  const utilityStrip = document.getElementById('utility-strip');
+  const menuToggle   = document.getElementById('menu-toggle');
+  const mobileNav    = document.getElementById('mobile-nav');
 
   /* ── Header top offset ───────────────────────────────────────
-     Keeps the header flush below the announcement bar.
-     Called on init, on bar dismiss, and on resize.
+     Keeps the header flush below the utility strip.
+     Called on init, on strip hide/show, and on resize.
   ──────────────────────────────────────────────────────────── */
   function syncHeaderTop() {
     if (!header) return;
-    const barH = (announcement && !announcement.classList.contains('is-dismissed'))
-      ? announcement.offsetHeight
-      : 0;
-    header.style.top = barH + 'px';
+    const stripVisible = utilityStrip &&
+      !utilityStrip.classList.contains('is-hidden');
+    header.style.top = stripVisible
+      ? (utilityStrip.offsetHeight || 32) + 'px'
+      : '0px';
   }
 
-  /* ── Scroll: transparent → warm-white ───────────────────────
-     Threshold of 20px so it triggers immediately on first scroll.
+  /* ── Scroll: transparent → warm-white + strip hide ──────────
+     is-scrolled threshold: 20px (fires immediately on first scroll)
+     strip hides after 80px of scroll
   ──────────────────────────────────────────────────────────── */
   let rafPending = false;
 
@@ -28,20 +29,38 @@
     if (rafPending) return;
     rafPending = true;
     requestAnimationFrame(function () {
+      const y = window.scrollY;
+
       if (header) {
-        header.classList.toggle('is-scrolled', window.scrollY > 20);
+        header.classList.toggle('is-scrolled', y > 20);
       }
+
+      if (utilityStrip) {
+        const shouldHide = y > 80;
+        const isHidden   = utilityStrip.classList.contains('is-hidden');
+        if (shouldHide !== isHidden) {
+          utilityStrip.classList.toggle('is-hidden', shouldHide);
+          // Re-sync header after CSS transition (300ms + small buffer)
+          setTimeout(syncHeaderTop, 320);
+        }
+      }
+
       rafPending = false;
     });
   }
 
-  /* ── Announcement bar dismiss ────────────────────────────── */
-  if (closeBtn && announcement) {
-    closeBtn.addEventListener('click', function () {
-      announcement.classList.add('is-dismissed');
-      // Wait for CSS transition (350ms) then snap header to top
-      setTimeout(syncHeaderTop, 360);
-    });
+  /* ── Rotating messages ───────────────────────────────────── */
+  var msgs   = utilityStrip
+    ? Array.from(utilityStrip.querySelectorAll('.utility-strip__msg'))
+    : [];
+  var msgIdx = 0;
+
+  if (msgs.length > 1) {
+    setInterval(function () {
+      msgs[msgIdx].classList.remove('is-active');
+      msgIdx = (msgIdx + 1) % msgs.length;
+      msgs[msgIdx].classList.add('is-active');
+    }, 4200);
   }
 
   /* ── Mobile nav toggle ───────────────────────────────────── */
