@@ -206,5 +206,11 @@ document.querySelectorAll('.craft__block').forEach(function (block) {
 /* ── Voices: 3 quotes, 80 ms stagger ───────────────────────── */
 revealOnScroll('.voices', '.voice', 80);
 
+/* ── Service & Promise: 4 pillars, 90 ms stagger ───────────── */
+revealOnScroll('.promise', '.promise__pillar', 90);
+
+/* ── Lived-In Gallery: 6 items, 60 ms stagger ──────────────── */
+revealOnScroll('.gallery', '.gallery__item', 60);
+
 /* ── Invitation: single block, gentle fade-rise ─────────────── */
 revealOnScroll('.invitation', '.invitation__inner', 0);
