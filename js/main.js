@@ -162,6 +162,23 @@ revealOnScroll('.collections', '.collection-tile', 90);
 /* ── Atelier Selection: 8 cards, 50 ms stagger ─────────────── */
 revealOnScroll('.selection', '.product-card', 50);
 
+/* ── Selection filter pills — active state toggle ──────────── */
+(function () {
+  var filters = document.querySelectorAll('.selection__filter');
+  if (!filters.length) return;
+
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filters.forEach(function (f) {
+        f.classList.remove('is-active');
+        f.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-pressed', 'true');
+    });
+  });
+})();
+
 /* ── Heritage & Craft: each block reveals img + text together ── */
 document.querySelectorAll('.craft__block').forEach(function (block) {
   if (!('IntersectionObserver' in window)) {
