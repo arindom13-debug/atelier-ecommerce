@@ -13,8 +13,17 @@
   --muted:        #8A8278;
   --border:       #E8E3DC;
 
-  --font-serif:   'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif:   'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans:    'General Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Typographic scale tokens */
+  --lh-display:   1.05;
+  --lh-heading:   1.22;
+  --lh-body:      1.74;
+  --track-neg:   -0.025em;
+  --track-neg-sm:-0.015em;
+  --track-head:  -0.01em;
+  --track-eye:    0.18em;
 
   --ann-h:        36px;
   --header-h:     72px;
@@ -398,11 +407,12 @@ button {
 /* Serif italic display headline */
 .hero__headline {
   font-family: var(--font-serif);
-  font-size: clamp(38px, 4.8vw, 68px);
+  font-size: clamp(44px, 5.2vw, 78px);
   font-weight: 300;
   font-style: italic;
-  line-height: 1.08;
-  letter-spacing: 0.01em;
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-neg);
+  font-variation-settings: 'opsz' 144;
   color: var(--white);
   margin-bottom: 24px;
 }
@@ -411,7 +421,7 @@ button {
 .hero__subline {
   font-family: var(--font-sans);
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.68);
   line-height: 1.8;
@@ -512,9 +522,9 @@ button {
 .collections__eyebrow {
   display: block;
   font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--track-eye);
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 16px;
@@ -523,10 +533,11 @@ button {
 .collections__title {
   font-family: var(--font-serif);
   font-size: clamp(34px, 3.2vw, 52px);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.1;
-  letter-spacing: 0.01em;
+  font-weight: 400;
+  font-style: normal;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--track-head);
+  font-variation-settings: 'opsz' 72;
   color: var(--charcoal);
 }
 
@@ -629,9 +640,10 @@ button {
 .collection-tile__name {
   font-family: var(--font-serif);
   font-size: clamp(18px, 1.5vw, 22px);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
-  line-height: 1.2;
+  line-height: 1.25;
+  font-variation-settings: 'opsz' 36;
   color: var(--charcoal);
   margin-bottom: 6px;
 }
@@ -639,8 +651,8 @@ button {
 .collection-tile__desc {
   font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  letter-spacing: 0.03em;
   color: var(--muted);
   line-height: 1.65;
 }
@@ -777,9 +789,9 @@ button {
 .selection__eyebrow {
   display: block;
   font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--track-eye);
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 18px;
@@ -788,10 +800,11 @@ button {
 .selection__title {
   font-family: var(--font-serif);
   font-size: clamp(32px, 3vw, 48px);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.1;
-  letter-spacing: 0.01em;
+  font-weight: 400;
+  font-style: normal;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--track-head);
+  font-variation-settings: 'opsz' 72;
   color: var(--charcoal);
 }
 
@@ -930,10 +943,11 @@ button {
 
 .product-card__name {
   font-family: var(--font-serif);
-  font-size: clamp(16px, 1.3vw, 19px);
-  font-weight: 300;
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-weight: 400;
   font-style: italic;
-  line-height: 1.25;
+  line-height: 1.3;
+  font-variation-settings: 'opsz' 24;
   color: var(--charcoal);
   margin-bottom: 5px;
 }
@@ -955,11 +969,11 @@ button {
 
 .product-card__material {
   font-family: var(--font-sans);
-  font-size: 10.5px;
-  font-weight: 300;
-  letter-spacing: 0.04em;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.5;
   margin-bottom: 8px;
 }
 
@@ -1173,9 +1187,9 @@ button {
 .craft__eyebrow {
   display: block;
   font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--track-eye);
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 20px;
@@ -1184,10 +1198,12 @@ button {
 /* Headline */
 .craft__headline {
   font-family: var(--font-serif);
-  font-size: clamp(34px, 3.5vw, 56px);
+  font-size: clamp(36px, 3.8vw, 62px);
   font-weight: 300;
   font-style: italic;
-  line-height: 1.1;
+  line-height: 1.08;
+  letter-spacing: var(--track-neg-sm);
+  font-variation-settings: 'opsz' 144;
   color: var(--charcoal);
   max-width: 16ch;
   margin-bottom: 28px;
@@ -1197,8 +1213,8 @@ button {
 .craft__body {
   font-family: var(--font-sans);
   font-size: 14px;
-  font-weight: 300;
-  line-height: 1.85;
+  font-weight: 400;
+  line-height: var(--lh-body);
   color: var(--charcoal);
   opacity: 0.78;
   max-width: 42ch;
@@ -1315,10 +1331,11 @@ button {
 
 .voice__quote {
   font-family: var(--font-serif);
-  font-size: clamp(20px, 1.8vw, 26px);
+  font-size: clamp(22px, 2.2vw, 32px);
   font-weight: 300;
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.45;
+  font-variation-settings: 'opsz' 72;
   color: var(--charcoal);
   margin-bottom: 24px;
 }
@@ -1336,8 +1353,8 @@ button {
 .voice__attr {
   font-family: var(--font-sans);
   font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.16em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -1403,9 +1420,9 @@ button {
 .invitation__eyebrow {
   display: block;
   font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--track-eye);
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 20px;
@@ -1414,10 +1431,12 @@ button {
 /* Headline */
 .invitation__title {
   font-family: var(--font-serif);
-  font-size: clamp(30px, 2.8vw, 46px);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.15;
+  font-size: clamp(32px, 2.8vw, 50px);
+  font-weight: 400;
+  font-style: normal;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--track-head);
+  font-variation-settings: 'opsz' 72;
   color: var(--charcoal);
   margin-bottom: 18px;
 }
@@ -1426,7 +1445,7 @@ button {
 .invitation__subline {
   font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
   color: var(--charcoal);
   opacity: 0.65;
