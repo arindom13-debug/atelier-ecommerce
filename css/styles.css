@@ -1334,6 +1334,15 @@ button {
   aspect-ratio: 4 / 5;
 }
 
+/* Transparent overlay link — makes the whole image navigate to the PDP.
+   Sits beneath the label/wish (z-index:1) so those stay clickable. */
+.product-card__media-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+}
+
 /* ─── Image placeholder + slow scale on card hover ── */
 .product-card__img {
   width: 100%;

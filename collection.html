@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Collection</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    /* Stub-only layout — uses global tokens. */
+    .cstub { min-height: 100vh; background: var(--warm-bg); color: var(--charcoal); }
+    .cstub__bar { padding: 22px 52px; border-bottom: 1px solid var(--border); }
+    .cstub__back { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--charcoal); opacity: 0.7; }
+    .cstub__back:hover { opacity: 1; }
+    .cstub__hero { max-width: 1100px; margin: 0 auto; padding: 80px 52px 40px; text-align: center; }
+    .cstub__eyebrow { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--muted); display: block; margin-bottom: 16px; }
+    .cstub__title { font-family: var(--font-serif); font-size: clamp(36px, 5vw, 64px); font-weight: 500; line-height: 1.04; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .cstub__desc { font-family: var(--font-serif); font-style: italic; font-size: 19px; color: var(--muted); margin-bottom: 8px; }
+    .cstub__meta { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+    .cstub__grid { max-width: 1100px; margin: 0 auto; padding: 40px 52px 120px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .cstub__card { display: block; color: inherit; }
+    .cstub__img { aspect-ratio: 4 / 5; background: var(--ivory) center/cover no-repeat; border: 1px solid var(--border); margin-bottom: 14px; }
+    .cstub__name { font-family: var(--font-serif); font-size: 19px; font-weight: 500; margin-bottom: 4px; }
+    .cstub__price { font-family: var(--font-sans); font-size: 13px; letter-spacing: 0.04em; color: var(--muted); }
+    .cstub__error { font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--muted); text-align: center; padding: 80px 24px; }
+    @media (max-width: 760px) { .cstub__grid { grid-template-columns: 1fr 1fr; gap: 20px; padding: 32px 24px 80px; } .cstub__hero { padding: 48px 24px 24px; } .cstub__bar { padding: 18px 24px; } }
+  </style>
+</head>
+<body>
+  <div class="cstub">
+    <div class="cstub__bar"><a class="cstub__back" href="/#collections">&larr; Back to the Atelier</a></div>
+    <div id="collection"></div>
+  </div>
+
+  <script src="/js/products.js"></script>
+  <script>
+    (function () {
+      function getSlug() {
+        var p = new URLSearchParams(location.search).get('slug');
+        if (p) return p;
+        var parts = location.pathname.split('/').filter(Boolean);
+        var last = parts[parts.length - 1];
+        if (last && last !== 'collection.html' && last !== 'collections') return last;
+        return null;
+      }
+      var mount = document.getElementById('collection');
+      var collection = window.getCollectionBySlug ? window.getCollectionBySlug(getSlug()) : null;
+
+      if (!collection) {
+        mount.innerHTML = '<p class="cstub__error">We couldn’t find that collection. <a href="/#collections">Return to the collections &rarr;</a></p>';
+        return;
+      }
+
+      document.title = 'Atelier — ' + collection.name;
+      var products = window.getProductsByCollection(collection.slug);
+      var cards = products.map(function (p) {
+        return '<a class="cstub__card" href="/products/' + p.slug + '">' +
+          '<div class="cstub__img" style="background-image:url(' + p.images.primary + ')"></div>' +
+          '<p class="cstub__name">' + p.name + '</p>' +
+          '<p class="cstub__price">$' + p.price + '</p>' +
+          '</a>';
+      }).join('');
+
+      mount.innerHTML =
+        '<header class="cstub__hero">' +
+          '<span class="cstub__eyebrow">SS26 — Now Showing</span>' +
+          '<h1 class="cstub__title">' + collection.name + '</h1>' +
+          '<p class="cstub__desc">' + collection.descriptor + '</p>' +
+          '<p class="cstub__meta">' + collection.meta + '</p>' +
+        '</header>' +
+        '<div class="cstub__grid">' + (cards || '<p class="cstub__error">Pieces arriving soon.</p>') + '</div>';
+    })();
+  </script>
+</body>
+</html>

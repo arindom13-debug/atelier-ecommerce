@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/products/:slug", "destination": "/product.html" },
+    { "source": "/collections/:slug", "destination": "/collection.html" }
+  ]
+}

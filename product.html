@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Product</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    /* Stub-only layout — full PDP arrives in a later pass. Uses global tokens. */
+    .stub { min-height: 100vh; background: var(--warm-bg); color: var(--charcoal); }
+    .stub__bar { padding: 22px 52px; border-bottom: 1px solid var(--border); }
+    .stub__back { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--charcoal); opacity: 0.7; }
+    .stub__back:hover { opacity: 1; }
+    .stub__main { max-width: 1100px; margin: 0 auto; padding: 64px 52px 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .stub__media { aspect-ratio: 4 / 5; background: var(--ivory) center/cover no-repeat; border: 1px solid var(--border); }
+    .stub__eyebrow { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--muted); display: block; margin-bottom: 14px; }
+    .stub__pill { display: inline-block; font-family: var(--font-serif); font-style: italic; font-size: 12px; letter-spacing: 0.02em; padding: 3px 12px; border: 1px solid var(--charcoal); border-radius: 100px; margin-bottom: 18px; }
+    .stub__name { font-family: var(--font-serif); font-size: clamp(32px, 4vw, 52px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .stub__material { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--muted); margin-bottom: 20px; }
+    .stub__price { font-family: var(--font-sans); font-size: 18px; letter-spacing: 0.02em; margin-bottom: 28px; }
+    .stub__desc { font-family: var(--font-serif); font-size: 18px; line-height: 1.6; color: var(--charcoal); margin-bottom: 32px; max-width: 46ch; }
+    .stub__row { margin-bottom: 26px; }
+    .stub__rowlabel { font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 10px; }
+    .stub__swatches { display: flex; gap: 10px; }
+    .stub__swatch { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--border); }
+    .stub__sizes { display: flex; gap: 14px; font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.14em; }
+    .stub__size--out { text-decoration: line-through; opacity: 0.4; }
+    .stub__scarcity { font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+    .stub__note { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 36px; }
+    .stub__error { font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--muted); }
+    @media (max-width: 760px) { .stub__main { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px 80px; } .stub__bar { padding: 18px 24px; } }
+  </style>
+</head>
+<body>
+  <div class="stub">
+    <div class="stub__bar"><a class="stub__back" href="/#shop">&larr; Back to the Atelier</a></div>
+    <main class="stub__main" id="pdp"></main>
+  </div>
+
+  <script src="/js/products.js"></script>
+  <script>
+    (function () {
+      function getSlug() {
+        var p = new URLSearchParams(location.search).get('slug');
+        if (p) return p;
+        var parts = location.pathname.split('/').filter(Boolean);
+        var last = parts[parts.length - 1];
+        if (last && last !== 'product.html' && last !== 'products') return last;
+        return null;
+      }
+      var mount = document.getElementById('pdp');
+      var product = window.getProductBySlug ? window.getProductBySlug(getSlug()) : null;
+
+      if (!product) {
+        mount.innerHTML = '<p class="stub__error">We couldn’t find that piece. <a href="/#shop">Return to the selection &rarr;</a></p>';
+        return;
+      }
+
+      document.title = 'Atelier — ' + product.name;
+      var collection = window.getCollectionBySlug(product.collection);
+      var pill = product.isNew ? 'New' : (product.isLimited ? 'Limited' : '');
+      var swatches = product.colors.map(function (c) {
+        return '<span class="stub__swatch" style="background:' + c.hex + '" title="' + c.label + '"></span>';
+      }).join('');
+      var sizes = product.sizes.map(function (s) {
+        return '<span class="' + (s.available ? '' : 'stub__size--out') + '">' + s.size + '</span>';
+      }).join('');
+      var scarcity = (product.stockLevel < 4)
+        ? '<p class="stub__scarcity">Only ' + product.stockLevel + ' left</p>' : '';
+
+      mount.innerHTML =
+        '<div class="stub__media" style="background-image:url(' + product.images.primary + ')"></div>' +
+        '<div class="stub__info">' +
+          (collection ? '<a class="stub__eyebrow" href="/collections/' + collection.slug + '">' + collection.name + '</a>' : '') +
+          (pill ? '<span class="stub__pill">' + pill + '</span>' : '') +
+          '<h1 class="stub__name">' + product.name + '</h1>' +
+          '<p class="stub__material">' + product.material + '</p>' +
+          '<p class="stub__price">$' + product.price + '</p>' +
+          '<p class="stub__desc">' + product.descriptor + '</p>' +
+          '<div class="stub__row"><span class="stub__rowlabel">Colour</span><div class="stub__swatches">' + swatches + '</div></div>' +
+          '<div class="stub__row"><span class="stub__rowlabel">Size</span><div class="stub__sizes">' + sizes + '</div></div>' +
+          scarcity +
+          '<p class="stub__note">Full product detail coming soon</p>' +
+        '</div>';
+    })();
+  </script>
+</body>
+</html>
