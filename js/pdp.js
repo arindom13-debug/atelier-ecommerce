@@ -337,51 +337,25 @@
   });
 
 
-  /* ── Accordion (one open at a time, smooth height) ── */
-
-  function setAccordion(item, open) {
-    var panel = item.querySelector('.pdp-acc__panel');
-    var head = item.querySelector('.pdp-acc__head');
-    if (open) {
-      item.classList.add('is-open');
-      head.setAttribute('aria-expanded', 'true');
-      panel.style.height = panel.firstElementChild.offsetHeight + 'px';
-    } else {
-      item.classList.remove('is-open');
-      head.setAttribute('aria-expanded', 'false');
-      panel.style.height = panel.offsetHeight + 'px';
-      void panel.offsetHeight;            // reflow
-      panel.style.height = '0px';
-    }
-  }
+  /* ── Accordion (one open at a time; CSS max-height animation) ──
+     Pure class toggle — no offsetHeight measuring or transitionend
+     dependency, so it works reliably across browsers and with
+     reduced-motion. The .is-open class drives max-height in CSS. */
 
   var accItems = Array.prototype.slice.call(document.querySelectorAll('.pdp-acc__item'));
   accItems.forEach(function (item) {
     var head = item.querySelector('.pdp-acc__head');
-    var panel = item.querySelector('.pdp-acc__panel');
-    // init: first item open
-    if (item.classList.contains('is-open')) {
-      panel.style.height = panel.firstElementChild.offsetHeight + 'px';
-    }
-    // settle to auto after open transition so content can reflow
-    panel.addEventListener('transitionend', function () {
-      if (item.classList.contains('is-open')) panel.style.height = 'auto';
-    });
     head.addEventListener('click', function () {
-      var isOpen = item.classList.contains('is-open');
+      var willOpen = !item.classList.contains('is-open');
+      // Collapse every section first (one open at a time)
       accItems.forEach(function (other) {
-        if (other !== item && other.classList.contains('is-open')) setAccordion(other, false);
+        other.classList.remove('is-open');
+        other.querySelector('.pdp-acc__head').setAttribute('aria-expanded', 'false');
       });
-      setAccordion(item, !isOpen);
-    });
-  });
-
-  // Recompute open-panel heights on resize (text reflows)
-  window.addEventListener('resize', function () {
-    accItems.forEach(function (item) {
-      if (item.classList.contains('is-open')) {
-        var panel = item.querySelector('.pdp-acc__panel');
-        panel.style.height = 'auto';
+      // Re-open the clicked one only if it was previously closed
+      if (willOpen) {
+        item.classList.add('is-open');
+        head.setAttribute('aria-expanded', 'true');
       }
     });
   });

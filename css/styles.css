@@ -4199,7 +4199,8 @@ body.ui-locked {
 .pdp-acc__icon::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
 .pdp-acc__icon::after  { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
 .pdp-acc__item.is-open .pdp-acc__icon::after { transform: translateX(-50%) scaleY(0); }
-.pdp-acc__panel { overflow: hidden; height: 0; transition: height var(--t-mid) var(--ease-out); }
+.pdp-acc__panel { overflow: hidden; max-height: 0; transition: max-height var(--t-mid) var(--ease-out); }
+.pdp-acc__item.is-open .pdp-acc__panel { max-height: 600px; }
 .pdp-acc__body {
   padding: 0 0 30px; max-width: 60ch;
   font-family: var(--font-sans); font-size: 15px; line-height: 1.8; color: var(--muted);

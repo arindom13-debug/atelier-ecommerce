@@ -173,8 +173,8 @@
       stockLevel: 4,
       images: {
         primary: 'https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85',
-        secondary: 'https://images.unsplash.com/photo-1583196003821-0da2e3cfcff2?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1583196003821-0da2e3cfcff2?auto=format&fit=crop&w=600&h=750&q=85'
+        secondary: 'https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85',
+        detail: 'https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85'
       },
       fullDescription: 'Jamdani is the finest of the fine — each piece woven on a traditional pit loom with supplementary weft patterns. This kurta is breathtakingly delicate, yet remarkably durable.',
       materialComposition: 'Hand-woven muslin with jamdani supplementary weft patterns. Cotton fibers are spun to an almost gossamer fineness, then woven on traditional pit looms by master weavers.',
@@ -216,8 +216,8 @@
       stockLevel: 15,
       images: {
         primary: 'https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85',
-        secondary: 'https://images.unsplash.com/photo-1594938298603-c8148c4b4463?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1594938298603-c8148c4b4463?auto=format&fit=crop&w=600&h=750&q=85'
+        secondary: 'https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85',
+        detail: 'https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85'
       },
       fullDescription: 'Stonewashed linen that arrives with that coveted softness you\'d normally have to wait for. The wide-leg silhouette drapes beautifully and pairs with everything.',
       materialComposition: 'Belgian linen, stonewashed twice for maximum softness. Each pair will develop its own unique patina as you wear it.',
@@ -259,8 +259,8 @@
       stockLevel: 9,
       images: {
         primary: 'https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85',
-        secondary: 'https://images.unsplash.com/photo-1617117873745-9a80d8f16ac2?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1617117873745-9a80d8f16ac2?auto=format&fit=crop&w=600&h=750&q=85'
+        secondary: 'https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85',
+        detail: 'https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85'
       },
       fullDescription: 'A featherweight dupatta that finishes any look. Hand block-printed in small batches, no two pieces share exactly the same impression. Drape it, knot it, or wear it as a scarf.',
       materialComposition: 'Endi silk, also known as peace silk, sourced from Rajshahi. Hand block-printed using traditional wooden blocks and natural dyes. Each piece is unique.',
