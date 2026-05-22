@@ -572,4 +572,67 @@
     sections.forEach(function (s) { observer.observe(s); });
   })();
 
+
+  /* ── 14. GLOBAL PRESS FEEDBACK ──────────────────────────────────
+     Subtle scale-down on press for every interactive element.
+     Implemented here (not via a CSS :active rule) so it never clobbers
+     the bespoke per-element hover transitions already in styles.css.
+
+     Two-class technique (see .press-anim / .press-down in styles.css):
+       • pointerdown → add both classes (element presses in)
+       • pointerup   → drop .press-down so it springs back through the
+                       same transition, then remove .press-anim once it
+                       settles, restoring the element's native transition.
+  ──────────────────────────────────────────────────────────────── */
+  (function () {
+    if (window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var CONTROL = 'a, button, select, summary, label[for], [role="button"], input[type="submit"]';
+    var CARD    = '.product-card, .collection-tile';
+
+    var pressed     = null;
+    var settleTimer = null;
+
+    function pickTarget(node) {
+      if (!node || !node.closest) return null;
+      var el = node.closest(CONTROL) || node.closest(CARD);
+      if (!el) return null;
+      // The product-card overlay link has no visible box of its own —
+      // press the whole card instead so the feedback is visible.
+      if (el.classList.contains('product-card__media-link')) {
+        el = el.closest('.product-card') || el;
+      }
+      return el;
+    }
+
+    function press(e) {
+      var el = pickTarget(e.target);
+      if (!el) return;
+      if (settleTimer) { clearTimeout(settleTimer); settleTimer = null; }
+      if (pressed && pressed !== el) {
+        pressed.classList.remove('press-anim', 'press-down');
+      }
+      pressed = el;
+      el.classList.add('press-anim', 'press-down');
+    }
+
+    function release() {
+      if (!pressed) return;
+      var el = pressed;
+      pressed = null;
+      el.classList.remove('press-down');        // animate back to scale(1)
+      settleTimer = setTimeout(function () {
+        el.classList.remove('press-anim');       // restore native transition
+        settleTimer = null;
+      }, 220);
+    }
+
+    document.addEventListener('pointerdown',   press,   true);
+    document.addEventListener('pointerup',     release, true);
+    document.addEventListener('pointercancel', release, true);
+    document.addEventListener('scroll',        release, true);
+    window.addEventListener('blur',            release);
+  })();
+
 })();

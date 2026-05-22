@@ -4380,3 +4380,29 @@ body.ui-locked {
   .pdp-acc__panel, .pdp-gallery__item img, .pdp-rel-card__img img,
   .pdp-lightbox, .pdp-sizedrawer, .pdp-fit__marker { transition: none; }
 }
+
+/* =====================================================
+   GLOBAL PRESS FEEDBACK
+   Subtle scale-down on press for every interactive element.
+   Driven by JS (interactions.js) via a two-class technique so it
+   never permanently overrides each element's own hover transition:
+     .press-anim  → temporarily owns the transform transition
+     .press-down  → applies the scale
+   The !important on .press-anim only holds for the brief press cycle,
+   after which the class is removed and the native transition resumes.
+   ===================================================== */
+.press-anim {
+  transition: transform 0.18s var(--ease-out) !important;
+}
+
+.press-anim.press-down {
+  transform: scale(0.96) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .press-anim,
+  .press-anim.press-down {
+    transition: none !important;
+    transform: none !important;
+  }
+}
