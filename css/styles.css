@@ -576,10 +576,10 @@ button {
 .hero__headline {
   font-family: var(--font-serif);
   font-size: clamp(43px, 5.5vw, 74px);
-  font-weight: 500;
+  font-weight: 300;
   font-style: normal;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   color: var(--charcoal);
   margin-bottom: 22px;
 }
@@ -815,11 +815,11 @@ button {
 .collections__eyebrow {
   display: block;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: var(--track-eye);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(26, 26, 26, 0.50);
   margin-bottom: 16px;
 }
 
@@ -837,8 +837,8 @@ button {
 
 .collections__title {
   font-family: var(--font-serif);
-  font-size: clamp(39px, 3.7vw, 60px);
-  font-weight: 600;
+  font-size: clamp(43px, 4.07vw, 66px);
+  font-weight: 400;
   font-style: normal;
   line-height: var(--lh-heading);
   letter-spacing: var(--track-head);
@@ -1092,7 +1092,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
-  background: var(--warm-bg);
+  background: var(--ivory);
 }
 
 /* Process image — left half */
@@ -1145,9 +1145,9 @@ button {
 .in-atelier__headline {
   font-family: var(--font-serif);
   font-size: clamp(35px, 3.7vw, 53px);
-  font-weight: 500;
-  line-height: 1.08;
-  letter-spacing: var(--track-neg);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   color: var(--charcoal);
   margin-bottom: 26px;
 }
@@ -1156,10 +1156,10 @@ button {
   font-family: var(--font-sans);
   font-size: 17px;
   font-weight: 400;
-  line-height: var(--lh-body);
-  color: var(--charcoal);
-  opacity: 0.72;
-  max-width: 42ch;
+  line-height: 1.7;
+  color: rgba(26, 26, 26, 0.70);
+  opacity: 1;
+  max-width: 62ch;
   margin-bottom: 34px;
 }
 
@@ -1235,21 +1235,21 @@ button {
 .selection__eyebrow {
   display: block;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: var(--track-eye);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(26, 26, 26, 0.50);
   margin-bottom: 18px;
 }
 
 .selection__title {
   font-family: var(--font-serif);
   font-size: clamp(37px, 3.45vw, 55px);
-  font-weight: 600;
+  font-weight: 300;
   font-style: normal;
-  line-height: var(--lh-heading);
-  letter-spacing: var(--track-head);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   color: var(--charcoal);
 }
 
@@ -1884,8 +1884,8 @@ button {
 
 .makers-mark__title {
   font-family: var(--font-serif);
-  font-size: clamp(30px, 3vw, 51px);
-  font-weight: 600;
+  font-size: clamp(33px, 3.3vw, 56px);
+  font-weight: 400;
   font-style: normal;
   line-height: var(--lh-heading);
   letter-spacing: var(--track-head);
@@ -2081,11 +2081,11 @@ button {
 .craft__eyebrow {
   display: block;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: var(--track-eye);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(26, 26, 26, 0.50);
   margin-bottom: 20px;
 }
 
@@ -2093,10 +2093,10 @@ button {
 .craft__headline {
   font-family: var(--font-serif);
   font-size: clamp(41px, 4.37vw, 71px);
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
-  line-height: 1.1;
-  letter-spacing: var(--track-neg-sm);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   color: var(--charcoal);
   max-width: 16ch;
   margin-bottom: 28px;
@@ -2107,10 +2107,10 @@ button {
   font-family: var(--font-sans);
   font-size: 17px;
   font-weight: 400;
-  line-height: var(--lh-body);
-  color: var(--charcoal);
-  opacity: 0.78;
-  max-width: 42ch;
+  line-height: 1.7;
+  color: rgba(26, 26, 26, 0.70);
+  opacity: 1;
+  max-width: 62ch;
   margin-bottom: 36px;
 }
 
@@ -2226,8 +2226,8 @@ button {
 
 .journal__title {
   font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: clamp(35px, 3.45vw, 55px);
+  font-weight: 400;
+  font-size: clamp(38.5px, 3.8vw, 60.5px);
   color: var(--charcoal);
   letter-spacing: -0.01em;
   line-height: 1.1;
@@ -2406,7 +2406,7 @@ button {
    ===================================================== */
 
 .voices {
-  background: var(--white);
+  background: var(--ivory);
   padding: 0 84px;
   max-width: 1440px;
   margin: 0 auto;
@@ -2513,15 +2513,15 @@ button {
    ===================================================== */
 
 .promise {
-  background: var(--warm-bg);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  border-top: 1px solid rgba(26, 26, 26, 0.10);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.10);
 }
 
 .promise__inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 100px 84px;
+  padding: 80px 84px;
 }
 
 .promise__header {
@@ -2542,8 +2542,8 @@ button {
 
 .promise__title {
   font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: clamp(30px, 2.76vw, 46px);
+  font-weight: 400;
+  font-size: clamp(33px, 3.04vw, 51px);
   color: var(--charcoal);
   letter-spacing: -0.01em;
   line-height: 1.15;
@@ -2577,19 +2577,24 @@ button {
 }
 
 .promise__icon {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   color: var(--charcoal);
   opacity: 0.45;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   flex-shrink: 0;
+}
+
+.promise__icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 .promise__pillar-name {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(17px, 1.34vw, 20px);
+  font-size: clamp(19.5px, 1.54vw, 23px);
   color: var(--charcoal);
   line-height: 1.3;
   margin: 0 0 10px;
@@ -2640,7 +2645,7 @@ button {
    ===================================================== */
 
 .gallery {
-  background: var(--white);
+  background: var(--ivory);
   padding: 120px 84px 140px;
 }
 
@@ -2667,8 +2672,8 @@ button {
 
 .gallery__title {
   font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: clamp(32px, 3vw, 51px);
+  font-weight: 400;
+  font-size: clamp(35px, 3.3vw, 56px);
   color: var(--charcoal);
   letter-spacing: -0.01em;
   line-height: 1.1;
@@ -2716,32 +2721,32 @@ button {
 
 /* Gallery image fills */
 .gallery-img--g1 {
-  background-image: url('https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=600');
   background-color: #d8cfc6;
 }
 
 .gallery-img--g2 {
-  background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600');
   background-color: #c9c0b5;
 }
 
 .gallery-img--g3 {
-  background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600');
   background-color: #dfd8cf;
 }
 
 .gallery-img--g4 {
-  background-image: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600');
   background-color: #c4b8ab;
 }
 
 .gallery-img--g5 {
-  background-image: url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600');
   background-color: #d0c8bc;
 }
 
 .gallery-img--g6 {
-  background-image: url('https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600');
   background-color: #cfc6bb;
 }
 
@@ -2825,7 +2830,7 @@ button {
    ===================================================== */
 
 .invitation {
-  background: var(--ivory);
+  background: var(--white);
   padding: 120px 84px;
   text-align: center;
 }
@@ -2861,17 +2866,17 @@ button {
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: var(--track-eye);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(26, 26, 26, 0.50);
   margin-bottom: 20px;
 }
 
 /* Headline */
 .invitation__title {
   font-family: var(--font-serif);
-  font-size: clamp(32px, 2.8vw, 50px);
-  font-weight: 600;
+  font-size: clamp(35px, 3.08vw, 55px);
+  font-weight: 400;
   font-style: normal;
   line-height: var(--lh-heading);
   letter-spacing: var(--track-head);
