@@ -532,4 +532,44 @@
     }
   };
 
+
+  /* ── 17. SECTION SCROLL-REVEAL ──────────────────────────────── */
+  /* Each major section below the Hero fades + rises into view as it
+     enters the viewport (opacity 0→1, translateY 20px→0, 600ms
+     ease-out). Content within sections continues to stagger via the
+     existing per-element reveals, so the page feels smooth and
+     intentional on scroll. The `.section-reveal` class is only added
+     by JS, so without JS the page renders fully visible. The Hero is
+     excluded — it sits outside <main> and is visible on load. */
+  (function () {
+    var sections = Array.prototype.slice.call(
+      document.querySelectorAll('main#main-content > section')
+    );
+    if (!sections.length) return;
+
+    sections.forEach(function (s, i) {
+      s.classList.add('section-reveal');
+      // Gentle 100ms cadence so adjacent sections don't pop in unison
+      s.style.transitionDelay = ((i % 2) * 100) + 'ms';
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      sections.forEach(function (s) { s.classList.add('is-revealed'); });
+      return;
+    }
+
+    /* threshold 0 (ratio-independent) so even very tall sections
+       reveal reliably; rootMargin sets the trigger point ~12% up
+       from the viewport bottom. */
+    var observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
+
+    sections.forEach(function (s) { observer.observe(s); });
+  })();
+
 })();
