@@ -1057,203 +1057,6 @@ button {
 }
 
 /* =====================================================
-   8b. FEATURED STORY — Editorial Interlude
-   Pure white; more vertical breathing room than other
-   sections; image fade-in only — no parallax, no scale.
-   ===================================================== */
-
-.feature-story {
-  background: var(--white);
-  padding: 148px 0 168px;
-}
-
-/* ── Full-width cinematic image ───────────────────── */
-.feature-story__img-wrap {
-  max-width: 1440px;
-  margin: 0 auto 80px;
-  padding: 0 84px;
-
-  /* Scroll-reveal: fade only */
-  opacity: 0;
-  transition: opacity 1.1s var(--ease-out);
-}
-
-.feature-story__img-wrap.is-visible {
-  opacity: 1;
-}
-
-.feature-story__img {
-  width: 100%;
-  height: clamp(520px, 78vh, 840px);
-  background-color: #C8BBA9;
-  background-image: url("https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?auto=format&fit=crop&w=1600&h=1200&q=85");
-  background-size: cover;
-  background-position: center 28%;
-}
-
-/* ── Narrow centered text block ───────────────────── */
-.feature-story__content {
-  max-width: 660px;
-  margin: 0 auto;
-  padding: 0 32px;
-  text-align: center;
-
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity   0.9s var(--ease-out) 0.1s,
-    transform 0.9s var(--ease-out) 0.1s;
-}
-
-.feature-story__content.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Eyebrow — italic serif, a quiet label */
-.feature-story__eyebrow {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 13px;
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  margin-bottom: 22px;
-}
-
-/* Headline — two lines, large italic serif */
-.feature-story__headline {
-  font-family: var(--font-serif);
-  font-size: clamp(38px, 4vw, 66px);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.06;
-  letter-spacing: var(--track-neg);
-  color: var(--charcoal);
-  margin-bottom: 40px;
-}
-
-/* Two-paragraph editorial body */
-.feature-story__body {
-  max-width: 54ch;
-  margin: 0 auto 40px;
-}
-
-.feature-story__body p {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: var(--lh-body);
-  color: var(--charcoal);
-  opacity: 0.72;
-}
-
-.feature-story__body p + p {
-  margin-top: 22px;
-}
-
-/* Quiet underlined CTA */
-.feature-story__cta {
-  display: inline-block;
-  font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--charcoal);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 6px;
-  opacity: 0.6;
-  transition:
-    opacity        var(--t-fast),
-    letter-spacing 0.35s ease;
-  margin-bottom: 22px;
-}
-
-.feature-story__cta:hover {
-  opacity: 1;
-  letter-spacing: 0.26em;
-}
-
-.feature-story__cta:focus-visible {
-  outline: 1px solid var(--charcoal);
-  outline-offset: 4px;
-  opacity: 1;
-}
-
-/* Issue metadata — small italic, below CTA */
-.feature-story__issue {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  opacity: 0.55;
-  margin-top: 4px;
-}
-
-.feature-story__issue em {
-  font-family: var(--font-serif);
-  font-style: italic;
-}
-
-/* ── Reduced motion: disable reveals ─────────────── */
-@media (prefers-reduced-motion: reduce) {
-  .feature-story__img-wrap,
-  .feature-story__content {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
-/* ── Responsive ───────────────────────────────────── */
-
-/* Tablet */
-@media (max-width: 900px) {
-  .feature-story {
-    padding: 120px 0 140px;
-  }
-
-  .feature-story__img-wrap {
-    padding: 0 52px;
-    margin-bottom: 64px;
-  }
-
-  .feature-story__img {
-    height: clamp(440px, 64vh, 680px);
-  }
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  .feature-story {
-    padding: 96px 0 120px;
-  }
-
-  .feature-story__img-wrap {
-    padding: 0;            /* image bleeds edge to edge */
-    margin-bottom: 52px;
-  }
-
-  .feature-story__img {
-    height: clamp(420px, 76vh, 600px);
-  }
-
-  .feature-story__content {
-    padding: 0 28px;
-  }
-
-  .feature-story__headline {
-    font-size: clamp(32px, 8vw, 48px);
-  }
-}
-
-
-/* =====================================================
    8b. IN THE ATELIER — Craft Process Split
    ===================================================== */
 
@@ -1385,169 +1188,6 @@ button {
 
 
 /* =====================================================
-   8c. WORN BY — Quiet Portraits Row
-   ===================================================== */
-
-.worn-by {
-  background: var(--white);
-  padding: 148px 84px 156px;
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.worn-by__header {
-  text-align: center;
-  margin-bottom: 72px;
-}
-
-.worn-by__eyebrow {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 14px;
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  margin-bottom: 18px;
-}
-
-.worn-by__title {
-  font-family: var(--font-serif);
-  font-size: clamp(30px, 3.2vw, 48px);
-  font-weight: 500;
-  line-height: var(--lh-heading);
-  letter-spacing: var(--track-head);
-  color: var(--charcoal);
-}
-
-/* Asymmetric row — tall / short / tall */
-.worn-by__row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: start;
-  gap: clamp(20px, 3vw, 48px);
-}
-
-.worn-by__item {
-  margin: 0;
-
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity   0.9s var(--ease-out),
-    transform 0.9s var(--ease-out);
-}
-
-.worn-by__item.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.worn-by__img {
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-color: #C8BFB3;
-  margin-bottom: 20px;
-}
-
-/* Asymmetric heights */
-.worn-by__item--tall  .worn-by__img { aspect-ratio: 3 / 4.4; }
-.worn-by__item--short .worn-by__img { aspect-ratio: 3 / 3.4; margin-top: clamp(40px, 7vw, 96px); }
-
-.worn-by-img--01 { background-image: url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&h=1000&q=85"); }
-.worn-by-img--02 { background-image: url("https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&h=820&q=85"); }
-.worn-by-img--03 { background-image: url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&h=1000&q=85"); }
-
-.worn-by__caption {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.worn-by__name {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--charcoal);
-}
-
-.worn-by__role {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-}
-
-.worn-by__footer {
-  text-align: center;
-  margin-top: 72px;
-}
-
-.worn-by__cta {
-  display: inline-block;
-  font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--charcoal);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 6px;
-  opacity: 0.62;
-  transition:
-    opacity        var(--t-fast),
-    letter-spacing 0.35s ease;
-}
-
-.worn-by__cta:hover {
-  opacity: 1;
-  letter-spacing: 0.26em;
-}
-
-.worn-by__cta:focus-visible {
-  outline: 1px solid var(--charcoal);
-  outline-offset: 4px;
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .worn-by__item {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
-/* Tablet */
-@media (max-width: 860px) {
-  .worn-by {
-    padding: 110px 52px 120px;
-  }
-}
-
-/* Mobile: stack into a single column, reset asymmetry */
-@media (max-width: 640px) {
-  .worn-by {
-    padding: 88px 28px 100px;
-  }
-  .worn-by__header {
-    margin-bottom: 52px;
-  }
-  .worn-by__row {
-    grid-template-columns: 1fr;
-    gap: 44px;
-  }
-  .worn-by__item--short .worn-by__img { margin-top: 0; }
-  .worn-by__item--tall  .worn-by__img,
-  .worn-by__item--short .worn-by__img { aspect-ratio: 3 / 3.8; }
-}
-
-
-/* =====================================================
    9. THE ATELIER SELECTION — Product Showcase
    ===================================================== */
 
@@ -1597,6 +1237,7 @@ button {
 .product-card {
   display: flex;
   flex-direction: column;
+  position: relative;          /* anchor for the full-card stretched link */
 
   /* Scroll-reveal: hidden until .is-visible added by JS */
   opacity: 0;
@@ -1604,6 +1245,21 @@ button {
   transition:
     opacity   0.6s var(--ease-out),
     transform 0.6s var(--ease-out);
+}
+
+/* Make the whole card a link to the PDP via the product title.
+   Interactive controls (Quick Add, wishlist) are raised above it. */
+.product-card__name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.product-card__wish,
+.product-card__atb {
+  position: relative;
+  z-index: 2;
 }
 
 .product-card.is-visible {
@@ -1626,6 +1282,7 @@ button {
   position: relative;
   overflow: hidden;
   aspect-ratio: 4 / 5;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 /* Transparent overlay link — makes the whole image navigate to the PDP.
@@ -1646,9 +1303,11 @@ button {
   transition: transform 0.6s var(--ease-out);
 }
 
-.product-card:hover .product-card__img,
-.product-card:focus-within .product-card__img {
-  transform: scale(1.03);
+/* Subtle lift on hover — no scale, no tint, no colour change */
+.product-card:hover .product-card__img-wrap,
+.product-card:focus-within .product-card__img-wrap {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
 /* 8 product photos — editorial fashion, person in each garment */
@@ -1705,9 +1364,10 @@ button {
   pointer-events: none;
 }
 
+/* Crossfade-to-second-image disabled — hover is a clean lift only */
 .product-card:hover       .product-card__img-hover,
 .product-card:focus-within .product-card__img-hover {
-  opacity: 1;
+  opacity: 0;
 }
 
 /* Secondary lifestyle / detail images */
@@ -1784,7 +1444,7 @@ button {
   margin: -4px;
   line-height: 0;
   opacity: 0.22;          /* was 0 — now always softly visible */
-  z-index: 1;
+  z-index: 2;             /* above the full-card stretched link */
   transition: opacity var(--t-fast), color var(--t-fast);
 }
 
@@ -3028,32 +2688,32 @@ button {
 
 /* Gallery image fills */
 .gallery-img--g1 {
-  background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600&q=80');
   background-color: #d8cfc6;
 }
 
 .gallery-img--g2 {
-  background-image: url('https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80');
   background-color: #c9c0b5;
 }
 
 .gallery-img--g3 {
-  background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80');
   background-color: #dfd8cf;
 }
 
 .gallery-img--g4 {
-  background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80');
   background-color: #c4b8ab;
 }
 
 .gallery-img--g5 {
-  background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=80');
   background-color: #d0c8bc;
 }
 
 .gallery-img--g6 {
-  background-image: url('https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=600&q=80');
   background-color: #cfc6bb;
 }
 
