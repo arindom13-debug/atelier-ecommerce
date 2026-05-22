@@ -1084,11 +1084,11 @@ button {
 
 .feature-story__img {
   width: 100%;
-  aspect-ratio: 21 / 9;
-  background-color: #B2A898;
-  background-image: url("https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1600&h=686&q=85");
+  height: clamp(520px, 78vh, 840px);
+  background-color: #C8BBA9;
+  background-image: url("https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?auto=format&fit=crop&w=1600&h=1200&q=85");
   background-size: cover;
-  background-position: center 30%;
+  background-position: center 28%;
 }
 
 /* ── Narrow centered text block ───────────────────── */
@@ -1224,7 +1224,7 @@ button {
   }
 
   .feature-story__img {
-    aspect-ratio: 16 / 9;
+    height: clamp(440px, 64vh, 680px);
   }
 }
 
@@ -1240,7 +1240,7 @@ button {
   }
 
   .feature-story__img {
-    aspect-ratio: 4 / 3;
+    height: clamp(420px, 76vh, 600px);
   }
 
   .feature-story__content {
@@ -1250,6 +1250,300 @@ button {
   .feature-story__headline {
     font-size: clamp(32px, 8vw, 48px);
   }
+}
+
+
+/* =====================================================
+   8b. IN THE ATELIER — Craft Process Split
+   ===================================================== */
+
+.in-atelier {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  background: var(--warm-bg);
+}
+
+/* Process image — left half */
+.in-atelier__media {
+  min-height: clamp(440px, 60vh, 680px);
+  background-color: #9A9280;
+  background-image: url("https://images.unsplash.com/photo-1517839439283-d2e29fd3db65?auto=format&fit=crop&w=1100&h=1200&q=85");
+  background-size: cover;
+  background-position: center;
+
+  /* Scroll-reveal: fade only */
+  opacity: 0;
+  transition: opacity 1.1s var(--ease-out);
+}
+
+.in-atelier__media.is-visible { opacity: 1; }
+
+/* Content — right half, vertically centred */
+.in-atelier__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(56px, 7vw, 120px);
+  max-width: 560px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity   0.9s var(--ease-out) 0.12s,
+    transform 0.9s var(--ease-out) 0.12s;
+}
+
+.in-atelier__content.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.in-atelier__eyebrow {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.in-atelier__headline {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.2vw, 46px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: var(--track-neg);
+  color: var(--charcoal);
+  margin-bottom: 26px;
+}
+
+.in-atelier__body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: var(--lh-body);
+  color: var(--charcoal);
+  opacity: 0.72;
+  max-width: 42ch;
+  margin-bottom: 34px;
+}
+
+.in-atelier__cta {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  opacity: 0.62;
+  transition:
+    opacity        var(--t-fast),
+    letter-spacing 0.35s ease;
+}
+
+.in-atelier__cta:hover {
+  opacity: 1;
+  letter-spacing: 0.26em;
+}
+
+.in-atelier__cta:focus-visible {
+  outline: 1px solid var(--charcoal);
+  outline-offset: 4px;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .in-atelier__media,
+  .in-atelier__content {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Tablet / mobile: stack image over content */
+@media (max-width: 860px) {
+  .in-atelier {
+    grid-template-columns: 1fr;
+  }
+  .in-atelier__media {
+    min-height: clamp(360px, 56vh, 460px);
+  }
+  .in-atelier__content {
+    max-width: none;
+    padding: clamp(48px, 9vw, 72px) clamp(28px, 7vw, 64px);
+  }
+}
+
+
+/* =====================================================
+   8c. WORN BY — Quiet Portraits Row
+   ===================================================== */
+
+.worn-by {
+  background: var(--white);
+  padding: 148px 84px 156px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.worn-by__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.worn-by__eyebrow {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.worn-by__title {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.2vw, 48px);
+  font-weight: 500;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--track-head);
+  color: var(--charcoal);
+}
+
+/* Asymmetric row — tall / short / tall */
+.worn-by__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: clamp(20px, 3vw, 48px);
+}
+
+.worn-by__item {
+  margin: 0;
+
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity   0.9s var(--ease-out),
+    transform 0.9s var(--ease-out);
+}
+
+.worn-by__item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.worn-by__img {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: #C8BFB3;
+  margin-bottom: 20px;
+}
+
+/* Asymmetric heights */
+.worn-by__item--tall  .worn-by__img { aspect-ratio: 3 / 4.4; }
+.worn-by__item--short .worn-by__img { aspect-ratio: 3 / 3.4; margin-top: clamp(40px, 7vw, 96px); }
+
+.worn-by-img--01 { background-image: url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&h=1000&q=85"); }
+.worn-by-img--02 { background-image: url("https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&h=820&q=85"); }
+.worn-by-img--03 { background-image: url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&h=1000&q=85"); }
+
+.worn-by__caption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.worn-by__name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--charcoal);
+}
+
+.worn-by__role {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.worn-by__footer {
+  text-align: center;
+  margin-top: 72px;
+}
+
+.worn-by__cta {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  opacity: 0.62;
+  transition:
+    opacity        var(--t-fast),
+    letter-spacing 0.35s ease;
+}
+
+.worn-by__cta:hover {
+  opacity: 1;
+  letter-spacing: 0.26em;
+}
+
+.worn-by__cta:focus-visible {
+  outline: 1px solid var(--charcoal);
+  outline-offset: 4px;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .worn-by__item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Tablet */
+@media (max-width: 860px) {
+  .worn-by {
+    padding: 110px 52px 120px;
+  }
+}
+
+/* Mobile: stack into a single column, reset asymmetry */
+@media (max-width: 640px) {
+  .worn-by {
+    padding: 88px 28px 100px;
+  }
+  .worn-by__header {
+    margin-bottom: 52px;
+  }
+  .worn-by__row {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .worn-by__item--short .worn-by__img { margin-top: 0; }
+  .worn-by__item--tall  .worn-by__img,
+  .worn-by__item--short .worn-by__img { aspect-ratio: 3 / 3.8; }
 }
 
 

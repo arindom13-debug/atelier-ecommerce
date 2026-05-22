@@ -21,6 +21,7 @@
     <style>
       .collection-tile, .product-card,
       .craft__img-col, .craft__text-col,
+      .in-atelier__media, .in-atelier__content, .worn-by__item,
       .voice, .invitation__inner { opacity: 1 !important; transform: none !important; }
     </style>
   </noscript>
@@ -251,18 +252,17 @@
       <div class="feature-story__img-wrap">
         <div class="feature-story__img"
              role="img"
-             aria-label="Editorial portrait — a woman in flowing linen moves through sun-drenched corridors, SS26"></div>
+             aria-label="Editorial portrait — a figure in a softly tailored coat beneath stone arches, SS26"></div>
       </div>
 
       <!-- Narrow centered text block -->
       <div class="feature-story__content">
         <em class="feature-story__eyebrow">The Feature</em>
         <h2 class="feature-story__headline" id="feature-story-title">
-          The art of<br>dressing slowly.
+          On the quiet weight<br>of linen.
         </h2>
         <div class="feature-story__body">
-          <p>There is a particular kind of morning that begins with choosing carefully. Not from abundance, but from restraint &mdash; the single garment that knows what it is, worn without apology. It is less a decision than a remembering.</p>
-          <p>We have spent the past year travelling slowly through the workshops and markets that still hold this knowledge. What we brought back is not a trend. It is a way of paying attention &mdash; to cloth, to craft, and to the quiet pleasure of wearing something made to last.</p>
+          <p>Some cloth asks to be noticed. Linen does not. It settles, softens, and learns the shape of a life lived slowly &mdash; growing more itself with every wearing.</p>
         </div>
         <a href="#" class="feature-story__cta">Read the Feature &rarr;</a>
         <p class="feature-story__issue"><em>Issue 04 &nbsp;&middot;&nbsp; Spring 2026</em></p>
@@ -670,6 +670,25 @@
 
     </section>
 
+    <!-- ─── In the Atelier — Craft Process ──────────────────
+         Split layout: process image left, text right.
+         Warm-white ground; restrained scroll-fade reveal.
+    ─────────────────────────────────────────────────────── -->
+    <section class="in-atelier" id="in-atelier" aria-labelledby="in-atelier-title">
+
+      <div class="in-atelier__media"
+           role="img"
+           aria-label="A maker's hands at work over folded cloth in the atelier"></div>
+
+      <div class="in-atelier__content">
+        <em class="in-atelier__eyebrow">In the Atelier</em>
+        <h2 class="in-atelier__headline" id="in-atelier-title">Where the work begins.</h2>
+        <p class="in-atelier__body">Before a garment is ever worn, it is made &mdash; slowly, by hand, in rooms that smell of cotton and indigo. Every seam carries the unhurried attention of the person who set it.</p>
+        <a href="#atelier" class="in-atelier__cta">See the Process &rarr;</a>
+      </div>
+
+    </section>
+
     <!-- ─── Heritage & Craft ────────────────────────────────── -->
     <section class="craft" id="atelier" aria-labelledby="craft-title-1">
 
@@ -698,6 +717,54 @@
 
         <div class="craft__img-col craft__img--loom"
              role="img" aria-label="Traditional handloom inside a heritage weaving studio, warm light on threads"></div>
+      </div>
+
+    </section>
+
+    <!-- ─── Worn By — Quiet Portraits ───────────────────────
+         Asymmetric 3-image row (tall / short / tall) of people
+         in considered dress. Pure white; gentle scroll-fade.
+    ─────────────────────────────────────────────────────── -->
+    <section class="worn-by" aria-labelledby="worn-by-title">
+
+      <div class="worn-by__header">
+        <em class="worn-by__eyebrow">Worn By</em>
+        <h2 class="worn-by__title" id="worn-by-title">Quiet portraits of considered dressing.</h2>
+      </div>
+
+      <div class="worn-by__row">
+
+        <figure class="worn-by__item worn-by__item--tall">
+          <div class="worn-by__img worn-by-img--01"
+               role="img" aria-label="A woman in a softly draped top, photographed in even daylight"></div>
+          <figcaption class="worn-by__caption">
+            <span class="worn-by__name">Amara Okafor</span>
+            <span class="worn-by__role">Ceramicist &middot; London</span>
+          </figcaption>
+        </figure>
+
+        <figure class="worn-by__item worn-by__item--short">
+          <div class="worn-by__img worn-by-img--02"
+               role="img" aria-label="A man in a simple white shirt against a pale interior"></div>
+          <figcaption class="worn-by__caption">
+            <span class="worn-by__name">Idris Rahman</span>
+            <span class="worn-by__role">Architect &middot; Dhaka</span>
+          </figcaption>
+        </figure>
+
+        <figure class="worn-by__item worn-by__item--tall">
+          <div class="worn-by__img worn-by-img--03"
+               role="img" aria-label="A woman in a wrapped scarf and coat in soft winter light"></div>
+          <figcaption class="worn-by__caption">
+            <span class="worn-by__name">Sofia Bauer</span>
+            <span class="worn-by__role">Editor &middot; Berlin</span>
+          </figcaption>
+        </figure>
+
+      </div><!-- /.worn-by__row -->
+
+      <div class="worn-by__footer">
+        <a href="#" class="worn-by__cta">Meet the Community &rarr;</a>
       </div>
 
     </section>

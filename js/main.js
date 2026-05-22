@@ -159,6 +159,32 @@ revealOnScroll('.collections', '.collection-tile', 90);
   if (content) observeEl(content, 0.12);
 })();
 
+/* ── In the Atelier: media fades, content rises after ──────── */
+(function () {
+  var section = document.querySelector('.in-atelier');
+  if (!section) return;
+
+  function observeEl(el, threshold) {
+    if (!('IntersectionObserver' in window)) {
+      el.classList.add('is-visible');
+      return;
+    }
+    new IntersectionObserver(function (entries, obs) {
+      if (!entries[0].isIntersecting) return;
+      el.classList.add('is-visible');
+      obs.disconnect();
+    }, { threshold: threshold || 0.08 }).observe(el);
+  }
+
+  var media   = section.querySelector('.in-atelier__media');
+  var content = section.querySelector('.in-atelier__content');
+  if (media)   observeEl(media, 0.05);
+  if (content) observeEl(content, 0.12);
+})();
+
+/* ── Worn By: 3 portraits, 90 ms stagger ───────────────────── */
+revealOnScroll('.worn-by', '.worn-by__item', 90);
+
 /* ── Atelier Selection: 8 cards, 50 ms stagger ─────────────── */
 revealOnScroll('.selection', '.product-card', 50);
 
