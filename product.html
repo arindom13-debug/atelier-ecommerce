@@ -12,85 +12,145 @@
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/styles.css">
-
-  <style>
-    /* Stub-only layout — full PDP arrives in a later pass. Uses global tokens. */
-    .stub { min-height: 100vh; background: var(--warm-bg); color: var(--charcoal); }
-    .stub__bar { padding: 22px 52px; border-bottom: 1px solid var(--border); }
-    .stub__back { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--charcoal); opacity: 0.7; }
-    .stub__back:hover { opacity: 1; }
-    .stub__main { max-width: 1100px; margin: 0 auto; padding: 64px 52px 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .stub__media { aspect-ratio: 4 / 5; background: var(--ivory) center/cover no-repeat; border: 1px solid var(--border); }
-    .stub__eyebrow { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--muted); display: block; margin-bottom: 14px; }
-    .stub__pill { display: inline-block; font-family: var(--font-serif); font-style: italic; font-size: 12px; letter-spacing: 0.02em; padding: 3px 12px; border: 1px solid var(--charcoal); border-radius: 100px; margin-bottom: 18px; }
-    .stub__name { font-family: var(--font-serif); font-size: clamp(32px, 4vw, 52px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 12px; }
-    .stub__material { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--muted); margin-bottom: 20px; }
-    .stub__price { font-family: var(--font-sans); font-size: 18px; letter-spacing: 0.02em; margin-bottom: 28px; }
-    .stub__desc { font-family: var(--font-serif); font-size: 18px; line-height: 1.6; color: var(--charcoal); margin-bottom: 32px; max-width: 46ch; }
-    .stub__row { margin-bottom: 26px; }
-    .stub__rowlabel { font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 10px; }
-    .stub__swatches { display: flex; gap: 10px; }
-    .stub__swatch { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--border); }
-    .stub__sizes { display: flex; gap: 14px; font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.14em; }
-    .stub__size--out { text-decoration: line-through; opacity: 0.4; }
-    .stub__scarcity { font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--muted); margin-bottom: 24px; }
-    .stub__note { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 36px; }
-    .stub__error { font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--muted); }
-    @media (max-width: 760px) { .stub__main { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px 80px; } .stub__bar { padding: 18px 24px; } }
-  </style>
 </head>
-<body>
-  <div class="stub">
-    <div class="stub__bar"><a class="stub__back" href="/#shop">&larr; Back to the Atelier</a></div>
-    <main class="stub__main" id="pdp"></main>
+<body class="pdp-page">
+
+  <!-- ── Slim bar: wordmark · back · cart ───────────────────── -->
+  <div class="pdp-bar">
+    <a class="pdp-bar__logo" href="/" aria-label="Atelier — home">ATELIER</a>
+    <div class="pdp-bar__right">
+      <a class="pdp-bar__back" href="/#shop">&larr; Back to the Atelier</a>
+      <button class="pdp-bar__cart" id="btn-cart" aria-label="Shopping bag" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="header__cart-count" id="cart-count" aria-hidden="true" data-count="0"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <nav class="pdp-crumb" id="pdp-crumb" aria-label="Breadcrumb"></nav>
+
+  <!-- Main: gallery + sticky panel -->
+  <main class="pdp-main" id="pdp-main"></main>
+
+  <!-- Accordion -->
+  <section class="pdp-accordion" id="pdp-accordion" aria-label="Product details"></section>
+
+  <!-- Fit & Reviews -->
+  <section class="pdp-reviews" id="pdp-reviews" aria-label="Fit and reviews"></section>
+
+  <!-- Styled With -->
+  <section class="pdp-styled" id="pdp-styled" aria-label="Styling suggestions"></section>
+
+  <!-- Service Promise band -->
+  <section class="pdp-promise" aria-label="Our service promise">
+    <div class="pdp-promise__inner">
+      <div class="pdp-promise__col">
+        <span class="pdp-promise__icon" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="14" width="26" height="20"/><path d="M30 20h8l6 7v7h-14z"/><circle cx="13" cy="38" r="3.5"/><circle cx="36" cy="38" r="3.5"/>
+          </svg>
+        </span>
+        <h3 class="pdp-promise__title">Complimentary Shipping</h3>
+        <p class="pdp-promise__line">On all orders, worldwide.</p>
+      </div>
+      <div class="pdp-promise__col">
+        <span class="pdp-promise__icon" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 40 L34 14"/><path d="M30 10l8 8-4 4-8-8z"/><circle cx="11" cy="37" r="2"/><path d="M16 22c4-2 8-2 10 0"/>
+          </svg>
+        </span>
+        <h3 class="pdp-promise__title">Lifetime Mending</h3>
+        <p class="pdp-promise__line">We repair what we make, always.</p>
+      </div>
+      <div class="pdp-promise__col">
+        <span class="pdp-promise__icon" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M40 24a16 16 0 1 1-6-12.5"/><path d="M34 6v7h-7"/>
+          </svg>
+        </span>
+        <h3 class="pdp-promise__title">30-Day Returns</h3>
+        <p class="pdp-promise__line">A month to be certain.</p>
+      </div>
+      <div class="pdp-promise__col">
+        <span class="pdp-promise__icon" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 14a4 4 0 1 0-3-6.6"/><path d="M24 14v4l16 11v5H8v-5z"/>
+          </svg>
+        </span>
+        <h3 class="pdp-promise__title">Private Styling</h3>
+        <p class="pdp-promise__line">Book a personal appointment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="pdp-lightbox" id="pdp-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="pdp-lightbox__close" id="lb-close" aria-label="Close viewer">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+    <button class="pdp-lightbox__btn pdp-lightbox__prev" id="lb-prev" aria-label="Previous image">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 4 7 12 15 20"/></svg>
+    </button>
+    <img class="pdp-lightbox__img" id="lb-img" src="" alt="">
+    <button class="pdp-lightbox__btn pdp-lightbox__next" id="lb-next" aria-label="Next image">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 4 17 12 9 20"/></svg>
+    </button>
+    <span class="pdp-lightbox__counter" id="lb-counter"></span>
+  </div>
+
+  <!-- Size Guide drawer -->
+  <div class="pdp-sizedrawer" id="pdp-sizedrawer" role="dialog" aria-modal="true" aria-label="Size guide" hidden>
+    <div class="pdp-sizedrawer__head">
+      <h2 class="pdp-sizedrawer__title">Size Guide</h2>
+      <button class="pdp-sizedrawer__close" id="sg-close" aria-label="Close size guide">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <p class="pdp-sizedrawer__sub">Measurements in centimetres. Garments are cut for a relaxed fit.</p>
+    <table class="pdp-sizetable">
+      <thead><tr><th>Size</th><th>Bust</th><th>Waist</th><th>Hip</th></tr></thead>
+      <tbody>
+        <tr><td>XS</td><td>82</td><td>64</td><td>89</td></tr>
+        <tr><td>S</td><td>87</td><td>69</td><td>94</td></tr>
+        <tr><td>M</td><td>92</td><td>74</td><td>99</td></tr>
+        <tr><td>L</td><td>99</td><td>81</td><td>106</td></tr>
+        <tr><td>XL</td><td>106</td><td>88</td><td>113</td></tr>
+      </tbody>
+    </table>
+    <p class="pdp-sizedrawer__note">Between sizes? Our pieces are designed to layer — size up for a looser silhouette. For tailored advice, book a private styling appointment.</p>
+  </div>
+
+  <!-- Backdrop (shared with cart drawer) -->
+  <div class="ui-backdrop" id="ui-backdrop" aria-hidden="true"></div>
+
+  <!-- Cart Drawer (mirror of homepage so Add to Bag opens it) -->
+  <div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping bag" hidden>
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Your Bag</h2>
+      <button class="cart-drawer__close" id="btn-cart-close" aria-label="Close bag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-drawer__body" id="cart-body"></div>
+    <div class="cart-drawer__footer" id="cart-footer" hidden>
+      <div class="cart-drawer__subtotal">
+        <span class="cart-drawer__subtotal-label">Subtotal</span>
+        <span class="cart-drawer__subtotal-amount" id="cart-subtotal">$0</span>
+      </div>
+      <p class="cart-drawer__shipping-note">Shipping calculated at checkout</p>
+      <a href="#" class="cart-drawer__checkout">Proceed to Checkout &rarr;</a>
+    </div>
   </div>
 
   <script src="/js/products.js"></script>
-  <script>
-    (function () {
-      function getSlug() {
-        var p = new URLSearchParams(location.search).get('slug');
-        if (p) return p;
-        var parts = location.pathname.split('/').filter(Boolean);
-        var last = parts[parts.length - 1];
-        if (last && last !== 'product.html' && last !== 'products') return last;
-        return null;
-      }
-      var mount = document.getElementById('pdp');
-      var product = window.getProductBySlug ? window.getProductBySlug(getSlug()) : null;
-
-      if (!product) {
-        mount.innerHTML = '<p class="stub__error">We couldn’t find that piece. <a href="/#shop">Return to the selection &rarr;</a></p>';
-        return;
-      }
-
-      document.title = 'Atelier — ' + product.name;
-      var collection = window.getCollectionBySlug(product.collection);
-      var pill = product.isNew ? 'New' : (product.isLimited ? 'Limited' : '');
-      var swatches = product.colors.map(function (c) {
-        return '<span class="stub__swatch" style="background:' + c.hex + '" title="' + c.label + '"></span>';
-      }).join('');
-      var sizes = product.sizes.map(function (s) {
-        return '<span class="' + (s.available ? '' : 'stub__size--out') + '">' + s.size + '</span>';
-      }).join('');
-      var scarcity = (product.stockLevel < 4)
-        ? '<p class="stub__scarcity">Only ' + product.stockLevel + ' left</p>' : '';
-
-      mount.innerHTML =
-        '<div class="stub__media" style="background-image:url(' + product.images.primary + ')"></div>' +
-        '<div class="stub__info">' +
-          (collection ? '<a class="stub__eyebrow" href="/collections/' + collection.slug + '">' + collection.name + '</a>' : '') +
-          (pill ? '<span class="stub__pill">' + pill + '</span>' : '') +
-          '<h1 class="stub__name">' + product.name + '</h1>' +
-          '<p class="stub__material">' + product.material + '</p>' +
-          '<p class="stub__price">$' + product.price + '</p>' +
-          '<p class="stub__desc">' + product.descriptor + '</p>' +
-          '<div class="stub__row"><span class="stub__rowlabel">Colour</span><div class="stub__swatches">' + swatches + '</div></div>' +
-          '<div class="stub__row"><span class="stub__rowlabel">Size</span><div class="stub__sizes">' + sizes + '</div></div>' +
-          scarcity +
-          '<p class="stub__note">Full product detail coming soon</p>' +
-        '</div>';
-    })();
-  </script>
+  <script src="/js/interactions.js"></script>
+  <script src="/js/pdp.js"></script>
 </body>
 </html>

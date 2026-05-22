@@ -518,4 +518,18 @@
   cart.load();
   updateBadge(false);   // restore badge from localStorage on page load
 
+
+  /* ── 16. GLOBAL API FOR PDP ─────────────────────────────────── */
+  /* Allows product detail page to add items and open cart drawer */
+
+  window.atelierCart = {
+    addItem: function (product) {
+      cart.addItem(product);
+      updateBadge(true);  // show pulse animation
+    },
+    openCart: function () {
+      openCart();
+    }
+  };
+
 })();
