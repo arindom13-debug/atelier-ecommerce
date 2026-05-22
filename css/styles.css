@@ -451,10 +451,11 @@ button {
 /* ── Outer container: two-column magazine split ────── */
 .hero {
   position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr;    /* force the single row to fill the container */
   overflow: hidden;
   background: var(--ivory);
 }
@@ -578,7 +579,7 @@ button {
    Two-weight technique: roman primary line + lighter italic second. */
 .hero__headline {
   font-family: var(--font-serif);
-  font-size: clamp(37px, 4.68vw, 63px);
+  font-size: clamp(43px, 5.5vw, 74px);
   font-weight: 300;
   font-style: normal;
   line-height: 1.05;
