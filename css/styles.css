@@ -454,7 +454,7 @@ button {
   min-height: 100vh;
   min-height: 100dvh;
   display: grid;
-  grid-template-columns: 60fr 40fr;
+  grid-template-columns: 1fr;
   overflow: hidden;
   background: var(--ivory);
 }
@@ -477,7 +477,9 @@ button {
 
 /* ── Left column: primary editorial image ──────────── */
 .hero__main {
-  position: relative;
+  position: absolute;   /* full-bleed: image fills the entire hero */
+  inset: 0;
+  z-index: 0;
   overflow: hidden;
 
   /* Stage 1: image reveals first */
@@ -506,7 +508,8 @@ button {
    compose across the full hero rather than inside this column. */
 .hero__aside {
   position: static;
-  background: var(--ivory);
+  background: transparent;
+  z-index: 1;
 }
 
 /* ── Detail shot tile — overlaps into main image ───── */
@@ -539,9 +542,9 @@ button {
   bottom: 9%;
   max-width: 42%;
   z-index: 4;
-  padding: 44px 48px 44px 52px;   /* generous breathing room */
+  padding: 52px 56px 52px 60px;   /* generous breathing room */
   background: var(--warm-bg);
-  box-shadow: 0 24px 64px rgba(26, 26, 26, 0.22);  /* lifts the panel off the photo */
+  box-shadow: 0 40px 90px -24px rgba(26, 26, 26, 0.30);  /* large, soft, diffuse lift */
 
   /* Stage 3: text card reveals last */
   opacity: 0;
@@ -632,7 +635,7 @@ button {
 .hero__scroll-indicator {
   position: absolute;
   bottom: 36px;
-  left: 54%;                    /* sits in the gap between card and detail tile */
+  left: 50%;                    /* centred under the full-bleed hero image */
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -729,7 +732,8 @@ button {
   }
 
   .hero__main {
-    /* Main image fills top portion */
+    /* Stacked layout: return image to grid flow (top portion) */
+    position: static;
     min-height: 56vh;
   }
 
@@ -801,7 +805,7 @@ button {
 
 .collections {
   background: var(--white);
-  padding: 120px 84px 140px;
+  padding: 168px 84px 184px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -1221,7 +1225,7 @@ button {
 
 .selection {
   background: var(--ivory);
-  padding: 120px 84px 100px;
+  padding: 168px 84px 150px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -1860,7 +1864,7 @@ button {
 
 .makers-mark {
   background: var(--white);
-  padding: 128px 84px 100px;
+  padding: 168px 84px 150px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -2203,7 +2207,7 @@ button {
 
 .journal {
   background: var(--white);
-  padding: 120px 84px 140px;
+  padding: 168px 84px 184px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -2521,7 +2525,7 @@ button {
 .promise__inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 80px 84px;
+  padding: 120px 84px;
 }
 
 .promise__header {
@@ -2646,7 +2650,7 @@ button {
 
 .gallery {
   background: var(--ivory);
-  padding: 120px 84px 140px;
+  padding: 168px 84px 184px;
 }
 
 .gallery__inner {
@@ -2831,7 +2835,7 @@ button {
 
 .invitation {
   background: var(--white);
-  padding: 120px 84px;
+  padding: 176px 84px;
   text-align: center;
 }
 
