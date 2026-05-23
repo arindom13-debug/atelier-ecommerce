@@ -258,20 +258,20 @@ button {
 /* 4b. Wordmark */
 .header__logo {
   font-family: var(--font-serif);
-  font-size: 19px;
-  font-weight: 500;
-  letter-spacing: 0.52em;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--charcoal);
+  color: #FFFFFF;   /* white over transparent hero; overridden when scrolled */
   transition: color var(--t-mid), opacity var(--t-fast);
   white-space: nowrap;
   user-select: none;
   /* Offset trailing tracking so the wordmark stays optically left-aligned */
-  margin-right: -0.52em;
+  margin-right: -0.15em;
 }
 
 .header__logo:hover               { opacity: 0.65; }
-.header.is-scrolled .header__logo { color: var(--charcoal); }
+.header.is-scrolled .header__logo { color: #1A1A1A; }
 
 .header__logo:focus-visible {
   outline: 1px solid currentColor;
@@ -287,9 +287,9 @@ button {
 
 .header__nav-link {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #FFFFFF;   /* white over transparent hero; overridden when scrolled */
   position: relative;
