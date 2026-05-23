@@ -489,7 +489,7 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   object-position: center top;
   background-color: #BDB0A0;
@@ -586,9 +586,9 @@ button {
 /* Display headline — anchored roman serif, strong visual weight.
    Two-weight technique: roman primary line + lighter italic second. */
 .hero__headline {
-  font-family: var(--font-serif);
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: clamp(52px, 7vw, 88px);
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   line-height: 1.05;
   letter-spacing: -0.02em;
