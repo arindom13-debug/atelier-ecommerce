@@ -291,7 +291,7 @@ button {
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #1A1A1A;
+  color: #FFFFFF;   /* white over transparent hero; overridden when scrolled */
   position: relative;
   padding-bottom: 2px;
   transition: color var(--t-mid);
@@ -312,7 +312,7 @@ button {
 }
 
 .header__nav-link:hover {
-  color: rgba(26, 26, 26, 0.55);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .header__nav-link:hover::after {
@@ -320,11 +320,11 @@ button {
 }
 
 .header.is-scrolled .header__nav-link {
-  color: rgba(26, 26, 26, 0.55);
+  color: #1A1A1A;
 }
 
 .header.is-scrolled .header__nav-link:hover {
-  color: var(--charcoal);
+  color: #1A1A1A;
 }
 
 .header__nav-link:focus-visible {
@@ -341,15 +341,15 @@ button {
 }
 
 .header__action svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .header__action {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1A1A1A;
+  color: #FFFFFF;   /* white over transparent hero; overridden when scrolled */
   padding: 10px;
   margin: -10px;
   position: relative;
@@ -357,7 +357,7 @@ button {
 }
 
 .header__action:hover               { opacity: 0.55; }
-.header.is-scrolled .header__action { color: var(--charcoal); }
+.header.is-scrolled .header__action { color: #1A1A1A; }
 .header.is-scrolled .header__action:hover { opacity: 0.55; }
 
 .header__action:focus-visible {
