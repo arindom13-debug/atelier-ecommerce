@@ -457,6 +457,7 @@ button {
 .hero {
   position: relative;
   height: 100vh;
+  min-height: 600px;
   overflow: hidden;
   background: var(--ivory);
 }
@@ -494,7 +495,7 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
   background-color: #BDB0A0;
@@ -592,10 +593,10 @@ button {
    Two-weight technique: roman primary line + lighter italic second. */
 .hero__headline {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(52px, 7vw, 88px);
+  font-size: clamp(56px, 8vw, 96px);
   font-weight: 300;
   font-style: normal;
-  line-height: 1.05;
+  line-height: 1.0;
   letter-spacing: -0.02em;
   color: #FFFFFF;
   margin-bottom: 22px;
@@ -2691,32 +2692,32 @@ button {
 
 /* Gallery image fills */
 .gallery-img--g1 {
-  background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=600');
+  background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600');
   background-color: #d8cfc6;
 }
 
 .gallery-img--g2 {
-  background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600');
+  background-image: url('https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600');
   background-color: #c9c0b5;
 }
 
 .gallery-img--g3 {
-  background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600');
+  background-image: url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600');
   background-color: #dfd8cf;
 }
 
 .gallery-img--g4 {
-  background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600');
+  background-image: url('https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600');
   background-color: #c4b8ab;
 }
 
 .gallery-img--g5 {
-  background-image: url('https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600');
+  background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600');
   background-color: #d0c8bc;
 }
 
 .gallery-img--g6 {
-  background-image: url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600');
+  background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600');
   background-color: #cfc6bb;
 }
 
