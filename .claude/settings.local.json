@@ -43,7 +43,8 @@
       "Bash(curl -s -o __TRACKED_VAR__.jpg -w '%{http_code}' 'https://images.unsplash.com/__TRACKED_VAR__?auto=format&fit=crop&w=240&q=50')",
       "Bash(rm -f .tmp_craft/*)",
       "Bash(rmdir .tmp_craft)",
-      "Bash(powershell -NoProfile -Command \"\\(Get-Content js/interactions.js | Measure-Object -Line\\).Lines\")"
+      "Bash(powershell -NoProfile -Command \"\\(Get-Content js/interactions.js | Measure-Object -Line\\).Lines\")",
+      "Bash(git revert *)"
     ]
   }
 }
