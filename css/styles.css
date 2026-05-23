@@ -282,14 +282,14 @@ button {
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
 }
 
 .header__nav-link {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #1A1A1A;
   position: relative;
@@ -336,8 +336,13 @@ button {
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
   justify-content: flex-end;
+}
+
+.header__action svg {
+  width: 20px;
+  height: 20px;
 }
 
 .header__action {
