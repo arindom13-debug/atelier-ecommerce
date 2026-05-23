@@ -578,10 +578,10 @@ button {
    Two-weight technique: roman primary line + lighter italic second. */
 .hero__headline {
   font-family: var(--font-serif);
-  font-size: 72px;
+  font-size: clamp(48px, 6vw, 80px);
   font-weight: 400;
   font-style: normal;
-  line-height: 1.1;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--charcoal);
   margin-bottom: 22px;
