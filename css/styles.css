@@ -596,7 +596,7 @@ button {
    Two-weight technique: roman primary line + lighter italic second. */
 .hero__headline {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(56px, 8vw, 96px);
+  font-size: clamp(48px, 7vw, 92px);
   font-weight: 300;
   font-style: normal;
   line-height: 1.0;
@@ -625,19 +625,22 @@ button {
   margin-bottom: 26px;
 }
 
-/* CTA — underlined, tracked-out */
+/* CTA — plain underlined text link */
 .hero__cta {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #FFFFFF;
   text-decoration: underline;
   text-decoration-color: #FFFFFF;
   text-decoration-thickness: 1px;
-  text-underline-offset: 6px;
+  text-underline-offset: 4px;
+  background: none;
+  border: none;
+  padding: 0;
   opacity: 0.85;
   transition:
     opacity        var(--t-fast),
