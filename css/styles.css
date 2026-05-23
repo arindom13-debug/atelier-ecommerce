@@ -453,8 +453,9 @@ button {
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 80px;
   overflow: hidden;
   background: var(--ivory);
 }
@@ -507,9 +508,9 @@ button {
    Static so the detail tile + text card anchor to .hero, free to
    compose across the full hero rather than inside this column. */
 .hero__aside {
-  position: static;
+  position: relative;
   background: transparent;
-  z-index: 1;
+  z-index: 4;
 }
 
 /* ── Detail shot tile — overlaps into main image ───── */
@@ -537,10 +538,9 @@ button {
 
 /* ── Text card — anchored lower-left over the primary image ── */
 .hero__card {
-  position: absolute;
-  left: 6%;
-  bottom: 9%;
-  max-width: 42%;
+  position: relative;
+  margin-left: 6vw;
+  max-width: 480px;
   z-index: 4;
   padding: 52px 56px 52px 60px;   /* generous breathing room */
   background: var(--warm-bg);
@@ -548,7 +548,7 @@ button {
 
   /* Stage 3: text card reveals last */
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(20px);
   animation: heroRise 0.75s var(--ease-out) forwards 0.95s;
 }
 
@@ -578,10 +578,10 @@ button {
    Two-weight technique: roman primary line + lighter italic second. */
 .hero__headline {
   font-family: var(--font-serif);
-  font-size: clamp(37px, 4.68vw, 63px);
-  font-weight: 300;
+  font-size: 72px;
+  font-weight: 400;
   font-style: normal;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--charcoal);
   margin-bottom: 22px;
@@ -679,7 +679,7 @@ button {
 }
 
 @keyframes heroRise {
-  from { opacity: 0; transform: translateY(14px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0);    }
 }
 
@@ -724,11 +724,14 @@ button {
   .utility-strip__col--right { display: none; }
 }
 
-/* Tablet: hero collapses to single column */
+/* Tablet: hero collapses to stacked image + card */
 @media (max-width: 860px) {
   .hero {
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 56vh auto;
+    align-items: initial;
+    padding-bottom: 0;
   }
 
   .hero__main {
@@ -757,12 +760,14 @@ button {
   .hero__card {
     /* Return to normal flow below the image in the stacked layout */
     position: static;
-    left: auto;
-    bottom: auto;
+    margin-left: 0;
     max-width: none;
     box-shadow: none;
-    margin-top: 0;
     padding: 32px 40px;
+  }
+
+  .hero__headline {
+    font-size: 48px;
   }
 
   .hero__scroll-indicator { display: none; }
@@ -795,7 +800,7 @@ button {
   }
 
   .hero__headline {
-    font-size: clamp(29px, 7.14vw, 43px);
+    font-size: 36px;
   }
 }
 
