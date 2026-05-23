@@ -2381,6 +2381,7 @@ button {
 
 .voices {
   background: var(--ivory);
+  border-top: 1px solid rgba(0,0,0,0.08);
   padding: 0 84px;
   max-width: 1440px;
   margin: 0 auto;
@@ -2421,11 +2422,11 @@ button {
 .voice:nth-child(3) { transition-delay: 160ms; }
 
 .voice__quote {
-  font-family: var(--font-serif);
-  font-size: clamp(19px, 1.87vw, 27px);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
   font-weight: 400;
   font-style: italic;
-  line-height: 1.45;
+  line-height: 1.7;
   color: var(--charcoal);
   margin-bottom: 24px;
 }
@@ -2442,9 +2443,9 @@ button {
 
 .voice__attr {
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -2495,7 +2496,7 @@ button {
 .promise__inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 120px 84px;
+  padding: 80px 84px;
 }
 
 .promise__header {
@@ -2568,7 +2569,7 @@ button {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(17px, 1.31vw, 20px);
+  font-size: 14px;
   color: var(--charcoal);
   line-height: 1.3;
   margin: 0 0 10px;
@@ -2576,7 +2577,7 @@ button {
 
 .promise__pillar-desc {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
   line-height: 1.7;
   color: var(--muted);
@@ -2705,7 +2706,7 @@ button {
 }
 
 .gallery-img--g3 {
-  background-image: url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600');
+  background-image: url('https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=600');
   background-color: #dfd8cf;
 }
 
