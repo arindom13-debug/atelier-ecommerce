@@ -501,9 +501,10 @@ button {
   object-fit: cover;
   object-position: center top;
   background-color: #BDB0A0;
-  background-image: url("https://images.unsplash.com/photo-1683660107856-cdad7a562d12?auto=format&fit=crop&w=960&h=1400&q=85");
+  background-image: url("https://images.unsplash.com/photo-1683660107856-cdad7a562d12?auto=format&fit=crop&w=1920&q=85");
   background-size: cover;
   background-position: center top;
+  background-repeat: no-repeat;
   /* Subtle scale-in on load for depth */
   transform: scale(1.04);
   animation: heroImageScale 1.4s var(--ease-out) forwards 0.05s;
