@@ -188,19 +188,39 @@ revealOnScroll('.worn-by', '.worn-by__item', 90);
 /* ── Atelier Selection: 8 cards, 50 ms stagger ─────────────── */
 revealOnScroll('.selection', '.product-card', 50);
 
-/* ── Selection filter pills — active state toggle ──────────── */
+/* ── Selection filter pills — active state + real filtering ─── */
 (function () {
   var filters = document.querySelectorAll('.selection__filter');
+  var cards   = document.querySelectorAll('.product-card');
   if (!filters.length) return;
 
   filters.forEach(function (btn) {
     btn.addEventListener('click', function () {
+      var category = btn.dataset.filter;
+
+      /* Update active pill */
       filters.forEach(function (f) {
         f.classList.remove('is-active');
         f.setAttribute('aria-pressed', 'false');
       });
       btn.classList.add('is-active');
       btn.setAttribute('aria-pressed', 'true');
+
+      /* Show / hide cards with a quick fade */
+      cards.forEach(function (card) {
+        var match = category === 'all' || card.dataset.category === category;
+        if (match) {
+          card.style.display = '';
+          requestAnimationFrame(function () { card.style.opacity = '1'; });
+        } else {
+          card.style.opacity = '0';
+          setTimeout(function () {
+            if (card.dataset.category !== category && category !== 'all') {
+              card.style.display = 'none';
+            }
+          }, 200);
+        }
+      });
     });
   });
 })();

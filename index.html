@@ -97,11 +97,10 @@
           </button>
           <!-- Account dropdown -->
           <div class="account-dropdown" id="account-dropdown" role="dialog" aria-label="Account options" hidden>
-            <p class="account-dropdown__welcome">Welcome</p>
-            <p class="account-dropdown__sub">Sign in to your account</p>
-            <a href="#" class="account-dropdown__link">Sign In &rarr;</a>
-            <hr class="account-dropdown__divider" aria-hidden="true">
-            <a href="#" class="account-dropdown__link">Create Account &rarr;</a>
+            <p class="account-dropdown__welcome">Hello.</p>
+            <p class="account-dropdown__sub">Access your orders, wishlist &amp; atelier appointments.</p>
+            <button class="account-dropdown__btn account-dropdown__btn--primary" id="open-signin" type="button">Sign In</button>
+            <button class="account-dropdown__btn account-dropdown__btn--ghost" id="open-signup" type="button">Create Account</button>
           </div>
         </div>
 
@@ -257,7 +256,7 @@
       <div class="selection__grid">
 
         <!-- 1 -->
-        <article class="product-card">
+        <article class="product-card" data-category="wraps">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/kantha-wrap-jacket" aria-label="View Kantha Wrap Jacket"></a>
             <div class="product-card__img product-img--kantha"
@@ -294,7 +293,7 @@
         </article>
 
         <!-- 2 -->
-        <article class="product-card">
+        <article class="product-card" data-category="tunics">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/linen-drawstring-shirt" aria-label="View Linen Drawstring Shirt"></a>
             <div class="product-card__img product-img--linen-shirt"
@@ -330,7 +329,7 @@
         </article>
 
         <!-- 3 -->
-        <article class="product-card">
+        <article class="product-card" data-category="tunics">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/jamdani-muslin-kurta" aria-label="View Jamdani Muslin Kurta"></a>
             <div class="product-card__img product-img--muslin-kurta"
@@ -368,7 +367,7 @@
         </article>
 
         <!-- 4 -->
-        <article class="product-card">
+        <article class="product-card" data-category="trousers">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/washed-linen-trouser" aria-label="View Washed Linen Trouser"></a>
             <div class="product-card__img product-img--linen-trouser"
@@ -404,7 +403,7 @@
         </article>
 
         <!-- 5 -->
-        <article class="product-card">
+        <article class="product-card" data-category="wraps">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/block-print-dupatta" aria-label="View Block-Print Dupatta"></a>
             <div class="product-card__img product-img--dupatta"
@@ -437,7 +436,7 @@
         </article>
 
         <!-- 6 -->
-        <article class="product-card">
+        <article class="product-card" data-category="tunics">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/heritage-cotton-tunic" aria-label="View Heritage Cotton Tunic"></a>
             <div class="product-card__img product-img--tunic"
@@ -473,7 +472,7 @@
         </article>
 
         <!-- 7 -->
-        <article class="product-card">
+        <article class="product-card" data-category="tunics">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/embroidered-lawn-blouse" aria-label="View Embroidered Lawn Blouse"></a>
             <div class="product-card__img product-img--lawn"
@@ -511,7 +510,7 @@
         </article>
 
         <!-- 8 -->
-        <article class="product-card">
+        <article class="product-card" data-category="dresses">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/pleated-muslin-dress" aria-label="View Pleated Muslin Dress"></a>
             <div class="product-card__img product-img--muslin-dress"
@@ -546,10 +545,157 @@
           </div>
         </article>
 
+        <!-- 9 -->
+        <article class="product-card" data-category="wraps">
+          <div class="product-card__img-wrap">
+            <a class="product-card__media-link" href="/products/indigo-cotton-wrap" aria-label="View Indigo Cotton Wrap"></a>
+            <div class="product-card__img product-img--indigo-wrap"
+                 role="img" aria-label="Indigo Cotton Wrap editorial photo"></div>
+            <div class="product-card__img-hover product-img-hover--indigo-wrap" aria-hidden="true"></div>
+            <span class="product-card__label">New</span>
+            <button class="product-card__wish" aria-label="Save Indigo Cotton Wrap to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="/products/indigo-cotton-wrap">Indigo Cotton Wrap</a></h3>
+            <p class="product-card__material">Handspun Indigo Cotton &middot; Rajshahi</p>
+            <p class="product-card__price">$225</p>
+            <div class="product-card__swatches" aria-label="Available colours: Indigo, Natural, Slate">
+              <span class="product-card__swatch" style="background:#4A5A7A" title="Indigo"></span>
+              <span class="product-card__swatch" style="background:#D4C9B8" title="Natural"></span>
+              <span class="product-card__swatch" style="background:#8A9098" title="Slate"></span>
+            </div>
+            <div class="product-card__sizes" aria-label="All sizes available">
+              <span class="product-card__size">XS</span>
+              <span class="product-card__size">S</span>
+              <span class="product-card__size">M</span>
+              <span class="product-card__size">L</span>
+              <span class="product-card__size">XL</span>
+            </div>
+            <button class="product-card__atb" aria-label="Add Indigo Cotton Wrap to bag"
+                    data-id="indigo-cotton-wrap" data-name="Indigo Cotton Wrap"
+                    data-material="Handspun Indigo Cotton · Rajshahi" data-price="225"
+                    data-img="product-img--indigo-wrap">Quick Add &rarr;</button>
+          </div>
+        </article>
+
+        <!-- 10 -->
+        <article class="product-card" data-category="dresses">
+          <div class="product-card__img-wrap">
+            <a class="product-card__media-link" href="/products/jamdani-evening-dress" aria-label="View Jamdani Evening Dress"></a>
+            <div class="product-card__img product-img--jamdani-evening"
+                 role="img" aria-label="Jamdani Evening Dress editorial photo"></div>
+            <div class="product-card__img-hover product-img-hover--jamdani-evening" aria-hidden="true"></div>
+            <span class="product-card__label product-card__label--limited">Limited</span>
+            <button class="product-card__wish" aria-label="Save Jamdani Evening Dress to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="/products/jamdani-evening-dress">Jamdani Evening Dress</a></h3>
+            <p class="product-card__material">Jamdani Muslin &middot; Dhaka</p>
+            <p class="product-card__price">$345</p>
+            <div class="product-card__swatches" aria-label="Available colours: Ivory, Blush, Midnight">
+              <span class="product-card__swatch" style="background:#EDE6D8" title="Ivory"></span>
+              <span class="product-card__swatch" style="background:#C8A8A0" title="Blush"></span>
+              <span class="product-card__swatch" style="background:#2A2E3A" title="Midnight"></span>
+            </div>
+            <div class="product-card__sizes" aria-label="Sizes: XS S M available, L XL unavailable">
+              <span class="product-card__size">XS</span>
+              <span class="product-card__size">S</span>
+              <span class="product-card__size">M</span>
+              <span class="product-card__size is-unavailable" aria-label="L — sold out">L</span>
+              <span class="product-card__size is-unavailable" aria-label="XL — sold out">XL</span>
+            </div>
+            <p class="product-card__scarcity" aria-live="polite">Only 5 left</p>
+            <button class="product-card__atb" aria-label="Add Jamdani Evening Dress to bag"
+                    data-id="jamdani-evening-dress" data-name="Jamdani Evening Dress"
+                    data-material="Jamdani Muslin · Dhaka" data-price="345"
+                    data-img="product-img--jamdani-evening">Quick Add &rarr;</button>
+          </div>
+        </article>
+
+        <!-- 11 -->
+        <article class="product-card" data-category="tunics">
+          <div class="product-card__img-wrap">
+            <a class="product-card__media-link" href="/products/endi-silk-tunic" aria-label="View Endi Silk Tunic"></a>
+            <div class="product-card__img product-img--endi-tunic"
+                 role="img" aria-label="Endi Silk Tunic editorial photo"></div>
+            <div class="product-card__img-hover product-img-hover--endi-tunic" aria-hidden="true"></div>
+            <button class="product-card__wish" aria-label="Save Endi Silk Tunic to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="/products/endi-silk-tunic">Endi Silk Tunic</a></h3>
+            <p class="product-card__material">Endi Silk Blend &middot; Rajshahi</p>
+            <p class="product-card__price">$195</p>
+            <div class="product-card__swatches" aria-label="Available colours: Ecru, Rose, Sage">
+              <span class="product-card__swatch" style="background:#D8CEB8" title="Ecru"></span>
+              <span class="product-card__swatch" style="background:#C89888" title="Rose"></span>
+              <span class="product-card__swatch" style="background:#8A9B82" title="Sage"></span>
+            </div>
+            <div class="product-card__sizes" aria-label="All sizes available">
+              <span class="product-card__size">XS</span>
+              <span class="product-card__size">S</span>
+              <span class="product-card__size">M</span>
+              <span class="product-card__size">L</span>
+              <span class="product-card__size">XL</span>
+            </div>
+            <button class="product-card__atb" aria-label="Add Endi Silk Tunic to bag"
+                    data-id="endi-silk-tunic" data-name="Endi Silk Tunic"
+                    data-material="Endi Silk Blend · Rajshahi" data-price="195"
+                    data-img="product-img--endi-tunic">Quick Add &rarr;</button>
+          </div>
+        </article>
+
+        <!-- 12 -->
+        <article class="product-card" data-category="trousers">
+          <div class="product-card__img-wrap">
+            <a class="product-card__media-link" href="/products/wide-leg-linen-trouser" aria-label="View Wide Leg Linen Trouser"></a>
+            <div class="product-card__img product-img--wide-trouser"
+                 role="img" aria-label="Wide Leg Linen Trouser editorial photo"></div>
+            <div class="product-card__img-hover product-img-hover--wide-trouser" aria-hidden="true"></div>
+            <button class="product-card__wish" aria-label="Save Wide Leg Linen Trouser to wishlist" aria-pressed="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name"><a href="/products/wide-leg-linen-trouser">Wide Leg Linen Trouser</a></h3>
+            <p class="product-card__material">Belgian Linen &middot; Comilla</p>
+            <p class="product-card__price">$165</p>
+            <div class="product-card__swatches" aria-label="Available colours: Sand, Chalk, Olive">
+              <span class="product-card__swatch" style="background:#C8B898" title="Sand"></span>
+              <span class="product-card__swatch" style="background:#F0EDE6" title="Chalk"></span>
+              <span class="product-card__swatch" style="background:#7A8A60" title="Olive"></span>
+            </div>
+            <div class="product-card__sizes" aria-label="Sizes: XS S M L available, XL unavailable">
+              <span class="product-card__size">XS</span>
+              <span class="product-card__size">S</span>
+              <span class="product-card__size">M</span>
+              <span class="product-card__size">L</span>
+              <span class="product-card__size is-unavailable" aria-label="XL — sold out">XL</span>
+            </div>
+            <button class="product-card__atb" aria-label="Add Wide Leg Linen Trouser to bag"
+                    data-id="wide-leg-linen-trouser" data-name="Wide Leg Linen Trouser"
+                    data-material="Belgian Linen · Comilla" data-price="165"
+                    data-img="product-img--wide-trouser">Quick Add &rarr;</button>
+          </div>
+        </article>
+
       </div><!-- /.selection__grid -->
 
       <div class="selection__footer">
-        <p class="selection__count-meta"><em>32 more pieces in the selection</em></p>
+        <p class="selection__count-meta"><em>28 more pieces in the selection</em></p>
         <a href="#" class="selection__view-all">View All Pieces &rarr;</a>
       </div>
 
@@ -1091,6 +1237,53 @@
       </div>
       <p class="cart-drawer__shipping-note">Shipping calculated at checkout</p>
       <a href="#" class="cart-drawer__checkout">Proceed to Checkout &rarr;</a>
+    </div>
+  </div>
+
+  <!-- ── Sign In Modal ──────────────────────────────────── -->
+  <div class="auth-modal" id="signin-modal" role="dialog" aria-modal="true" aria-labelledby="signin-title" hidden>
+    <div class="auth-modal__inner">
+      <button class="auth-modal__close" id="btn-signin-close" aria-label="Close sign in">&times;</button>
+      <em class="auth-modal__eyebrow">Welcome back</em>
+      <h2 class="auth-modal__title" id="signin-title">Sign in to Atelier.</h2>
+      <form class="auth-form" id="signin-form" novalidate>
+        <div class="auth-form__field">
+          <label for="signin-email">Email address</label>
+          <input type="email" id="signin-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+        </div>
+        <div class="auth-form__field">
+          <label for="signin-password">Password</label>
+          <input type="password" id="signin-password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+        </div>
+        <a href="#" class="auth-form__forgot">Forgot your password?</a>
+        <button type="submit" class="auth-form__submit">Sign In</button>
+        <p class="auth-form__switch">No account yet? <button type="button" class="auth-form__switch-btn" id="go-to-signup">Create one &rarr;</button></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── Sign Up Modal ──────────────────────────────────── -->
+  <div class="auth-modal" id="signup-modal" role="dialog" aria-modal="true" aria-labelledby="signup-title" hidden>
+    <div class="auth-modal__inner">
+      <button class="auth-modal__close" id="btn-signup-close" aria-label="Close sign up">&times;</button>
+      <em class="auth-modal__eyebrow">Join the atelier</em>
+      <h2 class="auth-modal__title" id="signup-title">Create your account.</h2>
+      <form class="auth-form" id="signup-form" novalidate>
+        <div class="auth-form__field">
+          <label for="signup-name">Full name</label>
+          <input type="text" id="signup-name" name="name" placeholder="Your name" autocomplete="name" required>
+        </div>
+        <div class="auth-form__field">
+          <label for="signup-email">Email address</label>
+          <input type="email" id="signup-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+        </div>
+        <div class="auth-form__field">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" name="password" placeholder="••••••••" autocomplete="new-password" required>
+        </div>
+        <button type="submit" class="auth-form__submit">Create Account</button>
+        <p class="auth-form__switch">Already have an account? <button type="button" class="auth-form__switch-btn" id="go-to-signin">Sign in &rarr;</button></p>
+      </form>
     </div>
   </div>
 

@@ -636,3 +636,147 @@
   })();
 
 })();
+
+
+/* ── AUTH MODALS — Sign In / Create Account ─────────────────── */
+(function () {
+  'use strict';
+
+  var signinModal = document.getElementById('signin-modal');
+  var signupModal = document.getElementById('signup-modal');
+  var openSignin  = document.getElementById('open-signin');
+  var openSignup  = document.getElementById('open-signup');
+  var closeSignin = document.getElementById('btn-signin-close');
+  var closeSignup = document.getElementById('btn-signup-close');
+  var goToSignup  = document.getElementById('go-to-signup');
+  var goToSignin  = document.getElementById('go-to-signin');
+
+  /* ── Open / close helpers ── */
+  function openAuthModal(modal) {
+    if (!modal) return;
+    document.body.classList.add('ui-locked');
+    modal.removeAttribute('hidden');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        modal.classList.add('is-open');
+        var first = modal.querySelector('input');
+        if (first) setTimeout(function () { first.focus(); }, 160);
+      });
+    });
+  }
+
+  function closeAuthModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    document.body.classList.remove('ui-locked');
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      modal.setAttribute('hidden', '');
+      /* Reset form + any error states */
+      var form = modal.querySelector('form');
+      if (form) {
+        form.reset();
+        form.querySelectorAll('.is-error').forEach(function (el) {
+          el.classList.remove('is-error');
+        });
+        var btn = form.querySelector('.auth-form__submit');
+        if (btn) { btn.textContent = btn.dataset.orig || btn.textContent; btn.disabled = false; }
+      }
+    }
+    modal.addEventListener('transitionend', function h() {
+      modal.removeEventListener('transitionend', h);
+      finish();
+    });
+    setTimeout(finish, 400);
+  }
+
+  function closeDropdown() {
+    var dd = document.getElementById('account-dropdown');
+    if (dd) { dd.classList.remove('is-open'); dd.setAttribute('hidden', ''); }
+    var btn = document.getElementById('btn-account');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+
+  /* ── Bind open triggers ── */
+  if (openSignin) {
+    openSignin.addEventListener('click', function () {
+      closeDropdown();
+      openAuthModal(signinModal);
+    });
+  }
+
+  if (openSignup) {
+    openSignup.addEventListener('click', function () {
+      closeDropdown();
+      openAuthModal(signupModal);
+    });
+  }
+
+  /* ── Bind close buttons ── */
+  if (closeSignin) closeSignin.addEventListener('click', function () { closeAuthModal(signinModal); });
+  if (closeSignup) closeSignup.addEventListener('click', function () { closeAuthModal(signupModal); });
+
+  /* ── Switch between modals ── */
+  if (goToSignup) {
+    goToSignup.addEventListener('click', function () {
+      closeAuthModal(signinModal);
+      setTimeout(function () { openAuthModal(signupModal); }, 260);
+    });
+  }
+  if (goToSignin) {
+    goToSignin.addEventListener('click', function () {
+      closeAuthModal(signupModal);
+      setTimeout(function () { openAuthModal(signinModal); }, 260);
+    });
+  }
+
+  /* ── Backdrop click closes ── */
+  [signinModal, signupModal].forEach(function (modal) {
+    if (!modal) return;
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeAuthModal(modal);
+    });
+  });
+
+  /* ── Escape key closes ── */
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (signinModal && !signinModal.hasAttribute('hidden')) closeAuthModal(signinModal);
+    if (signupModal && !signupModal.hasAttribute('hidden')) closeAuthModal(signupModal);
+  });
+
+  /* ── Form submission (client-side feedback — static site) ── */
+  function bindForm(form, modal) {
+    if (!form) return;
+    var submitBtn = form.querySelector('.auth-form__submit');
+    if (submitBtn) submitBtn.dataset.orig = submitBtn.textContent;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var valid = true;
+      form.querySelectorAll('input[required]').forEach(function (input) {
+        var empty = !input.value.trim();
+        input.classList.toggle('is-error', empty);
+        if (empty) valid = false;
+      });
+      if (!valid) return;
+
+      if (submitBtn) {
+        submitBtn.textContent = 'Done ✓';
+        submitBtn.disabled = true;
+      }
+      setTimeout(function () { closeAuthModal(modal); }, 900);
+    });
+
+    /* Clear error on input */
+    form.querySelectorAll('input').forEach(function (input) {
+      input.addEventListener('input', function () { input.classList.remove('is-error'); });
+    });
+  }
+
+  bindForm(document.getElementById('signin-form'), signinModal);
+  bindForm(document.getElementById('signup-form'), signupModal);
+
+})();
