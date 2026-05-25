@@ -62,9 +62,9 @@
       isLimited: false,
       stockLevel: 12,
       images: {
-        primary: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80',
-        secondary: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=750&q=85'
+        primary:   'https://images.pexels.com/photos/7816703/pexels-photo-7816703.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        secondary: 'https://images.pexels.com/photos/7789144/pexels-photo-7789144.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        detail:    'https://images.pexels.com/photos/8452016/pexels-photo-8452016.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop'
       },
       fullDescription: 'Each piece is hand-stitched with the running kantha stitch, a technique passed down through generations of artisans in Rajshahi. The weave is tightly constructed for warmth without weight, and the reversibility means you get two distinct colorways in one jacket.',
       materialComposition: 'Pure handloomed cotton sourced from heritage looms in Rajshahi, Bangladesh. Each thread is selected for softness and durability. The jacket is naturally breathable and becomes softer with every wash.',
@@ -129,9 +129,9 @@
       isLimited: false,
       stockLevel: 18,
       images: {
-        primary: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80',
-        secondary: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&h=750&q=85'
+        primary:   'https://images.pexels.com/photos/7789140/pexels-photo-7789140.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        secondary: 'https://images.pexels.com/photos/8198047/pexels-photo-8198047.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        detail:    'https://images.pexels.com/photos/7789139/pexels-photo-7789139.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop'
       },
       fullDescription: 'Pure Belgian linen in its most versatile form. The drawstring hem allows you to customize the length and shape, from flowing to structured. Pre-washed for immediate softness.',
       materialComposition: 'Belgian linen, pre-washed and stonewashed for a lived-in feel from day one. Naturally temperature-regulating and increasingly comfortable with wear.',
@@ -172,9 +172,9 @@
       isLimited: true,
       stockLevel: 4,
       images: {
-        primary: 'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600&q=80',
-        secondary: 'https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85'
+        primary:   'https://images.pexels.com/photos/19567920/pexels-photo-19567920.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        secondary: 'https://images.pexels.com/photos/30703860/pexels-photo-30703860.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        detail:    'https://images.pexels.com/photos/3396371/pexels-photo-3396371.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop'
       },
       fullDescription: 'Jamdani is the finest of the fine — each piece woven on a traditional pit loom with supplementary weft patterns. This kurta is breathtakingly delicate, yet remarkably durable.',
       materialComposition: 'Hand-woven muslin with jamdani supplementary weft patterns. Cotton fibers are spun to an almost gossamer fineness, then woven on traditional pit looms by master weavers.',
@@ -215,9 +215,9 @@
       isLimited: false,
       stockLevel: 15,
       images: {
-        primary: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&q=80',
-        secondary: 'https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85'
+        primary:   'https://images.pexels.com/photos/3095432/pexels-photo-3095432.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        secondary: 'https://images.pexels.com/photos/12058996/pexels-photo-12058996.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        detail:    'https://images.pexels.com/photos/30669356/pexels-photo-30669356.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop'
       },
       fullDescription: 'Stonewashed linen that arrives with that coveted softness you\'d normally have to wait for. The wide-leg silhouette drapes beautifully and pairs with everything.',
       materialComposition: 'Belgian linen, stonewashed twice for maximum softness. Each pair will develop its own unique patina as you wear it.',
@@ -258,9 +258,9 @@
       isLimited: false,
       stockLevel: 9,
       images: {
-        primary: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=80',
-        secondary: 'https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85'
+        primary:   'https://images.pexels.com/photos/8432522/pexels-photo-8432522.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        secondary: 'https://images.pexels.com/photos/20453639/pexels-photo-20453639.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        detail:    'https://images.pexels.com/photos/6154323/pexels-photo-6154323.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop'
       },
       fullDescription: 'A featherweight dupatta that finishes any look. Hand block-printed in small batches, no two pieces share exactly the same impression. Drape it, knot it, or wear it as a scarf.',
       materialComposition: 'Endi silk, also known as peace silk, sourced from Rajshahi. Hand block-printed using traditional wooden blocks and natural dyes. Each piece is unique.',
@@ -301,9 +301,9 @@
       isLimited: false,
       stockLevel: 11,
       images: {
-        primary: 'https://images.unsplash.com/photo-1481214110143-ed630356e1bb?w=600&q=80',
-        secondary: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=600&h=750&q=85'
+        primary:   'https://images.pexels.com/photos/28512776/pexels-photo-28512776.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        secondary: 'https://images.pexels.com/photos/20203718/pexels-photo-20203718.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        detail:    'https://images.pexels.com/photos/7302904/pexels-photo-7302904.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop'
       },
       fullDescription: 'A clean-lined tunic that anchors any wardrobe. Handloomed in Comilla with a subtle structure that holds its shape while remaining endlessly comfortable.',
       materialComposition: 'Handloomed cotton from heritage looms in Comilla. Mid-weight and breathable, with a refined texture that comes only from hand-weaving.',
@@ -344,9 +344,9 @@
       isLimited: true,
       stockLevel: 3,
       images: {
-        primary: 'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=600&q=80',
-        secondary: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&h=750&q=85'
+        primary:   'https://images.pexels.com/photos/33125106/pexels-photo-33125106.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        secondary: 'https://images.pexels.com/photos/25561633/pexels-photo-25561633.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        detail:    'https://images.pexels.com/photos/6850864/pexels-photo-6850864.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop'
       },
       fullDescription: 'Fine lawn cotton elevated by hand-guided nakshi embroidery at the placket. A limited seasonal run, each blouse carries the gentle irregularities of handwork.',
       materialComposition: 'Lightweight lawn cotton with hand-guided nakshi embroidery. The embroidery thread is mercerized cotton for a subtle sheen against the matte lawn.',
@@ -387,9 +387,9 @@
       isLimited: false,
       stockLevel: 7,
       images: {
-        primary: 'https://images.unsplash.com/photo-1544441893-675973e31985?w=600&q=80',
-        secondary: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&h=750&q=85',
-        detail: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&h=750&q=85'
+        primary:   'https://images.pexels.com/photos/30703860/pexels-photo-30703860.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        secondary: 'https://images.pexels.com/photos/11762028/pexels-photo-11762028.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop',
+        detail:    'https://images.pexels.com/photos/30116520/pexels-photo-30116520.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop'
       },
       fullDescription: 'A column of finely pleated muslin that moves like water. The endi-silk blend gives the pleats a soft luster while keeping the dress weightless and fluid.',
       materialComposition: 'Endi silk and muslin blend, hand-pleated and heat-set to hold the fine accordion folds. The pleating catches light beautifully as you move.',

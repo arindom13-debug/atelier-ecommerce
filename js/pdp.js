@@ -88,8 +88,17 @@
 
   /* ── 2 + 3. Gallery + Info Panel ──────────────────── */
 
+  // Desktop thumbnail strip
+  var thumbItems = imgs.map(function (src, i) {
+    return '<button class="pdp-thumb' + (i === 0 ? ' is-active' : '') + '" data-index="' + i + '" ' +
+      'aria-label="View image ' + (i + 1) + '">' +
+      '<img src="' + esc(src) + '" alt="" loading="lazy">' +
+      '</button>';
+  }).join('');
+
+  // Gallery items — all present, only active one shown on desktop
   var galleryItems = imgs.map(function (src, i) {
-    return '<figure class="pdp-gallery__item" data-index="' + i + '" role="button" tabindex="0" ' +
+    return '<figure class="pdp-gallery__item' + (i === 0 ? ' is-active' : '') + '" data-index="' + i + '" role="button" tabindex="0" ' +
       'aria-label="View image ' + (i + 1) + ' full screen">' +
       '<img src="' + esc(src) + '" alt="' + esc(product.name) + ' — view ' + (i + 1) + '" loading="' + (i === 0 ? 'eager' : 'lazy') + '">' +
       '</figure>';
@@ -119,6 +128,7 @@
 
   mainEl.innerHTML =
     '<div class="pdp-gallery-wrap">' +
+      '<div class="pdp-gallery-thumbs" id="pdp-thumbs">' + thumbItems + '</div>' +
       '<div class="pdp-gallery" id="pdp-gallery">' + galleryItems + '</div>' +
       '<div class="pdp-gallery__dots" id="pdp-dots">' + dots + '</div>' +
     '</div>' +
@@ -383,6 +393,21 @@
     lb.classList.remove('is-open');
     document.body.classList.remove('ui-locked');
   }
+
+  /* ── Thumbnail switcher (desktop) ────────────────── */
+  var thumbEls = Array.prototype.slice.call(document.querySelectorAll('.pdp-thumb'));
+  var galleryItemEls = Array.prototype.slice.call(document.querySelectorAll('.pdp-gallery__item'));
+
+  function switchToImage(index) {
+    thumbEls.forEach(function (t, ti) { t.classList.toggle('is-active', ti === index); });
+    galleryItemEls.forEach(function (g, gi) { g.classList.toggle('is-active', gi === index); });
+  }
+
+  thumbEls.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      switchToImage(parseInt(btn.dataset.index, 10));
+    });
+  });
 
   document.querySelectorAll('.pdp-gallery__item').forEach(function (item) {
     item.addEventListener('click', function () { openLb(parseInt(item.dataset.index, 10)); });
