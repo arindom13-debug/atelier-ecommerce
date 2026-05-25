@@ -2432,16 +2432,18 @@ button {
 }
 
 .voices__rule {
-  display: none;
+  display: block;
+  border: none;
+  border-top: 1px solid rgba(26, 26, 26, 0.10);
 }
 
 .voices__inner {
-  padding: 100px 0;
+  padding: 80px 0;
 }
 
 .voices__header {
   text-align: center;
-  margin-bottom: 72px;
+  margin-bottom: 56px;
 }
 
 .voices__eyebrow {
@@ -2460,7 +2462,17 @@ button {
   font-weight: 300;
   color: var(--charcoal);
   line-height: 1.2;
-  margin: 0;
+  margin: 0 0 20px;
+}
+
+/* Thin centred rule beneath headline */
+.voices__headline::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: rgba(26, 26, 26, 0.20);
+  margin: 20px auto 0;
 }
 
 .voices__list {
@@ -2472,7 +2484,7 @@ button {
 /* Individual quote */
 .voice {
   margin: 0;
-  padding: 0 48px;
+  padding: 0 52px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.65s var(--ease-out),
@@ -2483,7 +2495,7 @@ button {
 .voice:last-child  { padding-right: 0; }
 
 .voice + .voice {
-  border-left: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(26, 26, 26, 0.12);
 }
 
 .voice.is-visible {
@@ -2498,32 +2510,31 @@ button {
 
 .voice__quote {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   font-style: italic;
-  line-height: 1.8;
+  line-height: 1.75;
   color: #1A1A1A;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 /* Opening quote mark */
 .voice__quote::before {
   content: '\201C';
   display: block;
-  font-size: 1.6em;
-  line-height: 1;
-  color: var(--border);
-  margin-bottom: 8px;
+  font-size: 2.2em;
+  line-height: 0.9;
+  color: rgba(26, 26, 26, 0.18);
+  margin-bottom: 12px;
 }
 
 .voice__attr {
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--charcoal);
-  opacity: 0.6;
+  color: var(--muted);
 }
 
 .voice__attr cite {
@@ -2574,20 +2585,20 @@ button {
    ===================================================== */
 
 .promise {
-  background: var(--white);
-  border-top: 1px solid rgba(26, 26, 26, 0.10);
-  border-bottom: 1px solid rgba(26, 26, 26, 0.10);
+  background: var(--ivory);
+  border-top: 1px solid rgba(26, 26, 26, 0.08);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
 }
 
 .promise__inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 80px 84px;
+  padding: 96px 84px;
 }
 
 .promise__header {
   text-align: center;
-  margin-bottom: 72px;
+  margin-bottom: 64px;
 }
 
 .promise__eyebrow {
@@ -2637,25 +2648,31 @@ button {
   transform: translateY(0);
 }
 
+/* Icon ring — 60×60 circle, thin border, centred SVG */
 .promise__icon {
-  width: 32px;
-  height: 32px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(26, 26, 26, 0.14);
+  border-radius: 50%;
   color: var(--charcoal);
-  opacity: 0.45;
-  margin-bottom: 12px;
+  opacity: 0.75;
+  margin-bottom: 22px;
   flex-shrink: 0;
 }
 
 .promise__icon svg {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 .promise__pillar-name {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--charcoal);
   line-height: 1.3;
   margin: 0 0 10px;
@@ -2664,10 +2681,10 @@ button {
 .promise__pillar-desc {
   font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 300;
-  line-height: 1.7;
+  font-weight: 400;
+  line-height: 1.75;
   color: var(--muted);
-  max-width: 20ch;
+  max-width: 22ch;
   margin: 0;
 }
 
