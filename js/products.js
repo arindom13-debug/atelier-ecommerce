@@ -62,7 +62,7 @@
       isLimited: false,
       stockLevel: 12,
       images: {
-        primary: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80&v=2',
+        primary: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80',
         secondary: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -129,7 +129,7 @@
       isLimited: false,
       stockLevel: 18,
       images: {
-        primary: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80&v=2',
+        primary: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80',
         secondary: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -172,7 +172,7 @@
       isLimited: true,
       stockLevel: 4,
       images: {
-        primary: 'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600&q=80&v=2',
+        primary: 'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600&q=80',
         secondary: 'https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -215,7 +215,7 @@
       isLimited: false,
       stockLevel: 15,
       images: {
-        primary: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&q=80&v=2',
+        primary: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&q=80',
         secondary: 'https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -258,7 +258,7 @@
       isLimited: false,
       stockLevel: 9,
       images: {
-        primary: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=80&v=2',
+        primary: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=80',
         secondary: 'https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -301,7 +301,7 @@
       isLimited: false,
       stockLevel: 11,
       images: {
-        primary: 'https://images.unsplash.com/photo-1481214110143-ed630356e1bb?w=600&q=80&v=2',
+        primary: 'https://images.unsplash.com/photo-1481214110143-ed630356e1bb?w=600&q=80',
         secondary: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -344,7 +344,7 @@
       isLimited: true,
       stockLevel: 3,
       images: {
-        primary: 'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=600&q=80&v=2',
+        primary: 'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=600&q=80',
         secondary: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -387,7 +387,7 @@
       isLimited: false,
       stockLevel: 7,
       images: {
-        primary: 'https://images.unsplash.com/photo-1544441893-675973e31985?w=600&q=80&v=2',
+        primary: 'https://images.unsplash.com/photo-1544441893-675973e31985?w=600&q=80',
         secondary: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&h=750&q=85'
       },
