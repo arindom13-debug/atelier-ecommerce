@@ -2278,20 +2278,26 @@ button {
   transform: scale(1.04);
 }
 
-/* Journal card image placeholders */
+/* Journal card images — matched to article content */
 .journal-img--01 {
-  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80');
+  /* "One shirt, a hundred days" — woman reading in soft natural light */
+  background-image: url('https://images.pexels.com/photos/7302904/pexels-photo-7302904.jpeg?auto=compress&cs=tinysrgb&w=700&h=480&fit=crop');
   background-color: #d4c9bb;
+  background-position: center top;
 }
 
 .journal-img--02 {
-  background-image: url('https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?w=600&q=80');
+  /* "Rina Akter, weaving since twelve" — artisan at a traditional loom */
+  background-image: url('https://images.pexels.com/photos/25561633/pexels-photo-25561633.jpeg?auto=compress&cs=tinysrgb&w=700&h=480&fit=crop');
   background-color: #c8bfb3;
+  background-position: center center;
 }
 
 .journal-img--03 {
-  background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80');
+  /* "Why we still dye in clay pots" — hands dyeing fabric with indigo */
+  background-image: url('https://images.pexels.com/photos/6850864/pexels-photo-6850864.jpeg?auto=compress&cs=tinysrgb&w=700&h=480&fit=crop');
   background-color: #bfb8ae;
+  background-position: center center;
 }
 
 .journal-card__category {
