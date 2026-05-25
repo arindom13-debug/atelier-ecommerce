@@ -404,6 +404,152 @@
 
   /* ── 10. ADD TO BAG ─────────────────────────────────────────── */
 
+  /* Size picker state — shared by picker open/close/confirm */
+  var _sp = { btn: null, product: null };
+
+  /* ── Size picker DOM ── */
+  var spPicker   = document.getElementById('size-picker');
+  var spScrim    = document.getElementById('size-picker-scrim');
+  var spTitle    = document.getElementById('size-picker-title');
+  var spGrid     = document.getElementById('size-picker-grid');
+  var spAdd      = document.getElementById('size-picker-add');
+  var spClose    = document.getElementById('size-picker-close');
+
+  function openSizePicker(atbBtn, product, sizeLabels) {
+    if (!spPicker || !spScrim) return;
+    _sp.btn     = atbBtn;
+    _sp.product = product;
+
+    if (spTitle) spTitle.textContent = product.name;
+
+    /* Build size buttons */
+    if (spGrid) {
+      spGrid.innerHTML = '';
+      sizeLabels.forEach(function (label) {
+        var b = document.createElement('button');
+        b.type      = 'button';
+        b.className = 'size-picker__btn';
+        b.textContent = label;
+        b.dataset.size = label;
+        b.setAttribute('aria-pressed', 'false');
+        b.addEventListener('click', function () {
+          spGrid.querySelectorAll('.size-picker__btn').forEach(function (x) {
+            x.classList.remove('is-selected');
+            x.setAttribute('aria-pressed', 'false');
+          });
+          b.classList.add('is-selected');
+          b.setAttribute('aria-pressed', 'true');
+          if (spAdd) spAdd.disabled = false;
+        });
+        spGrid.appendChild(b);
+      });
+    }
+
+    if (spAdd) { spAdd.textContent = 'Add to Bag'; spAdd.disabled = true; }
+
+    spScrim.removeAttribute('hidden');
+    spPicker.removeAttribute('hidden');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        spScrim.classList.add('is-open');
+        spPicker.classList.add('is-open');
+        /* Focus first size button for keyboard users */
+        var first = spGrid && spGrid.querySelector('.size-picker__btn');
+        if (first) first.focus();
+      });
+    });
+    lockScroll();
+  }
+
+  function closeSizePicker() {
+    if (!spPicker || !spScrim) return;
+    spPicker.classList.remove('is-open');
+    spScrim.classList.remove('is-open');
+    unlockScroll();
+    setTimeout(function () {
+      spPicker.setAttribute('hidden', '');
+      spScrim.setAttribute('hidden', '');
+    }, 380);
+    _sp.btn = null;
+    _sp.product = null;
+  }
+
+  function addToCartDirect(btn, product) {
+    cart.addItem(product);
+    updateBadge(true);
+
+    var orig     = btn.innerHTML;
+    btn.innerHTML = 'Added ✓';
+    btn.classList.add('is-added');
+    btn.disabled  = true;
+
+    setTimeout(function () {
+      btn.innerHTML = orig;
+      btn.classList.remove('is-added');
+      btn.disabled  = false;
+    }, 1200);
+
+    setTimeout(function () {
+      if (currentPanel === 'cart') { renderCart(); } else { openCart(); }
+    }, 300);
+  }
+
+  /* ── Size picker confirm ── */
+  if (spAdd) {
+    spAdd.addEventListener('click', function () {
+      var selected = spGrid && spGrid.querySelector('.size-picker__btn.is-selected');
+      if (!selected || !_sp.product) return;
+
+      var sizeLabel = selected.dataset.size;
+      var product   = {
+        id:       _sp.product.id + '--' + sizeLabel.toLowerCase().replace(/\s+/g, '-'),
+        name:     _sp.product.name + ' (' + sizeLabel + ')',
+        material: _sp.product.material,
+        price:    _sp.product.price,
+        img:      _sp.product.img
+      };
+      cart.addItem(product);
+      updateBadge(true);
+
+      /* Feedback on size picker button */
+      spAdd.textContent = 'Added ✓';
+      spAdd.disabled = true;
+
+      /* Feedback on the original ATB button */
+      var atbBtn = _sp.btn;
+      if (atbBtn) {
+        var orig      = atbBtn.innerHTML;
+        atbBtn.innerHTML = 'Added ✓';
+        atbBtn.classList.add('is-added');
+        atbBtn.disabled  = true;
+        setTimeout(function () {
+          atbBtn.innerHTML = orig;
+          atbBtn.classList.remove('is-added');
+          atbBtn.disabled  = false;
+        }, 1500);
+      }
+
+      setTimeout(function () {
+        closeSizePicker();
+        setTimeout(function () {
+          if (currentPanel === 'cart') { renderCart(); } else { openCart(); }
+        }, 220);
+      }, 420);
+    });
+  }
+
+  if (spClose) spClose.addEventListener('click', closeSizePicker);
+  if (spScrim) spScrim.addEventListener('click', closeSizePicker);
+
+  /* Close size picker on Escape — injected into the existing keydown handler
+     below in section 12, but we handle it here too for safety. */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && spPicker && !spPicker.hasAttribute('hidden')) {
+      closeSizePicker();
+    }
+  });
+
+  /* ── ATB button click: route to size picker or direct add ── */
   document.querySelectorAll('.product-card__atb').forEach(function (btn) {
     btn.addEventListener('click', function () {
       if (btn.disabled) return;
@@ -416,30 +562,23 @@
         img:      btn.dataset.img
       };
 
-      // 1. Update state
-      cart.addItem(product);
-      updateBadge(true);   // immediate badge increment + pulse
+      /* Collect available (non-sold-out) size labels from this card */
+      var card   = btn.closest('.product-card');
+      var spans  = card
+        ? Array.prototype.slice.call(
+            card.querySelectorAll('.product-card__size:not(.is-unavailable)')
+          )
+        : [];
+      var labels = spans.map(function (s) { return s.textContent.trim(); });
+      var isOneSize = labels.length === 1 && labels[0] === 'One Size';
 
-      // 2. Button feedback: "Added ✓" for 1.2 s
-      var original    = btn.textContent;
-      btn.textContent = 'Added ✓';
-      btn.classList.add('is-added');
-      btn.disabled = true;
-
-      setTimeout(function () {
-        btn.textContent = original;
-        btn.classList.remove('is-added');
-        btn.disabled = false;
-      }, 1200);
-
-      // 3. Open cart drawer 300 ms later (or re-render if already open)
-      setTimeout(function () {
-        if (currentPanel === 'cart') {
-          renderCart();   // silently refresh contents
-        } else {
-          openCart();
-        }
-      }, 300);
+      if (isOneSize || labels.length === 0) {
+        /* No real size choice — add straight to cart */
+        addToCartDirect(btn, product);
+      } else {
+        /* Show size picker */
+        openSizePicker(btn, product, labels);
+      }
     });
   });
 
@@ -779,4 +918,59 @@
   bindForm(document.getElementById('signin-form'), signinModal);
   bindForm(document.getElementById('signup-form'), signupModal);
 
+})();
+
+
+/* ── INVITATION FORM — Success state ───────────────────────────
+   On submit: validate email, hide the form row, reveal the
+   success block with a gentle fade. The button briefly shows
+   "Thank you ✓" before the swap so the transition feels earned.
+─────────────────────────────────────────────────────────────── */
+(function () {
+  'use strict';
+
+  var form       = document.querySelector('.invitation__form');
+  var successEl  = document.getElementById('invite-success');
+  if (!form || !successEl) return;
+
+  var emailInput  = form.querySelector('input[type="email"]');
+  var submitBtn   = form.querySelector('.invitation__submit');
+  var microcopy   = document.getElementById('invite-note');
+  /* Fade out the whole form + microcopy, then show success */
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    /* Basic validation */
+    if (emailInput && !emailInput.value.trim()) {
+      emailInput.focus();
+      return;
+    }
+
+    /* Disable + show micro-feedback on the button */
+    if (submitBtn) {
+      submitBtn.disabled    = true;
+      submitBtn.textContent = 'Thank you ✓';
+    }
+
+    /* Swap form → success after a short pause */
+    setTimeout(function () {
+      form.style.transition = 'opacity 0.4s ease';
+      form.style.opacity    = '0';
+      if (microcopy) {
+        microcopy.style.transition = 'opacity 0.4s ease';
+        microcopy.style.opacity    = '0';
+      }
+      setTimeout(function () {
+        form.style.display = 'none';
+        if (microcopy) microcopy.style.display = 'none';
+        successEl.style.opacity    = '0';
+        successEl.style.transition = 'opacity 0.5s ease';
+        successEl.removeAttribute('hidden');
+        /* Force reflow then fade in */
+        void successEl.offsetWidth;
+        successEl.style.opacity = '1';
+      }, 420);
+    }, 600);
+  });
 })();

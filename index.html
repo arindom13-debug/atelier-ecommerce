@@ -16,6 +16,21 @@
 
   <link rel="stylesheet" href="css/styles.css">
 
+  <!-- Favicon — inline SVG monogram -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231A1A1A'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='18' font-style='italic' fill='%23F8F5F0'>A</text></svg>">
+
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Atelier — Crafted with Intention">
+  <meta property="og:description" content="South Asian artisan clothing. Hand-loomed, naturally dyed, made in small batches in Dhaka and London.">
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1683660107856-cdad7a562d12?auto=format&fit=crop&w=1200&h=630&q=85">
+  <meta property="og:url"         content="https://atelier.co">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title"      content="Atelier — Crafted with Intention">
+  <meta name="twitter:description" content="South Asian artisan clothing. Hand-loomed, naturally dyed, made in small batches.">
+  <meta name="twitter:image"      content="https://images.unsplash.com/photo-1683660107856-cdad7a562d12?auto=format&fit=crop&w=1200&h=630&q=85">
+  <meta name="description"        content="South Asian artisan clothing by Atelier. Hand-loomed in Dhaka, naturally dyed, never more than forty pieces per pattern.">
+
   <!-- No-JS: ensure scroll-reveal elements are visible without JS -->
   <noscript>
     <style>
@@ -160,7 +175,7 @@
           Crafted in silence.<br><em>Worn with intention.</em>
         </h1>
         <p class="hero__subline">Rooted in craft. Refined by time.</p>
-        <a href="#collections" class="hero__cta">Discover the Collection</a>
+        <a href="#collections" class="hero__cta">Enter the Collection &nbsp;→</a>
       </div>
     </div>
 
@@ -284,6 +299,7 @@
               <span class="product-card__size">M</span>
               <span class="product-card__size">L</span>
               <span class="product-card__size is-unavailable" aria-label="XL — sold out">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <button class="product-card__atb" aria-label="Add Kantha Wrap Jacket to bag"
                     data-id="kantha-wrap-jacket" data-name="Kantha Wrap Jacket"
@@ -320,6 +336,7 @@
               <span class="product-card__size">M</span>
               <span class="product-card__size">L</span>
               <span class="product-card__size">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <button class="product-card__atb" aria-label="Add Linen Drawstring Shirt to bag"
                     data-id="linen-drawstring-shirt" data-name="Linen Drawstring Shirt"
@@ -357,6 +374,7 @@
               <span class="product-card__size">M</span>
               <span class="product-card__size is-unavailable" aria-label="L — sold out">L</span>
               <span class="product-card__size is-unavailable" aria-label="XL — sold out">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <p class="product-card__scarcity" aria-live="polite">Only 4 left</p>
             <button class="product-card__atb" aria-label="Add Jamdani Muslin Kurta to bag"
@@ -394,6 +412,7 @@
               <span class="product-card__size">M</span>
               <span class="product-card__size">L</span>
               <span class="product-card__size">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <button class="product-card__atb" aria-label="Add Washed Linen Trouser to bag"
                     data-id="washed-linen-trouser" data-name="Washed Linen Trouser"
@@ -427,6 +446,7 @@
             </div>
             <div class="product-card__sizes" aria-label="One size">
               <span class="product-card__size">One Size</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <button class="product-card__atb" aria-label="Add Block-Print Dupatta to bag"
                     data-id="block-print-dupatta" data-name="Block-Print Dupatta"
@@ -463,6 +483,7 @@
               <span class="product-card__size is-unavailable" aria-label="M — sold out">M</span>
               <span class="product-card__size">L</span>
               <span class="product-card__size">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <button class="product-card__atb" aria-label="Add Heritage Cotton Tunic to bag"
                     data-id="heritage-cotton-tunic" data-name="Heritage Cotton Tunic"
@@ -500,6 +521,7 @@
               <span class="product-card__size">M</span>
               <span class="product-card__size is-unavailable" aria-label="L — sold out">L</span>
               <span class="product-card__size is-unavailable" aria-label="XL — sold out">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <p class="product-card__scarcity" aria-live="polite">Only 3 left</p>
             <button class="product-card__atb" aria-label="Add Embroidered Lawn Blouse to bag"
@@ -537,6 +559,7 @@
               <span class="product-card__size">M</span>
               <span class="product-card__size">L</span>
               <span class="product-card__size">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <button class="product-card__atb" aria-label="Add Pleated Muslin Dress to bag"
                     data-id="pleated-muslin-dress" data-name="Pleated Muslin Dress"
@@ -574,6 +597,7 @@
               <span class="product-card__size">M</span>
               <span class="product-card__size">L</span>
               <span class="product-card__size">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <button class="product-card__atb" aria-label="Add Indigo Cotton Wrap to bag"
                     data-id="indigo-cotton-wrap" data-name="Indigo Cotton Wrap"
@@ -611,6 +635,7 @@
               <span class="product-card__size">M</span>
               <span class="product-card__size is-unavailable" aria-label="L — sold out">L</span>
               <span class="product-card__size is-unavailable" aria-label="XL — sold out">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <p class="product-card__scarcity" aria-live="polite">Only 5 left</p>
             <button class="product-card__atb" aria-label="Add Jamdani Evening Dress to bag"
@@ -648,6 +673,7 @@
               <span class="product-card__size">M</span>
               <span class="product-card__size">L</span>
               <span class="product-card__size">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <button class="product-card__atb" aria-label="Add Endi Silk Tunic to bag"
                     data-id="endi-silk-tunic" data-name="Endi Silk Tunic"
@@ -684,6 +710,7 @@
               <span class="product-card__size">M</span>
               <span class="product-card__size">L</span>
               <span class="product-card__size is-unavailable" aria-label="XL — sold out">XL</span>
+              <button class="product-card__size-guide" type="button" aria-label="Open size guide">Size guide</button>
             </div>
             <button class="product-card__atb" aria-label="Add Wide Leg Linen Trouser to bag"
                     data-id="wide-leg-linen-trouser" data-name="Wide Leg Linen Trouser"
@@ -699,6 +726,18 @@
         <a href="#" class="selection__view-all">View All Pieces &rarr;</a>
       </div>
 
+    </section>
+
+    <!-- ─── Campaign Break — SS26 Dark Editorial ───────────
+         Full-width dark cinema between product grid and craft.
+    ─────────────────────────────────────────────────────── -->
+    <section class="campaign-break section-reveal" aria-label="SS26 campaign">
+      <div class="campaign-break__inner">
+        <span class="campaign-break__kicker">SS26 &nbsp;·&nbsp; The Linen Edit</span>
+        <h2 class="campaign-break__headline">Made once.<br>Worn always.</h2>
+        <p class="campaign-break__body">Twelve pieces in Belgian linen, hand-loomed in Dhaka over three days per cloth. Each garment carries the unhurried attention of the person who set every thread.</p>
+        <a href="#shop" class="campaign-break__cta">Shop the Edit &nbsp;→</a>
+      </div>
     </section>
 
     <!-- ─── Maker's Mark — Craftsmanship Pillars ────────────
@@ -858,6 +897,7 @@
             <h3 class="journal-card__title">
               <a href="#">One shirt, a hundred days.</a>
             </h3>
+            <p class="journal-card__excerpt">On why a single piece, worn daily, becomes something the calendar cannot measure.</p>
             <p class="journal-card__meta">12 May 2026 &nbsp;&middot;&nbsp; 4 min read</p>
           </div>
         </article>
@@ -873,6 +913,7 @@
             <h3 class="journal-card__title">
               <a href="#">Rina Akter, weaving since twelve.</a>
             </h3>
+            <p class="journal-card__excerpt">The hands that set our first warp threads still return each season to the same loom in Tangail.</p>
             <p class="journal-card__meta">28 Apr 2026 &nbsp;&middot;&nbsp; 6 min read</p>
           </div>
         </article>
@@ -888,6 +929,7 @@
             <h3 class="journal-card__title">
               <a href="#">Why we still dye in clay pots.</a>
             </h3>
+            <p class="journal-card__excerpt">On the quiet alchemy of plant dye — and why machine alternatives always fall short of the real thing.</p>
             <p class="journal-card__meta">14 Apr 2026 &nbsp;&middot;&nbsp; 3 min read</p>
           </div>
         </article>
@@ -935,7 +977,7 @@
           </blockquote>
 
           <blockquote class="voice">
-            <div class="voice__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <div class="voice__stars" aria-label="4 out of 5 stars">★★★★<span style="opacity:0.25">★</span></div>
             <p class="voice__quote">&ldquo;There is something in the cloth that makes you slow down.&rdquo;</p>
             <footer class="voice__attr">
               <span class="voice__avatar" aria-hidden="true">M</span>
@@ -971,7 +1013,7 @@
           </blockquote>
 
           <blockquote class="voice">
-            <div class="voice__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <div class="voice__stars" aria-label="4 out of 5 stars">★★★★<span style="opacity:0.25">★</span></div>
             <p class="voice__quote">&ldquo;An investment that only gets better. Mine is three years old and more beautiful than the day it arrived.&rdquo;</p>
             <footer class="voice__attr">
               <span class="voice__avatar" aria-hidden="true">R</span>
@@ -1084,8 +1126,8 @@
         </div><!-- /.gallery__grid -->
 
         <div class="gallery__footer">
-          <p class="gallery__tagline"><em>Tag us @atelier to be featured.</em></p>
-          <a href="#" class="gallery__community-cta">View the Community &rarr;</a>
+          <p class="gallery__tagline"><em>Tag us <a href="https://instagram.com/atelier" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px">@atelier</a> to be featured.</em></p>
+          <a href="https://instagram.com/atelier" target="_blank" rel="noopener" class="gallery__community-cta">View the Community &rarr;</a>
         </div>
 
       </div>
@@ -1119,6 +1161,15 @@
         </form>
 
         <p class="invitation__microcopy" id="invite-note">One letter a season. Nothing more.</p>
+
+        <!-- Success state — shown after submit -->
+        <div class="invitation__success" id="invite-success" hidden aria-live="polite">
+          <div class="invitation__success-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <p class="invitation__success-text">&ldquo;You&rsquo;re on the list. We&rsquo;ll write to you soon.&rdquo;</p>
+          <p class="invitation__success-sub">One letter a season &mdash; nothing more.</p>
+        </div>
 
       </div>
     </section>
@@ -1329,8 +1380,34 @@
     </div>
   </div>
 
-  <script src="js/products.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/interactions.js"></script>
+  <!-- ─── Size Picker — Bottom-sheet popup ───────────────────
+       Slides up when user clicks "Quick Add" on a product card.
+       JS controls .is-open on .size-picker and .size-picker-scrim.
+  ─────────────────────────────────────────────────────────── -->
+  <div class="size-picker-scrim" id="size-picker-scrim" aria-hidden="true"></div>
+  <div class="size-picker" id="size-picker" role="dialog" aria-modal="true" aria-labelledby="size-picker-title" hidden>
+    <div class="size-picker__header">
+      <p class="size-picker__product-name" id="size-picker-title">Select a size</p>
+      <button class="size-picker__close" id="size-picker-close" type="button" aria-label="Close size picker">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <p class="size-picker__label">Select a size</p>
+    <div class="size-picker__sizes" id="size-picker-grid" role="group" aria-label="Available sizes"></div>
+    <button class="size-picker__add" id="size-picker-add" type="button" disabled>Add to Bag</button>
+  </div>
+
+  <!-- ─── Back to Top ──────────────────────────────────────── -->
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" hidden>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="js/products.js?v=2"></script>
+  <script src="js/main.js?v=2"></script>
+  <script src="js/interactions.js?v=2"></script>
 </body>
 </html>

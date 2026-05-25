@@ -514,12 +514,14 @@ button {
   to { transform: scale(1); }
 }
 
-/* Cinematic dark gradient — left side only, so white headline text stays legible */
+/* Cinematic dark gradient — stronger left sweep + bottom vignette for max text legibility */
 .hero__main::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 60%);
+  background:
+    linear-gradient(to right,  rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.28) 52%, rgba(0,0,0,0) 78%),
+    linear-gradient(to top,    rgba(0,0,0,0.32) 0%, rgba(0,0,0,0)    38%);
   z-index: 1;
   pointer-events: none;
 }
@@ -625,29 +627,32 @@ button {
   margin-bottom: 26px;
 }
 
-/* CTA — plain underlined text link */
+/* CTA — bordered pill button, more tactile than bare underline */
 .hero__cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #FFFFFF;
-  text-decoration: underline;
-  text-decoration-color: #FFFFFF;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-  opacity: 0.85;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  padding: 15px 32px;
+  text-decoration: none;
   transition:
-    opacity        var(--t-fast),
-    letter-spacing 0.35s ease;
+    background   var(--t-fast),
+    border-color var(--t-fast),
+    color        var(--t-fast);
 }
-.hero__cta:hover         { opacity: 1; letter-spacing: 0.26em; }
+.hero__cta:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.90);
+}
 .hero__cta:focus-visible {
   outline: 1px solid #FFFFFF;
   outline-offset: 4px;
-  opacity: 1;
 }
 
 /* ── Scroll indicator ───────────────────────────────── */
@@ -899,8 +904,9 @@ button {
 }
 
 .collection-tile__img--cotton {
-  background-color: #C8C4B0;
-  background-image: url("https://images.pexels.com/photos/32176792/pexels-photo-32176792.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop");
+  /* Heritage Cotton — woman in handloomed ivory cotton, warm Dhaka courtyard light */
+  background-color: #C8C0A8;
+  background-image: url("https://images.pexels.com/photos/30703860/pexels-photo-30703860.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop");
 }
 
 .collection-tile__img--silk {
@@ -1401,10 +1407,10 @@ button {
   pointer-events: none;
 }
 
-/* Crossfade-to-second-image disabled — hover is a clean lift only */
+/* Crossfade to secondary lifestyle/detail image on hover */
 .product-card:hover       .product-card__img-hover,
 .product-card:focus-within .product-card__img-hover {
-  opacity: 0;
+  opacity: 1;
 }
 
 /* Secondary lifestyle / detail images */
@@ -1544,10 +1550,11 @@ button {
 
 .product-card__price {
   font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--charcoal);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
 }
 
 /* ─── Color swatch dots ──────────────────────────── */
@@ -1636,48 +1643,66 @@ button {
   line-height: 1.5;
 }
 
-/* ─── "Quick Add →" — revealed on hover ─────────── */
-/* ATB button text changed to "Quick Add →"; styles
-   below are the existing ATB styles — no class change. */
-/* ─── "Add to Bag" — revealed on hover ───────────── */
+/* ─── Quick Add — premium full-width pill, fills dark on hover ─ */
 .product-card__atb {
-  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.18em;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--charcoal);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
-  padding: 0;
-  margin-top: 12px;
-  background: none;
-  border: none;
+  background: transparent;
+  border: 1px solid rgba(26, 26, 26, 0.22);
+  padding: 12px 16px;
+  margin-top: 14px;
   cursor: pointer;
+  text-decoration: none;
 
   opacity: 0;
-  transform: translateY(5px);
+  transform: translateY(6px);
   transition:
-    opacity   0.3s ease,
-    transform 0.3s ease,
-    color     var(--t-fast);
+    opacity      0.3s ease,
+    transform    0.3s ease,
+    background   var(--t-fast),
+    border-color var(--t-fast),
+    color        var(--t-fast);
 }
 
-.product-card:hover    .product-card__atb,
+.product-card:hover     .product-card__atb,
 .product-card:focus-within .product-card__atb {
   opacity: 1;
   transform: translateY(0);
 }
 
-.product-card__atb:hover {
-  color: var(--muted);
+/* Touch / mobile — always show the button */
+@media (hover: none) {
+  .product-card__atb {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card__atb:hover,
+.product-card__atb:focus-visible {
+  background:    var(--charcoal);
+  border-color:  var(--charcoal);
+  color:         #FFFFFF;
 }
 
 .product-card__atb:focus-visible {
-  outline: 1px solid var(--charcoal);
-  outline-offset: 4px;
+  outline: 2px solid var(--charcoal);
+  outline-offset: 2px;
+}
+
+/* "Added ✓" confirmed state */
+.product-card__atb.is-added {
+  background:   var(--charcoal);
+  border-color: var(--charcoal);
+  color:        #FFFFFF;
   opacity: 1;
   transform: translateY(0);
 }
@@ -2470,13 +2495,14 @@ button {
   gap: 20px;
 }
 
-/* Individual card — cream background, charcoal border */
+/* Individual card — cream background, top gold accent line */
 .voice {
   margin: 0;
   padding: 32px 28px 28px;
   background: #F5F1EB;
   border: 1px solid rgba(26, 26, 26, 0.10);
-  border-radius: 6px;
+  border-top: 2px solid rgba(184, 150, 90, 0.55);
+  border-radius: 0 0 4px 4px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -2489,8 +2515,13 @@ button {
 }
 
 .voice:hover {
-  border-color: rgba(26, 26, 26, 0.20);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  border-top-color: rgba(184, 150, 90, 0.85);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+.voice.is-visible:hover {
+  transform: translateY(-2px);
 }
 
 .voice:first-child,
@@ -2498,8 +2529,6 @@ button {
   padding: 32px 28px 28px;
   background: #F5F1EB;
 }
-
-.voice + .voice { border-left: none; }
 
 .voice.is-visible {
   opacity: 1;
@@ -2524,11 +2553,12 @@ button {
 /* Quote body */
 .voice__quote {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(19px, 1.6vw, 23px);
+  font-size: clamp(20px, 1.7vw, 25px);
   font-weight: 400;
   font-style: italic;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--charcoal);
+  letter-spacing: -0.01em;
   margin: 0;
   flex: 1;
 }
@@ -4127,6 +4157,423 @@ body.ui-locked {
     animation: none;
   }
   @keyframes badge-pulse { 0%, 100% { transform: scale(1); } }
+}
+
+
+/* =====================================================
+   15. CAMPAIGN BREAK — Dark editorial band
+   Full-width cinematic section between product grid
+   and Maker's Mark. Typography-first, no image needed.
+   ===================================================== */
+
+.campaign-break {
+  background: #0D0B09;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle warm vignette radiating from center */
+.campaign-break::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 120% at 50% 50%,
+    rgba(184, 150, 90, 0.07) 0%,
+    transparent 65%);
+  pointer-events: none;
+}
+
+.campaign-break__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 140px 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.campaign-break__kicker {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(184, 150, 90, 0.72);
+  margin-bottom: 36px;
+}
+
+.campaign-break__headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(52px, 8vw, 108px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: rgba(248, 245, 240, 0.95);
+  margin: 0 0 40px;
+  max-width: 18ch;
+}
+
+.campaign-break__body {
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(248, 245, 240, 0.42);
+  max-width: 54ch;
+  margin: 0 0 56px;
+  letter-spacing: 0.01em;
+}
+
+.campaign-break__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(248, 245, 240, 0.88);
+  border: 1px solid rgba(248, 245, 240, 0.25);
+  padding: 16px 40px;
+  text-decoration: none;
+  transition:
+    background   var(--t-fast),
+    border-color var(--t-fast),
+    color        var(--t-fast);
+}
+
+.campaign-break__cta:hover {
+  background: rgba(248, 245, 240, 0.08);
+  border-color: rgba(248, 245, 240, 0.70);
+  color: #FFFFFF;
+}
+
+.campaign-break__cta:focus-visible {
+  outline: 1px solid rgba(248, 245, 240, 0.6);
+  outline-offset: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .campaign-break__inner { padding: 112px 52px; }
+}
+@media (max-width: 640px) {
+  .campaign-break__inner { padding: 96px 28px; }
+  .campaign-break__body  { display: none; } /* collapse to headline + CTA on mobile */
+}
+
+
+/* =====================================================
+   16. JOURNAL CARD EXCERPTS
+   ===================================================== */
+
+.journal-card__excerpt {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(26, 26, 26, 0.55);
+  margin: 6px 0 0;
+}
+
+
+/* =====================================================
+   17. PRODUCT CARD — SIZE GUIDE LINK
+   ===================================================== */
+
+.product-card__size-guide {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  opacity: 0.6;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: opacity var(--t-fast);
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.product-card__size-guide:hover  { opacity: 1; }
+
+
+/* =====================================================
+   18. SIZE PICKER — Inline popup on Quick Add
+   ===================================================== */
+
+.size-picker-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+}
+
+.size-picker-overlay.is-open {
+  pointer-events: auto;
+}
+
+.size-picker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 32px 52px 40px;
+  z-index: 901;
+  transform: translateY(100%);
+  transition: transform 0.35s var(--ease-out);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.size-picker.is-open {
+  transform: translateY(0);
+}
+
+.size-picker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.size-picker__product-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--charcoal);
+}
+
+.size-picker__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 8px;
+  margin: -8px;
+  line-height: 0;
+  transition: color var(--t-fast);
+}
+.size-picker__close:hover { color: var(--charcoal); }
+
+.size-picker__label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.size-picker__guide-link {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  color: var(--muted);
+  text-decoration: underline;
+  opacity: 0.7;
+  transition: opacity var(--t-fast);
+}
+.size-picker__guide-link:hover { opacity: 1; }
+
+.size-picker__sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.size-picker__btn {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  border: 1px solid var(--border);
+  background: none;
+  padding: 12px 22px;
+  cursor: pointer;
+  transition:
+    border-color var(--t-fast),
+    background   var(--t-fast),
+    color        var(--t-fast);
+  min-width: 60px;
+  text-align: center;
+}
+
+.size-picker__btn:hover:not(:disabled) {
+  border-color: var(--charcoal);
+}
+
+.size-picker__btn.is-selected {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--white);
+}
+
+.size-picker__btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.size-picker__add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 360px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--charcoal);
+  border: 1px solid var(--charcoal);
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: opacity var(--t-fast);
+}
+.size-picker__add:hover:not(:disabled) { opacity: 0.78; }
+.size-picker__add:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Scrim behind picker */
+.size-picker-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.28);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.size-picker-scrim.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 640px) {
+  .size-picker { padding: 28px 24px 36px; }
+}
+
+
+/* =====================================================
+   19. INVITATION SUCCESS STATE
+   ===================================================== */
+
+.invitation__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.invitation__success-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(184, 150, 90, 0.4);
+  background: rgba(184, 150, 90, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B8965A;
+}
+
+.invitation__success-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 23px);
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.55;
+  max-width: 36ch;
+  text-align: center;
+}
+
+.invitation__success-sub {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  opacity: 0.75;
+}
+
+
+/* =====================================================
+   20. BACK TO TOP BUTTON
+   ===================================================== */
+
+.back-to-top {
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+  z-index: 200;
+  width: 44px;
+  height: 44px;
+  background: rgba(26, 26, 26, 0.82);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity   0.3s ease,
+    transform 0.3s ease,
+    background var(--t-fast);
+  pointer-events: none;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: rgba(26, 26, 26, 0.96);
+}
+
+.back-to-top:focus-visible {
+  outline: 1px solid rgba(255,255,255,0.5);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    bottom: 24px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 

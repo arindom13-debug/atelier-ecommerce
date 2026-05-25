@@ -260,3 +260,30 @@ revealOnScroll('.gallery', '.gallery__item', 60);
 
 /* ── Invitation: single block, gentle fade-rise ─────────────── */
 revealOnScroll('.invitation', '.invitation__inner', 0);
+
+/* ── Back to Top ────────────────────────────────────────────── */
+(function () {
+  var btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  var visible = false;
+
+  window.addEventListener('scroll', function () {
+    var shouldShow = window.scrollY > 500;
+    if (shouldShow === visible) return;
+    visible = shouldShow;
+    if (shouldShow) {
+      btn.removeAttribute('hidden');
+      requestAnimationFrame(function () { btn.classList.add('is-visible'); });
+    } else {
+      btn.classList.remove('is-visible');
+      setTimeout(function () {
+        if (!btn.classList.contains('is-visible')) btn.setAttribute('hidden', '');
+      }, 350);
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
