@@ -1316,65 +1316,65 @@ button {
   box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
-/* 8 product photos — editorial fashion, person in each garment */
+/* 12 product photos — warm editorial, luxury artisan tone */
 .product-img--kantha {
   background-color: #C8BFB0;
-  background-image: url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1700317440744-a126fc87b900?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--linen-shirt {
   background-color: #D0CBC0;
-  background-image: url("https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--muslin-kurta {
   background-color: #C5AFA6;
-  background-image: url("https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--linen-trouser {
   background-color: #C2BAA0;
-  background-image: url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1683660107856-cdad7a562d12?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--dupatta {
   background-color: #C4B4AE;
-  background-image: url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1659297949927-06fa02629af0?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--tunic {
   background-color: #BEC0BA;
-  background-image: url("https://images.unsplash.com/photo-1481214110143-ed630356e1bb?w=600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1694971112579-464e82f35a13?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--lawn {
   background-color: #CCC5B8;
-  background-image: url("https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--muslin-dress {
-  background-color: #B8BEBC;
-  background-image: url("https://images.unsplash.com/photo-1544441893-675973e31985?w=600&q=80");
+  background-color: #C4BAB0;
+  background-image: url("https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--indigo-wrap {
-  background-color: #B0B8C8;
-  background-image: url("https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #B8BFC8;
+  background-image: url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--jamdani-evening {
   background-color: #C5B8A8;
-  background-image: url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&h=750&q=85");
+  background-image: url("https://images.unsplash.com/photo-1683660107856-cdad7a562d12?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--endi-tunic {
-  background-color: #BEC0BA;
-  background-image: url("https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #C0BDB5;
+  background-image: url("https://images.unsplash.com/photo-1700317440744-a126fc87b900?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 .product-img--wide-trouser {
   background-color: #C8C0B0;
-  background-image: url("https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&h=750&q=85");
+  background-image: url("https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&h=750&q=85");
 }
 
 /* ─── Hover secondary image ──────────────────────── */
