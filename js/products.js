@@ -62,7 +62,7 @@
       isLimited: false,
       stockLevel: 12,
       images: {
-        primary: 'https://images.unsplash.com/photo-1700317440740-627b8c533120?auto=format&fit=crop&w=600&h=750&q=85',
+        primary: 'https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?w=600',
         secondary: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -129,7 +129,7 @@
       isLimited: false,
       stockLevel: 18,
       images: {
-        primary: 'https://images.unsplash.com/photo-1700235162827-fb30a9774dd6?auto=format&fit=crop&w=600&h=750&q=85',
+        primary: 'https://images.pexels.com/photos/2220316/pexels-photo-2220316.jpeg?w=600',
         secondary: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -172,7 +172,7 @@
       isLimited: true,
       stockLevel: 4,
       images: {
-        primary: 'https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85',
+        primary: 'https://images.pexels.com/photos/1375736/pexels-photo-1375736.jpeg?w=600',
         secondary: 'https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1756483510837-83203eba47e9?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -215,7 +215,7 @@
       isLimited: false,
       stockLevel: 15,
       images: {
-        primary: 'https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85',
+        primary: 'https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?w=600',
         secondary: 'https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -258,7 +258,7 @@
       isLimited: false,
       stockLevel: 9,
       images: {
-        primary: 'https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85',
+        primary: 'https://images.pexels.com/photos/2220317/pexels-photo-2220317.jpeg?w=600',
         secondary: 'https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1556914249-863ba0ec162d?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -301,7 +301,7 @@
       isLimited: false,
       stockLevel: 11,
       images: {
-        primary: 'https://images.unsplash.com/photo-1538331269258-6c97a6bdeae0?auto=format&fit=crop&w=600&h=750&q=85',
+        primary: 'https://images.pexels.com/photos/3622608/pexels-photo-3622608.jpeg?w=600',
         secondary: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -344,7 +344,7 @@
       isLimited: true,
       stockLevel: 3,
       images: {
-        primary: 'https://images.unsplash.com/photo-1773574488221-08b2883a1c80?auto=format&fit=crop&w=600&h=750&q=85',
+        primary: 'https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?w=600',
         secondary: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&h=750&q=85'
       },
@@ -387,7 +387,7 @@
       isLimited: false,
       stockLevel: 7,
       images: {
-        primary: 'https://images.unsplash.com/photo-1726591383658-37fc19442523?auto=format&fit=crop&w=600&h=750&q=85',
+        primary: 'https://images.pexels.com/photos/2866119/pexels-photo-2866119.jpeg?w=600',
         secondary: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&h=750&q=85',
         detail: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&h=750&q=85'
       },
