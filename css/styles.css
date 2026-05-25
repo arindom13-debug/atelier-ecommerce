@@ -1334,8 +1334,10 @@ button {
 }
 
 .product-img--linen-trouser {
-  background-color: #C0A880;
-  background-image: url("https://images.pexels.com/photos/5377172/pexels-photo-5377172.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
+  /* Washed Linen Trouser — woman in neutral linen outfit on sandy terrain */
+  background-color: #C8BEA8;
+  background-image: url("https://images.pexels.com/photos/3095432/pexels-photo-3095432.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
+  background-position: center top;
 }
 
 .product-img--dupatta {
@@ -1344,8 +1346,10 @@ button {
 }
 
 .product-img--tunic {
-  background-color: #C0A890;
-  background-image: url("https://images.pexels.com/photos/10347957/pexels-photo-10347957.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
+  /* Heritage Cotton Tunic — white chikankari kurti, outdoor Lucknow, ethnic elegance */
+  background-color: #D0C8B8;
+  background-image: url("https://images.pexels.com/photos/28512776/pexels-photo-28512776.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
+  background-position: center top;
 }
 
 .product-img--lawn {
@@ -1359,13 +1363,17 @@ button {
 }
 
 .product-img--indigo-wrap {
-  background-color: #A8A8C0;
-  background-image: url("https://images.pexels.com/photos/2723623/pexels-photo-2723623.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
+  /* Indigo Cotton Wrap — woman in elegant blue dress, warm studio, sophisticated */
+  background-color: #A8B0C0;
+  background-image: url("https://images.pexels.com/photos/30116520/pexels-photo-30116520.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
+  background-position: center top;
 }
 
 .product-img--jamdani-evening {
-  background-color: #C8A860;
-  background-image: url("https://images.pexels.com/photos/18085866/pexels-photo-18085866.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
+  /* Jamdani Evening Dress — woman in red kameez, warm dramatic indoor light */
+  background-color: #B89080;
+  background-image: url("https://images.pexels.com/photos/3396371/pexels-photo-3396371.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
+  background-position: center top;
 }
 
 .product-img--endi-tunic {
@@ -1374,8 +1382,10 @@ button {
 }
 
 .product-img--wide-trouser {
-  background-color: #C0C0B8;
-  background-image: url("https://images.pexels.com/photos/8484131/pexels-photo-8484131.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
+  /* Wide Leg Linen Trouser — loose earth-toned flowing pants, sandy shoreline, serene */
+  background-color: #C8BEA8;
+  background-image: url("https://images.pexels.com/photos/12058996/pexels-photo-12058996.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
+  background-position: center center;
 }
 
 /* ─── Hover secondary image ──────────────────────── */
