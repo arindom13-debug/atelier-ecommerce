@@ -1316,65 +1316,65 @@ button {
   box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
-/* 12 product photos — warm editorial, luxury artisan tone */
+/* 12 product photos — South Asian editorial fashion, Pexels verified */
 .product-img--kantha {
-  background-color: #C8BFB0;
-  background-image: url("https://images.unsplash.com/photo-1700317440744-a126fc87b900?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #B8A080;
+  background-image: url("https://images.pexels.com/photos/7816703/pexels-photo-7816703.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--linen-shirt {
-  background-color: #D0CBC0;
-  background-image: url("https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #D0C8B8;
+  background-image: url("https://images.pexels.com/photos/7789140/pexels-photo-7789140.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--muslin-kurta {
-  background-color: #C5AFA6;
-  background-image: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #C8C0B0;
+  background-image: url("https://images.pexels.com/photos/19567920/pexels-photo-19567920.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--linen-trouser {
-  background-color: #C2BAA0;
-  background-image: url("https://images.unsplash.com/photo-1683660107856-cdad7a562d12?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #C0A880;
+  background-image: url("https://images.pexels.com/photos/5377172/pexels-photo-5377172.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--dupatta {
-  background-color: #C4B4AE;
-  background-image: url("https://images.unsplash.com/photo-1659297949927-06fa02629af0?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #C8C0A8;
+  background-image: url("https://images.pexels.com/photos/8432522/pexels-photo-8432522.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--tunic {
-  background-color: #BEC0BA;
-  background-image: url("https://images.unsplash.com/photo-1694971112579-464e82f35a13?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #C0A890;
+  background-image: url("https://images.pexels.com/photos/10347957/pexels-photo-10347957.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--lawn {
-  background-color: #CCC5B8;
-  background-image: url("https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #B8C0A8;
+  background-image: url("https://images.pexels.com/photos/33125106/pexels-photo-33125106.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--muslin-dress {
-  background-color: #C4BAB0;
-  background-image: url("https://images.unsplash.com/photo-1652132228164-4499391c4725?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #B8A890;
+  background-image: url("https://images.pexels.com/photos/30703860/pexels-photo-30703860.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--indigo-wrap {
-  background-color: #B8BFC8;
-  background-image: url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #A8A8C0;
+  background-image: url("https://images.pexels.com/photos/2723623/pexels-photo-2723623.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--jamdani-evening {
-  background-color: #C5B8A8;
-  background-image: url("https://images.unsplash.com/photo-1683660107856-cdad7a562d12?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #C8A860;
+  background-image: url("https://images.pexels.com/photos/18085866/pexels-photo-18085866.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--endi-tunic {
-  background-color: #C0BDB5;
-  background-image: url("https://images.unsplash.com/photo-1700317440744-a126fc87b900?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #C0B090;
+  background-image: url("https://images.pexels.com/photos/20203718/pexels-photo-20203718.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 .product-img--wide-trouser {
-  background-color: #C8C0B0;
-  background-image: url("https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&h=750&q=85");
+  background-color: #C0C0B8;
+  background-image: url("https://images.pexels.com/photos/8484131/pexels-photo-8484131.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop");
 }
 
 /* ─── Hover secondary image ──────────────────────── */
