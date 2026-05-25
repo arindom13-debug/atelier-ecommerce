@@ -2424,9 +2424,9 @@ button {
    11. VOICES (TESTIMONIALS)
    ===================================================== */
 
-/* ── Voices — Dark card theme ──────────────────────── */
+/* ── Voices — White background, cream cards ────────── */
 .voices {
-  background: #16140F;
+  background: var(--white);
   padding: 100px 84px 120px;
 }
 
@@ -2448,7 +2448,7 @@ button {
   font-style: italic;
   font-size: 15px;
   letter-spacing: 0.04em;
-  color: rgba(248, 245, 240, 0.50);
+  color: var(--muted);
   margin-bottom: 14px;
 }
 
@@ -2456,7 +2456,7 @@ button {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: clamp(36px, 4.5vw, 58px);
   font-weight: 300;
-  color: #F8F5F0;
+  color: var(--charcoal);
   line-height: 1.15;
   margin: 0;
 }
@@ -2470,12 +2470,12 @@ button {
   gap: 20px;
 }
 
-/* Individual card */
+/* Individual card — cream background, charcoal border */
 .voice {
   margin: 0;
   padding: 32px 28px 28px;
-  background: #1F1C16;
-  border: 1px solid rgba(248, 245, 240, 0.10);
+  background: #F5F1EB;
+  border: 1px solid rgba(26, 26, 26, 0.10);
   border-radius: 6px;
   display: flex;
   flex-direction: column;
@@ -2484,17 +2484,19 @@ button {
   transform: translateY(20px);
   transition: opacity 0.65s var(--ease-out),
               transform 0.65s var(--ease-out),
-              border-color 0.3s ease;
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
 .voice:hover {
-  border-color: rgba(196, 169, 110, 0.30);
+  border-color: rgba(26, 26, 26, 0.20);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
 .voice:first-child,
 .voice:last-child {
   padding: 32px 28px 28px;
-  background: #1F1C16;
+  background: #F5F1EB;
 }
 
 .voice + .voice { border-left: none; }
@@ -2513,20 +2515,20 @@ button {
 
 /* Stars */
 .voice__stars {
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #C4A96E;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #B8965A;
   line-height: 1;
 }
 
 /* Quote body */
 .voice__quote {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(17px, 1.4vw, 20px);
+  font-size: clamp(19px, 1.6vw, 23px);
   font-weight: 400;
   font-style: italic;
   line-height: 1.65;
-  color: rgba(248, 245, 240, 0.88);
+  color: var(--charcoal);
   margin: 0;
   flex: 1;
 }
@@ -2538,49 +2540,48 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(248, 245, 240, 0.08);
+  padding-top: 18px;
+  border-top: 1px solid rgba(26, 26, 26, 0.10);
   font-style: normal;
 }
 
 /* Initial avatar circle */
 .voice__avatar {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(196, 169, 110, 0.15);
-  border: 1px solid rgba(196, 169, 110, 0.30);
+  background: rgba(184, 150, 90, 0.12);
+  border: 1px solid rgba(184, 150, 90, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-serif);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-  color: #C4A96E;
+  color: #8A6E3E;
   flex-shrink: 0;
 }
 
 .voice__info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .voice__name {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: #F8F5F0;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 400;
   font-style: normal;
+  color: var(--charcoal);
 }
 
 .voice__role {
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.06em;
-  color: rgba(248, 245, 240, 0.42);
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 /* Reduced motion */
