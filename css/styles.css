@@ -2766,35 +2766,41 @@ button {
   transform: scale(1.02);
 }
 
-/* Gallery image fills */
+/* Gallery image fills — on-brand lifestyle: natural fabrics, warm tones */
 .gallery-img--g1 {
-  background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600');
+  background-image: url('https://images.pexels.com/photos/7789144/pexels-photo-7789144.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop');
   background-color: #d8cfc6;
+  background-position: center top;
 }
 
 .gallery-img--g2 {
-  background-image: url('https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600');
+  background-image: url('https://images.pexels.com/photos/7789139/pexels-photo-7789139.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop');
   background-color: #c9c0b5;
+  background-position: center top;
 }
 
 .gallery-img--g3 {
-  background-image: url('https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=600');
+  background-image: url('https://images.pexels.com/photos/8452016/pexels-photo-8452016.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop');
   background-color: #dfd8cf;
+  background-position: center top;
 }
 
 .gallery-img--g4 {
-  background-image: url('https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600');
+  background-image: url('https://images.pexels.com/photos/11762028/pexels-photo-11762028.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop');
   background-color: #c4b8ab;
+  background-position: center center;
 }
 
 .gallery-img--g5 {
-  background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600');
+  background-image: url('https://images.pexels.com/photos/20453639/pexels-photo-20453639.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop');
   background-color: #d0c8bc;
+  background-position: center top;
 }
 
 .gallery-img--g6 {
-  background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600');
+  background-image: url('https://images.pexels.com/photos/6154323/pexels-photo-6154323.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop');
   background-color: #cfc6bb;
+  background-position: center top;
 }
 
 /* @handle link */
