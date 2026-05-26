@@ -1178,6 +1178,114 @@
 })();
 
 
+/* ── GALLERY LIGHTBOX ──────────────────────────────────────────
+   Opens on gallery tile click, supports prev/next/keyboard/swipe.
+   Images are loaded full-res from Pexels at open time.
+─────────────────────────────────────────────────────────────── */
+(function () {
+  'use strict';
+
+  var IMAGES = [
+    { src: 'https://images.pexels.com/photos/7789144/pexels-photo-7789144.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1800&fit=crop', alt: 'A woman in a soft coat and scarf, photographed under stone arches' },
+    { src: 'https://images.pexels.com/photos/7789139/pexels-photo-7789139.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1800&fit=crop', alt: 'A quiet studio portrait of a woman in a draped dark top' },
+    { src: 'https://images.pexels.com/photos/8452016/pexels-photo-8452016.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1800&fit=crop', alt: 'A man in a fine-knit sweater, neutral light' },
+    { src: 'https://images.pexels.com/photos/11762028/pexels-photo-11762028.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1800&fit=crop', alt: 'Woman in white dress in a golden sunset field' },
+    { src: 'https://images.pexels.com/photos/20453639/pexels-photo-20453639.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1800&fit=crop', alt: 'Woman in a flowing white dress in a grassy rural landscape' },
+    { src: 'https://images.pexels.com/photos/6154323/pexels-photo-6154323.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1800&fit=crop', alt: 'Woman in an elegant flowing white dress, studio portrait' }
+  ];
+
+  var lightbox  = document.getElementById('lightbox');
+  var img       = document.getElementById('lightbox-img');
+  var closeBtn  = document.getElementById('lightbox-close');
+  var prevBtn   = document.getElementById('lightbox-prev');
+  var nextBtn   = document.getElementById('lightbox-next');
+  var counter   = document.getElementById('lightbox-counter');
+
+  if (!lightbox || !img) return;
+
+  var current = 0;
+  var lastFocused = null;
+
+  /* ── Open / Close ── */
+  function open(index) {
+    current = ((index % IMAGES.length) + IMAGES.length) % IMAGES.length;
+    lastFocused = document.activeElement;
+    lightbox.removeAttribute('hidden');
+    setTimeout(function () {
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      showImage(current);
+      if (closeBtn) closeBtn.focus();
+    }, 16);
+  }
+
+  function close() {
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(function () {
+      lightbox.setAttribute('hidden', '');
+      img.classList.remove('is-loaded');
+      img.src = '';
+    }, 300);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function showImage(index) {
+    img.classList.remove('is-loaded');
+    var data = IMAGES[index];
+    counter.textContent = (index + 1) + ' / ' + IMAGES.length;
+    img.alt = data.alt;
+    img.src = '';
+    /* Short delay so fade-out completes before new image loads */
+    setTimeout(function () {
+      img.onload = function () { img.classList.add('is-loaded'); };
+      img.src = data.src;
+      /* If cached, onload may not fire — check immediately */
+      if (img.complete && img.naturalWidth) img.classList.add('is-loaded');
+    }, 80);
+  }
+
+  function navigate(dir) {
+    current = ((current + dir) + IMAGES.length) % IMAGES.length;
+    showImage(current);
+  }
+
+  /* ── Event bindings ── */
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click',  function () { navigate(-1); });
+  nextBtn.addEventListener('click',  function () { navigate(1);  });
+
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox || e.target === img.parentElement) close();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape'   || e.keyCode === 27) close();
+    if (e.key === 'ArrowLeft'  || e.keyCode === 37) navigate(-1);
+    if (e.key === 'ArrowRight' || e.keyCode === 39) navigate(1);
+  });
+
+  /* Touch swipe */
+  var touchStartX = 0;
+  lightbox.addEventListener('touchstart', function (e) {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  lightbox.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) navigate(dx < 0 ? 1 : -1);
+  }, { passive: true });
+
+  /* ── Wire up gallery buttons ── */
+  document.querySelectorAll('.gallery__btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      open(parseInt(btn.dataset.index, 10));
+    });
+  });
+
+})();
+
+
 /* ── INVITATION FORM — Success state ───────────────────────────
    On submit: validate email, hide the form row, reveal the
    success block with a gentle fade. The button briefly shows

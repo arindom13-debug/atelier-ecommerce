@@ -1170,22 +1170,52 @@
         <div class="gallery__grid">
 
           <div class="gallery__item">
-            <div class="gallery__img gallery-img--g1" role="img" aria-label="A woman in a soft coat and scarf, photographed under stone arches"></div>
+            <button class="gallery__btn" aria-label="View photo 1 — A woman in a soft coat and scarf" data-index="0">
+              <div class="gallery__img gallery-img--g1" aria-hidden="true"></div>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M21 21l-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
+            </button>
           </div>
           <div class="gallery__item">
-            <div class="gallery__img gallery-img--g2" role="img" aria-label="A quiet studio portrait of a woman in a draped dark top"></div>
+            <button class="gallery__btn" aria-label="View photo 2 — A quiet studio portrait of a woman in a draped dark top" data-index="1">
+              <div class="gallery__img gallery-img--g2" aria-hidden="true"></div>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M21 21l-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
+            </button>
           </div>
           <div class="gallery__item">
-            <div class="gallery__img gallery-img--g3" role="img" aria-label="A man in a fine-knit sweater, neutral light"></div>
+            <button class="gallery__btn" aria-label="View photo 3 — A man in a fine-knit sweater, neutral light" data-index="2">
+              <div class="gallery__img gallery-img--g3" aria-hidden="true"></div>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M21 21l-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
+            </button>
           </div>
           <div class="gallery__item">
-            <div class="gallery__img gallery-img--g4" role="img" aria-label="Woman in white dress in a golden sunset field"></div>
+            <button class="gallery__btn" aria-label="View photo 4 — Woman in white dress in a golden sunset field" data-index="3">
+              <div class="gallery__img gallery-img--g4" aria-hidden="true"></div>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M21 21l-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
+            </button>
           </div>
           <div class="gallery__item">
-            <div class="gallery__img gallery-img--g5" role="img" aria-label="Woman in a flowing white dress in a grassy rural landscape"></div>
+            <button class="gallery__btn" aria-label="View photo 5 — Woman in a flowing white dress in a rural landscape" data-index="4">
+              <div class="gallery__img gallery-img--g5" aria-hidden="true"></div>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M21 21l-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
+            </button>
           </div>
           <div class="gallery__item">
-            <div class="gallery__img gallery-img--g6" role="img" aria-label="Woman in an elegant flowing white dress, studio portrait"></div>
+            <button class="gallery__btn" aria-label="View photo 6 — Woman in an elegant flowing white dress, studio portrait" data-index="5">
+              <div class="gallery__img gallery-img--g6" aria-hidden="true"></div>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M21 21l-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
+            </button>
           </div>
 
         </div><!-- /.gallery__grid -->
@@ -1463,6 +1493,25 @@
     <div class="wishlist-body" id="wishlist-body"></div>
   </div>
 
+  <!-- ─── Gallery Lightbox ────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close photo viewer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
+      </svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous photo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="lightbox__stage">
+      <img class="lightbox__img" id="lightbox-img" src="" alt="" draggable="false">
+    </div>
+    <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next photo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <p class="lightbox__counter" id="lightbox-counter" aria-live="polite"></p>
+  </div>
+
   <!-- ─── Size Picker — Bottom-sheet popup ───────────────────
        Slides up when user clicks "Quick Add" on a product card.
        JS controls .is-open on .size-picker and .size-picker-scrim.
@@ -1491,6 +1540,6 @@
 
   <script src="js/products.js?v=2"></script>
   <script src="js/main.js?v=2"></script>
-  <script src="js/interactions.js?v=6"></script>
+  <script src="js/interactions.js?v=8"></script>
 </body>
 </html>
