@@ -4200,6 +4200,41 @@ body.ui-locked {
   outline-offset: 2px;
 }
 
+/* ── Free shipping progress bar ─────────────────── */
+.cart-drawer__shipping-bar {
+  padding: 16px 32px 14px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.cart-drawer__shipping-msg {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+.cart-drawer__shipping-bar.is-unlocked .cart-drawer__shipping-msg {
+  color: #5A7A5A;
+}
+.cart-drawer__progress-track {
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.cart-drawer__progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--charcoal);
+  border-radius: 2px;
+  transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background 0.4s ease;
+}
+.cart-drawer__shipping-bar.is-unlocked .cart-drawer__progress-fill {
+  background: #5A7A5A;
+}
+
 /* ── Cart footer ─────────────────────────────────── */
 .cart-drawer__footer {
   border-top: 1px solid var(--border);
@@ -4231,7 +4266,7 @@ body.ui-locked {
   color: var(--charcoal);
 }
 
-.cart-drawer__shipping-note {
+.cart-drawer__shipping-note { /* kept for legacy reference — replaced by progress bar */
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 400;

@@ -1388,12 +1388,17 @@
       </button>
     </div>
     <div class="cart-drawer__body" id="cart-body"></div>
+    <div class="cart-drawer__shipping-bar" id="cart-shipping-bar" hidden>
+      <p class="cart-drawer__shipping-msg" id="cart-shipping-msg"></p>
+      <div class="cart-drawer__progress-track">
+        <div class="cart-drawer__progress-fill" id="cart-progress-fill"></div>
+      </div>
+    </div>
     <div class="cart-drawer__footer" id="cart-footer" hidden>
       <div class="cart-drawer__subtotal">
         <span class="cart-drawer__subtotal-label">Subtotal</span>
         <span class="cart-drawer__subtotal-amount" id="cart-subtotal">$0</span>
       </div>
-      <p class="cart-drawer__shipping-note">Shipping calculated at checkout</p>
       <a href="#" class="cart-drawer__checkout">Proceed to Checkout &rarr;</a>
     </div>
   </div>
@@ -1486,6 +1491,6 @@
 
   <script src="js/products.js?v=2"></script>
   <script src="js/main.js?v=2"></script>
-  <script src="js/interactions.js?v=3"></script>
+  <script src="js/interactions.js?v=4"></script>
 </body>
 </html>
