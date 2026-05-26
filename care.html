@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Care Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .info-page { max-width: 720px; margin: 0 auto; padding: 80px 32px 120px; }
+    .info-page__back { display: inline-block; font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--charcoal); opacity: 0.6; margin-bottom: 48px; }
+    .info-page__back:hover { opacity: 1; }
+    .info-page__eyebrow { font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--muted); display: block; margin-bottom: 12px; }
+    .info-page__title { font-family: var(--font-serif); font-size: clamp(32px, 5vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .info-page__intro { font-family: var(--font-serif); font-style: italic; font-size: 18px; line-height: 1.6; color: var(--muted); margin-bottom: 40px; }
+    .info-page__section { border-top: 1px solid var(--border); padding: 28px 0; }
+    .info-page__section-title { font-family: var(--font-serif); font-size: 18px; font-weight: 500; margin-bottom: 16px; }
+    .care-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .care-card { background: var(--ivory); border: 1px solid var(--border); padding: 20px; }
+    .care-card__icon { font-size: 22px; margin-bottom: 10px; }
+    .care-card__title { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; color: var(--charcoal); margin-bottom: 6px; }
+    .care-card__body { font-family: var(--font-sans); font-size: 13px; line-height: 1.65; color: var(--muted); }
+    .info-note { background: var(--ivory); border: 1px solid var(--border); padding: 18px 22px; margin-top: 20px; font-family: var(--font-serif); font-style: italic; font-size: 14px; line-height: 1.65; color: var(--charcoal); }
+    .info-page__body { font-family: var(--font-sans); font-size: 14px; line-height: 1.75; color: var(--muted); }
+    @media (max-width: 580px) { .care-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body style="background:var(--warm-bg);color:var(--charcoal)">
+  <div class="info-page">
+    <a class="info-page__back" href="/">&larr; Return to the Atelier</a>
+    <em class="info-page__eyebrow">Service &amp; Care</em>
+    <h1 class="info-page__title">Care Guide.</h1>
+    <p class="info-page__intro">Handmade things reward attentive care. These are not rules — they are the habits of someone who loves what they own.</p>
+
+    <div class="info-page__section">
+      <h2 class="info-page__section-title">General care</h2>
+      <div class="care-grid">
+        <div class="care-card">
+          <div class="care-card__icon">🫧</div>
+          <p class="care-card__title">Washing</p>
+          <p class="care-card__body">Hand wash in cool water with a mild, pH-neutral soap. Turn inside out. Do not wring — press gently between towels to remove water.</p>
+        </div>
+        <div class="care-card">
+          <div class="care-card__icon">☀️</div>
+          <p class="care-card__title">Drying</p>
+          <p class="care-card__body">Lay flat or hang in the shade to dry. Avoid direct sunlight for dyed pieces — natural colours will deepen beautifully with light, but prolonged sun exposure accelerates the process unevenly.</p>
+        </div>
+        <div class="care-card">
+          <div class="care-card__icon">🌡️</div>
+          <p class="care-card__title">Ironing</p>
+          <p class="care-card__body">Iron on a low to medium heat, inside out. Steam is preferred. Many of our pieces are intended to carry gentle wrinkle — it is part of the cloth's character.</p>
+        </div>
+        <div class="care-card">
+          <div class="care-card__icon">📦</div>
+          <p class="care-card__title">Storage</p>
+          <p class="care-card__body">Fold loosely and store away from direct light. Avoid plastic bags — natural fibres need to breathe. Cedar blocks rather than mothballs for wool and silk blends.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-page__section">
+      <h2 class="info-page__section-title">Natural dyes</h2>
+      <p class="info-page__body">Our colours are drawn from plants, minerals, and bark — indigo, turmeric, iron, tannin, and others. This means:</p>
+      <ul style="margin:12px 0 0 0;padding-left:20px;font-family:var(--font-sans);font-size:14px;line-height:1.9;color:var(--muted)">
+        <li>Slight colour variation between pieces is natural and intentional.</li>
+        <li>Colours deepen and mellow with age rather than fading uniformly.</li>
+        <li>The first few washes may release excess dye — this is normal. Wash separately in cool water initially.</li>
+        <li>Avoid soaking for extended periods, which can draw colour unevenly.</li>
+      </ul>
+      <div class="info-note">"A naturally dyed garment is still in conversation with the world. It changes because you wear it, because you wash it, because time moves through it. We consider this the cloth's biography, not its failure."</div>
+    </div>
+
+    <div class="info-page__section">
+      <h2 class="info-page__section-title">Fabric-specific notes</h2>
+      <p class="info-page__body"><strong style="color:var(--charcoal)">Handloomed cotton &amp; kantha:</strong> Grows softer with each wash. Machine wash on delicate cold if hand washing is impractical — but hand washing extends the life of the stitching.</p>
+      <p class="info-page__body" style="margin-top:10px"><strong style="color:var(--charcoal)">Jamdani &amp; muslin:</strong> Very delicate. Hand wash only, cool water, minimal agitation. These are among the finest woven fabrics in the world — treat them accordingly.</p>
+      <p class="info-page__body" style="margin-top:10px"><strong style="color:var(--charcoal)">Endi silk blends:</strong> Dry clean recommended, or hand wash in cool water with silk-specific soap. Do not wring.</p>
+      <p class="info-page__body" style="margin-top:10px"><strong style="color:var(--charcoal)">Belgian linen:</strong> Machine wash cool, lay flat to dry. Linen softens significantly with washing — a stiff new linen piece is simply one that hasn't been loved yet.</p>
+    </div>
+  </div>
+</body>
+</html>

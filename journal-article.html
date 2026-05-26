@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .art { max-width: 680px; margin: 0 auto; padding: 72px 32px 120px; }
+    .art__back { display: inline-block; font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--charcoal); opacity: 0.6; margin-bottom: 48px; }
+    .art__back:hover { opacity: 1; }
+    .art__tag { font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 14px; }
+    .art__title { font-family: var(--font-serif); font-size: clamp(30px, 5vw, 52px); font-weight: 500; line-height: 1.07; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .art__meta { font-family: var(--font-sans); font-size: 12px; color: var(--muted); margin-bottom: 36px; }
+    .art__hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border: 1px solid var(--border); margin-bottom: 40px; }
+    .art__body { font-family: var(--font-sans); font-size: 15px; line-height: 1.85; color: var(--charcoal); }
+    .art__body p { margin-bottom: 22px; }
+    .art__body em { font-family: var(--font-serif); font-style: italic; font-size: 1.1em; }
+    .art__pull { font-family: var(--font-serif); font-style: italic; font-size: 22px; line-height: 1.45; color: var(--charcoal); border-left: 2px solid var(--charcoal); padding-left: 24px; margin: 36px 0; }
+    .art__footer { border-top: 1px solid var(--border); padding-top: 28px; margin-top: 48px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .art__cta { font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--charcoal); border-bottom: 1px solid var(--charcoal); padding-bottom: 2px; }
+    .art__cta:hover { opacity: 0.7; }
+  </style>
+</head>
+<body style="background:var(--warm-bg);color:var(--charcoal)">
+  <article class="art">
+    <a class="art__back" href="/journal">&larr; The Journal</a>
+
+    <span class="art__tag" id="art-tag">The Edit &nbsp;·&nbsp; Issue 04</span>
+    <h1 class="art__title" id="art-title">One shirt, a hundred days.</h1>
+    <p class="art__meta" id="art-meta">By Laila Rahman &nbsp;·&nbsp; 8 min read</p>
+
+    <img class="art__hero" id="art-hero"
+         src="https://images.pexels.com/photos/3622608/pexels-photo-3622608.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop"
+         alt="Editorial photograph" loading="eager">
+
+    <div class="art__body">
+      <p>There is a particular quality of attention that develops when you wear the same garment for a hundred consecutive days. You begin to notice things you would otherwise overlook: the way the collar softens at the fold, the faint ridge the shoulder seam leaves against skin in the heat of afternoon, the difference in drape after a wash versus after a dry day of wear.</p>
+
+      <p>We gave one of our linen tunics — hand-loomed in Dhaka, block-printed in Rajshahi — to a writer in London with a single instruction: wear it every day, note what you find.</p>
+
+      <div class="art__pull">"By day forty, the fabric had begun to remember the shape of her shoulders. By day seventy, it remembered her pace."</div>
+
+      <p>The first two weeks were uncomfortable in the way that new handmade things often are: the cloth was still in conversation with itself, settling into the threads' arrangement, the dye's tannins releasing slowly with each wash. She described a faint smell of earth on the first few wears — not unpleasant, she said, but unfamiliar. The smell of something that had been alive in the field recently.</p>
+
+      <p>By the end of the month, something had changed. The tunic had moved past its newness. The indigo block-print had shifted slightly — warmer at the creases, deeper at the hem where the dye had pooled during the pot-dye process. The cloth, she wrote, had "stopped being a garment I was wearing and started being part of how I was dressed."</p>
+
+      <p>This is the thing about handmade natural-fibre clothing that no product description can fully convey: the relationship between cloth and wearer is not static. It is metabolic. The fabric takes something from you — your heat, your motion, your oil, your habits — and records it. Not forever. Not perfectly. But in the particular way that honest materials hold the impression of use.</p>
+
+      <p>At day one hundred, she photographed the tunic against the original image we had sent her. The differences were not dramatic — you would have to know what to look for. But they were there, and they were entirely hers.</p>
+    </div>
+
+    <div class="art__footer">
+      <a class="art__cta" href="/journal">&larr; All stories</a>
+      <a class="art__cta" href="/">Return to the Atelier &rarr;</a>
+    </div>
+  </article>
+</body>
+</html>

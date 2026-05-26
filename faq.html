@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Frequently Asked Questions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .info-page { max-width: 720px; margin: 0 auto; padding: 80px 32px 120px; }
+    .info-page__back { display: inline-block; font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--charcoal); opacity: 0.6; margin-bottom: 48px; }
+    .info-page__back:hover { opacity: 1; }
+    .info-page__eyebrow { font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--muted); display: block; margin-bottom: 12px; }
+    .info-page__title { font-family: var(--font-serif); font-size: clamp(32px, 5vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 40px; }
+    .faq-group { margin-bottom: 8px; border-top: 1px solid var(--border); }
+    .faq-group:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; padding: 22px 0; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+    .faq-q__text { font-family: var(--font-serif); font-size: 17px; font-weight: 500; color: var(--charcoal); line-height: 1.4; }
+    .faq-q__icon { font-size: 20px; color: var(--muted); line-height: 1; flex-shrink: 0; transition: transform 0.25s ease; }
+    .faq-group.is-open .faq-q__icon { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 22px; font-family: var(--font-sans); font-size: 14px; line-height: 1.75; color: var(--muted); }
+    .faq-group.is-open .faq-a { display: block; }
+    .faq-section-label { font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin: 40px 0 8px; }
+    .faq-section-label:first-of-type { margin-top: 0; }
+  </style>
+</head>
+<body style="background:var(--warm-bg);color:var(--charcoal)">
+  <div class="info-page">
+    <a class="info-page__back" href="/">&larr; Return to the Atelier</a>
+    <em class="info-page__eyebrow">Help</em>
+    <h1 class="info-page__title">Frequently asked questions.</h1>
+
+    <p class="faq-section-label">Orders &amp; Shipping</p>
+
+    <div class="faq-group">
+      <button class="faq-q" aria-expanded="false">
+        <span class="faq-q__text">How long does delivery take?</span>
+        <span class="faq-q__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">Standard domestic delivery takes 5–7 business days. Express (2–3 days) and overnight options are available at checkout. International orders typically arrive within 5–14 business days depending on the destination.</div>
+    </div>
+
+    <div class="faq-group">
+      <button class="faq-q" aria-expanded="false">
+        <span class="faq-q__text">Do you ship internationally?</span>
+        <span class="faq-q__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">Yes — we ship to over 40 countries. Free shipping applies to international orders over $150 to the UK. For full international rates, see our <a href="/shipping" style="color:var(--charcoal)">Shipping page</a>.</div>
+    </div>
+
+    <div class="faq-group">
+      <button class="faq-q" aria-expanded="false">
+        <span class="faq-q__text">Can I change or cancel my order?</span>
+        <span class="faq-q__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">Orders can be modified or cancelled within 2 hours of placement. After that, the piece enters our preparation process and we cannot guarantee changes. Email us immediately at <a href="mailto:hello@atelier.co" style="color:var(--charcoal)">hello@atelier.co</a>.</div>
+    </div>
+
+    <p class="faq-section-label">The Craft</p>
+
+    <div class="faq-group">
+      <button class="faq-q" aria-expanded="false">
+        <span class="faq-q__text">How are your garments made?</span>
+        <span class="faq-q__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">Every piece is hand-loomed by artisans in Dhaka and Rajshahi, Bangladesh. We work directly with master weavers, paying above fair-trade rates and producing in batches of no more than forty pieces per pattern. The process is intentionally slow — it takes a weaver three days to produce enough fabric for a single garment.</div>
+    </div>
+
+    <div class="faq-group">
+      <button class="faq-q" aria-expanded="false">
+        <span class="faq-q__text">What does "naturally dyed" mean?</span>
+        <span class="faq-q__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">Our colours come from plant, bark, and mineral sources — indigo, turmeric, iron, tannin. No synthetic dyes enter our process. This means slight variation between pieces and a colour that deepens and softens over time rather than fading uniformly. These variations are not imperfections; they are the signature of the hand.</div>
+    </div>
+
+    <div class="faq-group">
+      <button class="faq-q" aria-expanded="false">
+        <span class="faq-q__text">Why are your pieces limited to forty per pattern?</span>
+        <span class="faq-q__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">Because that is the maximum that allows each piece to receive individual attention throughout its making. Beyond forty, quality supervision becomes difficult and the relationship between maker and cloth begins to dissolve. We would rather make less well than make more carelessly.</div>
+    </div>
+
+    <p class="faq-section-label">Sizing &amp; Fit</p>
+
+    <div class="faq-group">
+      <button class="faq-q" aria-expanded="false">
+        <span class="faq-q__text">How does sizing work?</span>
+        <span class="faq-q__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">Our pieces are designed with a relaxed, layered fit in mind. Most styles run true to size. Detailed measurements and a size guide are included on every product page. If you are between sizes, we generally recommend sizing up for drapier pieces and true-to-size for structured cuts.</div>
+    </div>
+
+    <div class="faq-group">
+      <button class="faq-q" aria-expanded="false">
+        <span class="faq-q__text">Can I book an appointment to try pieces in person?</span>
+        <span class="faq-q__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">Yes — we welcome appointments at both our Dhaka and London ateliers. Use the "Book Appointment" link at the top of the page or write to <a href="mailto:appointments@atelier.co" style="color:var(--charcoal)">appointments@atelier.co</a>.</div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var group = btn.closest('.faq-group');
+        var isOpen = group.classList.contains('is-open');
+        document.querySelectorAll('.faq-group.is-open').forEach(function(g) {
+          g.classList.remove('is-open');
+          g.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          group.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

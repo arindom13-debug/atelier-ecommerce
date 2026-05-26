@@ -2,7 +2,14 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/products/:slug", "destination": "/product.html" },
-    { "source": "/collections/:slug", "destination": "/collection.html" }
+    { "source": "/products/:slug",     "destination": "/product.html" },
+    { "source": "/collections/:slug",  "destination": "/collection.html" },
+    { "source": "/journal/:slug",      "destination": "/journal-article.html" },
+    { "source": "/shipping",           "destination": "/shipping.html" },
+    { "source": "/returns",            "destination": "/returns.html" },
+    { "source": "/faq",                "destination": "/faq.html" },
+    { "source": "/care",               "destination": "/care.html" },
+    { "source": "/journal",            "destination": "/journal.html" },
+    { "source": "/forgot-password",    "destination": "/forgot-password.html" }
   ]
 }

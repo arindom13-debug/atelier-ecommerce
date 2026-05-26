@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Shipping</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .info-page { max-width: 720px; margin: 0 auto; padding: 80px 32px 120px; }
+    .info-page__back { display: inline-block; font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--charcoal); opacity: 0.6; margin-bottom: 48px; }
+    .info-page__back:hover { opacity: 1; }
+    .info-page__eyebrow { font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--muted); display: block; margin-bottom: 12px; }
+    .info-page__title { font-family: var(--font-serif); font-size: clamp(32px, 5vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 40px; }
+    .info-page__section { border-top: 1px solid var(--border); padding: 28px 0; }
+    .info-page__section-title { font-family: var(--font-serif); font-size: 18px; font-weight: 500; margin-bottom: 12px; }
+    .info-page__body { font-family: var(--font-sans); font-size: 14px; line-height: 1.75; color: var(--muted); }
+    .info-page__body + .info-page__body { margin-top: 10px; }
+    .info-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    .info-table th, .info-table td { font-family: var(--font-sans); font-size: 13px; text-align: left; padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--charcoal); }
+    .info-table th { font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; font-size: 10px; color: var(--muted); }
+    .info-tag { display: inline-block; font-family: var(--font-sans); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; border: 1px solid var(--border); padding: 3px 8px; color: var(--muted); margin-top: 4px; }
+  </style>
+</head>
+<body style="background:var(--warm-bg);color:var(--charcoal)">
+  <div class="info-page">
+    <a class="info-page__back" href="/">&larr; Return to the Atelier</a>
+    <em class="info-page__eyebrow">Service &amp; Care</em>
+    <h1 class="info-page__title">Shipping.</h1>
+
+    <div class="info-page__section">
+      <h2 class="info-page__section-title">Free shipping threshold</h2>
+      <p class="info-page__body">Complimentary standard shipping on all orders over $150. No code required — applied automatically at checkout.</p>
+    </div>
+
+    <div class="info-page__section">
+      <h2 class="info-page__section-title">Domestic rates (United States)</h2>
+      <table class="info-table">
+        <thead><tr><th>Method</th><th>Estimated delivery</th><th>Cost</th></tr></thead>
+        <tbody>
+          <tr><td>Standard</td><td>5–7 business days</td><td>$12 <span class="info-tag">Free over $150</span></td></tr>
+          <tr><td>Express</td><td>2–3 business days</td><td>$22</td></tr>
+          <tr><td>Overnight</td><td>Next business day</td><td>$38</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-page__section">
+      <h2 class="info-page__section-title">International shipping</h2>
+      <table class="info-table">
+        <thead><tr><th>Region</th><th>Estimated delivery</th><th>Cost</th></tr></thead>
+        <tbody>
+          <tr><td>United Kingdom</td><td>4–6 business days</td><td>$18 <span class="info-tag">Free over $150</span></td></tr>
+          <tr><td>European Union</td><td>5–8 business days</td><td>$22</td></tr>
+          <tr><td>South &amp; Southeast Asia</td><td>5–8 business days</td><td>$20</td></tr>
+          <tr><td>Rest of World</td><td>7–14 business days</td><td>$28</td></tr>
+        </tbody>
+      </table>
+      <p class="info-page__body" style="margin-top:16px">International orders may be subject to customs duties and import taxes levied by the destination country. These charges are the responsibility of the recipient.</p>
+    </div>
+
+    <div class="info-page__section">
+      <h2 class="info-page__section-title">Processing time</h2>
+      <p class="info-page__body">Orders are processed within 1–2 business days. Each piece is inspected and wrapped by hand before dispatch — this unhurried care is part of what you ordered.</p>
+    </div>
+
+    <div class="info-page__section">
+      <h2 class="info-page__section-title">Tracking</h2>
+      <p class="info-page__body">You will receive a confirmation email with a tracking number once your order has been dispatched. If you have any questions, write to us at <a href="mailto:hello@atelier.co" style="color:var(--charcoal)">hello@atelier.co</a>.</p>
+    </div>
+  </div>
+</body>
+</html>
