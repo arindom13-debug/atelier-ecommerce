@@ -183,8 +183,19 @@
       cartDrawer.setAttribute('hidden', '');
       if (btnCart) btnCart.setAttribute('aria-expanded', 'false');
     }
+    /* Also close wishlist drawer if open — it lives in a separate IIFE
+       but shares the same backdrop / scroll lock */
+    var wDr = document.getElementById('wishlist-drawer');
+    var wBtn = document.getElementById('btn-wishlist');
+    if (wDr) {
+      wDr.classList.remove('is-open');
+      wDr.setAttribute('hidden', '');
+    }
+    if (wBtn) wBtn.setAttribute('aria-expanded', 'false');
+
     hideBackdrop();
     unlockScroll();
+    document.body.style.overflow = ''; /* clear any inline override */
     currentPanel = null;
   }
 
@@ -1016,20 +1027,19 @@
   function openWishlist() {
     renderDrawer();
     drawer.removeAttribute('hidden');
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        drawer.classList.add('is-open');
-        if (backdrop) backdrop.classList.add('is-active');
-        document.body.style.overflow = 'hidden';
-        btnClose.focus();
-      });
-    });
+    setTimeout(function () {
+      drawer.classList.add('is-open');
+      if (backdrop) backdrop.classList.add('is-active');
+      document.body.classList.add('ui-locked');
+      if (btnClose) btnClose.focus();
+    }, 16);
     if (btnOpen) btnOpen.setAttribute('aria-expanded', 'true');
   }
 
   function closeWishlist() {
     drawer.classList.remove('is-open');
     if (backdrop) backdrop.classList.remove('is-active');
+    document.body.classList.remove('ui-locked');
     document.body.style.overflow = '';
     if (btnOpen) btnOpen.setAttribute('aria-expanded', 'false');
     setTimeout(function () {
