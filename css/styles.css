@@ -598,10 +598,10 @@ button {
    Two-weight technique: roman primary line + lighter italic second. */
 .hero__headline {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(48px, 7vw, 92px);
+  font-size: clamp(44px, 6vw, 84px);
   font-weight: 300;
   font-style: normal;
-  line-height: 1.12;
+  line-height: 1.08;
   letter-spacing: -0.02em;
   color: #FFFFFF;
   margin-bottom: 22px;
@@ -772,6 +772,22 @@ button {
     right: 20px;
     bottom: 40px;
   }
+}
+
+/* Short viewports (laptops): the tall editorial headline + card can
+   exceed the viewport height and clip behind the fixed header. Scale
+   the headline down and tuck the card closer to the bottom so the
+   whole block stays below the header. */
+@media (max-height: 760px) {
+  .hero__season   { margin-bottom: 12px; }
+  .hero__headline { font-size: 56px; line-height: 1.08; margin-bottom: 16px; }
+  .hero__subline  { margin-bottom: 18px; }
+  .hero__card     { bottom: 48px; }
+}
+
+@media (max-height: 620px) {
+  .hero__headline { font-size: 46px; margin-bottom: 12px; }
+  .hero__card     { bottom: 36px; }
 }
 
 /* =====================================================
