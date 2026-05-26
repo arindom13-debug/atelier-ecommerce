@@ -3108,24 +3108,30 @@ button {
   flex-shrink: 0;
   font-family: var(--font-sans);
   font-size: 10px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--charcoal);
-  background: none;
-  border: none;
+  color: var(--ivory);
+  background: var(--charcoal);
+  border: 1px solid var(--charcoal);
   cursor: pointer;
-  padding: 0;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-thickness: 1px;
-  transition: opacity var(--t-fast);
+  padding: 0 22px;
+  height: 46px;
+  white-space: nowrap;
+  transition: background var(--t-fast), color var(--t-fast);
 }
 
-.invitation__submit:hover         { opacity: 0.45; }
+.invitation__submit:hover {
+  background: transparent;
+  color: var(--charcoal);
+}
 .invitation__submit:focus-visible {
   outline: 1px solid var(--charcoal);
   outline-offset: 4px;
+}
+.invitation__submit:disabled {
+  opacity: 0.55;
+  cursor: default;
 }
 
 /* Microcopy */
@@ -4398,20 +4404,11 @@ body.ui-locked {
    ===================================================== */
 
 .campaign-break {
-  background: #0D0B09;
+  background: var(--warm-bg);
   position: relative;
   overflow: hidden;
-}
-
-/* Subtle warm vignette radiating from center */
-.campaign-break::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 80% 120% at 50% 50%,
-    rgba(184, 150, 90, 0.07) 0%,
-    transparent 65%);
-  pointer-events: none;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .campaign-break__inner {
@@ -4433,7 +4430,7 @@ body.ui-locked {
   font-weight: 400;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(184, 150, 90, 0.72);
+  color: var(--muted);
   margin-bottom: 36px;
 }
 
@@ -4444,7 +4441,7 @@ body.ui-locked {
   font-style: italic;
   line-height: 1.0;
   letter-spacing: -0.025em;
-  color: rgba(248, 245, 240, 0.95);
+  color: var(--charcoal);
   margin: 0 0 40px;
   max-width: 18ch;
 }
@@ -4454,7 +4451,7 @@ body.ui-locked {
   font-size: clamp(13px, 1.1vw, 16px);
   font-weight: 300;
   line-height: 1.85;
-  color: rgba(248, 245, 240, 0.42);
+  color: var(--muted);
   max-width: 54ch;
   margin: 0 0 56px;
   letter-spacing: 0.01em;
@@ -4469,8 +4466,8 @@ body.ui-locked {
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(248, 245, 240, 0.88);
-  border: 1px solid rgba(248, 245, 240, 0.25);
+  color: var(--charcoal);
+  border: 1px solid rgba(26, 26, 26, 0.30);
   padding: 16px 40px;
   text-decoration: none;
   transition:
@@ -4480,13 +4477,13 @@ body.ui-locked {
 }
 
 .campaign-break__cta:hover {
-  background: rgba(248, 245, 240, 0.08);
-  border-color: rgba(248, 245, 240, 0.70);
-  color: #FFFFFF;
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--ivory);
 }
 
 .campaign-break__cta:focus-visible {
-  outline: 1px solid rgba(248, 245, 240, 0.6);
+  outline: 1px solid var(--charcoal);
   outline-offset: 4px;
 }
 
