@@ -1195,23 +1195,38 @@
   var microcopy   = document.getElementById('invite-note');
   /* Fade out the whole form + microcopy, then show success */
 
+  /* Clear error on input */
+  if (emailInput) {
+    emailInput.addEventListener('input', function () {
+      emailInput.classList.remove('is-error');
+      emailInput.removeAttribute('aria-invalid');
+    });
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    /* Basic validation */
+    /* Basic validation — show error state if empty */
     if (emailInput && !emailInput.value.trim()) {
+      emailInput.classList.add('is-error');
+      emailInput.setAttribute('aria-invalid', 'true');
       emailInput.focus();
+      /* Shake the input */
+      emailInput.classList.remove('shake');
+      void emailInput.offsetWidth;
+      emailInput.classList.add('shake');
       return;
     }
 
     /* Disable + show micro-feedback on the button */
     if (submitBtn) {
       submitBtn.disabled    = true;
-      submitBtn.textContent = 'Thank you ✓';
+      submitBtn.textContent = 'Sending…';
     }
 
     /* Swap form → success after a short pause */
     setTimeout(function () {
+      if (submitBtn) submitBtn.textContent = 'Thank you ✓';
       form.style.transition = 'opacity 0.4s ease';
       form.style.opacity    = '0';
       if (microcopy) {
