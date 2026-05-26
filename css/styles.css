@@ -457,7 +457,7 @@ button {
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 600px;
+  min-height: 700px;
   overflow: hidden;
   background: var(--ivory);
 }
@@ -494,8 +494,7 @@ button {
 
 .hero__main-img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -503,7 +502,7 @@ button {
   background-color: #BDB0A0;
   background-image: url("https://images.unsplash.com/photo-1683660107856-cdad7a562d12?auto=format&fit=crop&w=1920&q=85");
   background-size: cover;
-  background-position: center top;
+  background-position: center;
   background-repeat: no-repeat;
   /* Subtle scale-in on load for depth */
   transform: scale(1.04);
@@ -598,10 +597,10 @@ button {
    Two-weight technique: roman primary line + lighter italic second. */
 .hero__headline {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(44px, 6vw, 84px);
+  font-size: clamp(52px, 8vw, 96px);
   font-weight: 300;
   font-style: normal;
-  line-height: 1.08;
+  line-height: 1.0;
   letter-spacing: -0.02em;
   color: #FFFFFF;
   margin-bottom: 22px;
@@ -2383,21 +2382,21 @@ button {
 /* Journal card images — matched to article content */
 .journal-img--01 {
   /* "One shirt, a hundred days" — woman reading in soft natural light */
-  background-image: url('https://images.pexels.com/photos/7302904/pexels-photo-7302904.jpeg?auto=compress&cs=tinysrgb&w=700&h=480&fit=crop');
+  background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80');
   background-color: #d4c9bb;
   background-position: center top;
 }
 
 .journal-img--02 {
   /* "Rina Akter, weaving since twelve" — artisan at a traditional loom */
-  background-image: url('https://images.pexels.com/photos/25561633/pexels-photo-25561633.jpeg?auto=compress&cs=tinysrgb&w=700&h=480&fit=crop');
+  background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&q=80');
   background-color: #c8bfb3;
   background-position: center center;
 }
 
 .journal-img--03 {
   /* "Why we still dye in clay pots" — hands dyeing fabric with indigo */
-  background-image: url('https://images.pexels.com/photos/6850864/pexels-photo-6850864.jpeg?auto=compress&cs=tinysrgb&w=700&h=480&fit=crop');
+  background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80');
   background-color: #bfb8ae;
   background-position: center center;
 }
@@ -2787,8 +2786,8 @@ button {
 
 /* Icon ring — sage-tinted circle */
 .promise__icon {
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2796,13 +2795,13 @@ button {
   border-radius: 50%;
   background: rgba(122, 148, 116, 0.08);
   color: #4A6645;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   flex-shrink: 0;
 }
 
 .promise__icon svg {
-  width: 28px;
-  height: 28px;
+  width: 16px;
+  height: 16px;
 }
 
 .promise__pillar-name {
