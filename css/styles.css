@@ -601,7 +601,7 @@ button {
   font-size: clamp(48px, 7vw, 92px);
   font-weight: 300;
   font-style: normal;
-  line-height: 1.0;
+  line-height: 1.12;
   letter-spacing: -0.02em;
   color: #FFFFFF;
   margin-bottom: 22px;
@@ -1407,10 +1407,11 @@ button {
   pointer-events: none;
 }
 
-/* Crossfade to secondary lifestyle/detail image on hover */
+/* Hover image swap disabled — the secondary image stays hidden so
+   hovering a product card never replaces its photo. */
 .product-card:hover       .product-card__img-hover,
 .product-card:focus-within .product-card__img-hover {
-  opacity: 1;
+  opacity: 0;
 }
 
 /* Secondary lifestyle / detail images */
