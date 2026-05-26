@@ -921,6 +921,242 @@
 })();
 
 
+/* ── WISHLIST ───────────────────────────────────────────────────
+   Stores saved product IDs in localStorage under WISH_KEY.
+   Heart buttons on product cards toggle saved state.
+   Drawer renders saved items with "Move to Bag" + "Remove".
+   Badge shows count when > 0.
+─────────────────────────────────────────────────────────────── */
+(function () {
+  'use strict';
+
+  var WISH_KEY = 'atelier_wish_v1';
+
+  /* ── State ── */
+  var wish = {
+    ids: [],
+
+    load: function () {
+      try {
+        var raw = localStorage.getItem(WISH_KEY);
+        if (raw) this.ids = JSON.parse(raw);
+      } catch (e) { this.ids = []; }
+    },
+
+    save: function () {
+      try { localStorage.setItem(WISH_KEY, JSON.stringify(this.ids)); }
+      catch (e) {}
+    },
+
+    has: function (id) { return this.ids.indexOf(id) !== -1; },
+
+    add: function (id) {
+      if (!this.has(id)) { this.ids.push(id); this.save(); }
+    },
+
+    remove: function (id) {
+      this.ids = this.ids.filter(function (i) { return i !== id; });
+      this.save();
+    },
+
+    toggle: function (id) {
+      if (this.has(id)) { this.remove(id); return false; }
+      else { this.add(id); return true; }
+    },
+
+    count: function () { return this.ids.length; }
+  };
+
+  wish.load();
+
+  /* ── DOM refs ── */
+  var btnOpen    = document.getElementById('btn-wishlist');
+  var drawer     = document.getElementById('wishlist-drawer');
+  var btnClose   = document.getElementById('btn-wishlist-close');
+  var body       = document.getElementById('wishlist-body');
+  var badgeEl    = document.getElementById('wish-count');
+
+  /* Re-use the shared backdrop */
+  var backdrop   = document.getElementById('ui-backdrop');
+
+  if (!btnOpen || !drawer || !btnClose || !body) return;
+
+  /* ── Badge ── */
+  function updateBadge() {
+    var n = wish.count();
+    if (badgeEl) {
+      badgeEl.setAttribute('data-count', n);
+      badgeEl.textContent = n > 0 ? n : '';
+    }
+    if (btnOpen) btnOpen.setAttribute('aria-label', n > 0 ? 'Wishlist (' + n + ' items)' : 'Wishlist');
+  }
+
+  /* ── Open / Close ── */
+  function openWishlist() {
+    renderDrawer();
+    drawer.removeAttribute('hidden');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        drawer.classList.add('is-open');
+        if (backdrop) backdrop.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+        btnClose.focus();
+      });
+    });
+    if (btnOpen) btnOpen.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeWishlist() {
+    drawer.classList.remove('is-open');
+    if (backdrop) backdrop.classList.remove('is-active');
+    document.body.style.overflow = '';
+    if (btnOpen) btnOpen.setAttribute('aria-expanded', 'false');
+    setTimeout(function () {
+      drawer.setAttribute('hidden', '');
+    }, 350);
+  }
+
+  btnOpen.addEventListener('click', openWishlist);
+  btnClose.addEventListener('click', closeWishlist);
+
+  /* Close on backdrop click (only when wishlist is open) */
+  if (backdrop) {
+    backdrop.addEventListener('click', function () {
+      if (drawer.classList.contains('is-open')) closeWishlist();
+    });
+  }
+
+  /* Escape key */
+  document.addEventListener('keydown', function (e) {
+    if ((e.key === 'Escape' || e.keyCode === 27) && drawer.classList.contains('is-open')) {
+      closeWishlist();
+    }
+  });
+
+  /* ── Render drawer ── */
+  function renderDrawer() {
+    if (wish.count() === 0) {
+      body.innerHTML =
+        '<div class="wish-empty">' +
+          '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>' +
+          '</svg>' +
+          '<p class="wish-empty__line">Your wishlist is empty.</p>' +
+          '<p class="wish-empty__line" style="font-size:12px">Save pieces you love and find them here.</p>' +
+        '</div>';
+      return;
+    }
+
+    /* Look up product data from the global products registry */
+    var allProducts = (window.ATELIER_PRODUCTS || []);
+    var html = '';
+
+    wish.ids.forEach(function (id) {
+      /* Find matching product — id may include size suffix, try exact then prefix */
+      var prod = allProducts.filter(function (p) { return p.id === id; })[0];
+      if (!prod) return; /* skip unknown IDs */
+
+      html +=
+        '<div class="wish-item" data-id="' + escHtml(id) + '">' +
+          '<div class="wish-item__thumb">' +
+            (prod.images && prod.images.primary
+              ? '<img src="' + escHtml(prod.images.primary) + '" alt="' + escHtml(prod.name) + '" loading="lazy" width="80" height="96" style="width:100%;height:100%;object-fit:cover">'
+              : '<div class="wish-item__thumb-placeholder"></div>') +
+          '</div>' +
+          '<div class="wish-item__info">' +
+            '<p class="wish-item__name">' + escHtml(prod.name) + '</p>' +
+            '<p class="wish-item__meta">' + escHtml(prod.material || '') + '</p>' +
+            '<p class="wish-item__price">$' + (parseFloat(prod.price) || 0).toFixed(0) + '</p>' +
+          '</div>' +
+          '<div class="wish-item__actions">' +
+            '<button class="wish-item__move-to-bag" type="button" data-id="' + escHtml(id) + '">Move to Bag</button>' +
+            '<button class="wish-item__remove" type="button" aria-label="Remove from wishlist" data-id="' + escHtml(id) + '">' +
+              '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">' +
+                '<line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>' +
+              '</svg>' +
+            '</button>' +
+          '</div>' +
+        '</div>';
+    });
+
+    body.innerHTML = html || '<div class="wish-empty"><p class="wish-empty__line">Nothing saved yet.</p></div>';
+
+    /* Bind actions */
+    body.querySelectorAll('.wish-item__remove').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var id = btn.getAttribute('data-id');
+        wish.remove(id);
+        syncHeartButtons();
+        updateBadge();
+        renderDrawer();
+      });
+    });
+
+    body.querySelectorAll('.wish-item__move-to-bag').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var id = btn.getAttribute('data-id');
+        var prod = (window.ATELIER_PRODUCTS || []).filter(function (p) { return p.id === id; })[0];
+        if (prod && window.atelierCart) {
+          window.atelierCart.addItem(prod);
+        }
+        wish.remove(id);
+        syncHeartButtons();
+        updateBadge();
+        renderDrawer();
+      });
+    });
+  }
+
+  /* ── Heart buttons on product cards ── */
+  function syncHeartButtons() {
+    document.querySelectorAll('.product-card__wish').forEach(function (btn) {
+      var id = btn.closest('.product-card') && btn.closest('.product-card').dataset.id;
+      if (!id) return;
+      var saved = wish.has(id);
+      btn.classList.toggle('is-saved', saved);
+      btn.setAttribute('aria-label', saved ? 'Remove from wishlist' : 'Save to wishlist');
+      btn.setAttribute('aria-pressed', String(saved));
+    });
+  }
+
+  document.querySelectorAll('.product-card__wish').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var card = btn.closest('.product-card');
+      if (!card) return;
+      var id = card.dataset.id;
+      if (!id) return;
+      var saved = wish.toggle(id);
+      btn.classList.toggle('is-saved', saved);
+      btn.setAttribute('aria-label', saved ? 'Remove from wishlist' : 'Save to wishlist');
+      btn.setAttribute('aria-pressed', String(saved));
+
+      /* Quick pulse animation */
+      btn.classList.remove('wish-pulse');
+      void btn.offsetWidth;
+      btn.classList.add('wish-pulse');
+      btn.addEventListener('animationend', function () { btn.classList.remove('wish-pulse'); }, { once: true });
+
+      updateBadge();
+    });
+  });
+
+  /* ── Helpers ── */
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  /* ── Init ── */
+  syncHeartButtons();
+  updateBadge();
+
+})();
+
+
 /* ── INVITATION FORM — Success state ───────────────────────────
    On submit: validate email, hide the form row, reveal the
    success block with a gentle fade. The button briefly shows

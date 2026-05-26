@@ -119,6 +119,14 @@
           </div>
         </div>
 
+        <!-- Wishlist -->
+        <button class="header__action header__wish-btn" id="btn-wishlist" aria-label="Wishlist" aria-expanded="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="header__wish-count" id="wish-count" aria-hidden="true" data-count="0"></span>
+        </button>
+
         <!-- Cart -->
         <button class="header__action header__cart-btn" id="btn-cart" aria-label="Shopping bag" aria-expanded="false">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -271,7 +279,7 @@
       <div class="selection__grid">
 
         <!-- 1 -->
-        <article class="product-card" data-category="wraps">
+        <article class="product-card" data-category="wraps" data-id="kantha-wrap-jacket">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/kantha-wrap-jacket" aria-label="View Kantha Wrap Jacket"></a>
             <div class="product-card__img product-img--kantha"
@@ -309,7 +317,7 @@
         </article>
 
         <!-- 2 -->
-        <article class="product-card" data-category="tunics">
+        <article class="product-card" data-category="tunics" data-id="linen-drawstring-shirt">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/linen-drawstring-shirt" aria-label="View Linen Drawstring Shirt"></a>
             <div class="product-card__img product-img--linen-shirt"
@@ -346,7 +354,7 @@
         </article>
 
         <!-- 3 -->
-        <article class="product-card" data-category="tunics">
+        <article class="product-card" data-category="tunics" data-id="jamdani-muslin-kurta">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/jamdani-muslin-kurta" aria-label="View Jamdani Muslin Kurta"></a>
             <div class="product-card__img product-img--muslin-kurta"
@@ -385,7 +393,7 @@
         </article>
 
         <!-- 4 -->
-        <article class="product-card" data-category="trousers">
+        <article class="product-card" data-category="trousers" data-id="washed-linen-trouser">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/washed-linen-trouser" aria-label="View Washed Linen Trouser"></a>
             <div class="product-card__img product-img--linen-trouser"
@@ -422,7 +430,7 @@
         </article>
 
         <!-- 5 -->
-        <article class="product-card" data-category="wraps">
+        <article class="product-card" data-category="wraps" data-id="block-print-dupatta">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/block-print-dupatta" aria-label="View Block-Print Dupatta"></a>
             <div class="product-card__img product-img--dupatta"
@@ -456,7 +464,7 @@
         </article>
 
         <!-- 6 -->
-        <article class="product-card" data-category="tunics">
+        <article class="product-card" data-category="tunics" data-id="heritage-cotton-tunic">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/heritage-cotton-tunic" aria-label="View Heritage Cotton Tunic"></a>
             <div class="product-card__img product-img--tunic"
@@ -493,7 +501,7 @@
         </article>
 
         <!-- 7 -->
-        <article class="product-card" data-category="tunics">
+        <article class="product-card" data-category="tunics" data-id="embroidered-lawn-blouse">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/embroidered-lawn-blouse" aria-label="View Embroidered Lawn Blouse"></a>
             <div class="product-card__img product-img--lawn"
@@ -532,7 +540,7 @@
         </article>
 
         <!-- 8 -->
-        <article class="product-card" data-category="dresses">
+        <article class="product-card" data-category="dresses" data-id="pleated-muslin-dress">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/pleated-muslin-dress" aria-label="View Pleated Muslin Dress"></a>
             <div class="product-card__img product-img--muslin-dress"
@@ -569,7 +577,7 @@
         </article>
 
         <!-- 9 -->
-        <article class="product-card" data-category="wraps">
+        <article class="product-card" data-category="wraps" data-id="indigo-cotton-wrap">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/indigo-cotton-wrap" aria-label="View Indigo Cotton Wrap"></a>
             <div class="product-card__img product-img--indigo-wrap"
@@ -607,7 +615,7 @@
         </article>
 
         <!-- 10 -->
-        <article class="product-card" data-category="dresses">
+        <article class="product-card" data-category="dresses" data-id="jamdani-evening-dress">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/jamdani-evening-dress" aria-label="View Jamdani Evening Dress"></a>
             <div class="product-card__img product-img--jamdani-evening"
@@ -646,7 +654,7 @@
         </article>
 
         <!-- 11 -->
-        <article class="product-card" data-category="tunics">
+        <article class="product-card" data-category="tunics" data-id="endi-silk-tunic">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/endi-silk-tunic" aria-label="View Endi Silk Tunic"></a>
             <div class="product-card__img product-img--endi-tunic"
@@ -683,7 +691,7 @@
         </article>
 
         <!-- 12 -->
-        <article class="product-card" data-category="trousers">
+        <article class="product-card" data-category="trousers" data-id="wide-leg-linen-trouser">
           <div class="product-card__img-wrap">
             <a class="product-card__media-link" href="/products/wide-leg-linen-trouser" aria-label="View Wide Leg Linen Trouser"></a>
             <div class="product-card__img product-img--wide-trouser"
@@ -726,6 +734,23 @@
         <a href="#" class="selection__view-all">View All Pieces &rarr;</a>
       </div>
 
+    </section>
+
+    <!-- ─── Feature Story — Editorial Break ─────────────────
+         Two-column split: image left, long-read intro right.
+         Sits between the product grid and the campaign break.
+    ─────────────────────────────────────────────────────── -->
+    <section class="feature-story" aria-labelledby="feature-story-title">
+      <div class="feature-story__img-wrap">
+        <div class="feature-story__img" role="img" aria-label="A woman in a linen tunic, seated by a window in warm afternoon light"></div>
+      </div>
+      <div class="feature-story__content">
+        <span class="feature-story__tag">The Edit &nbsp;·&nbsp; Issue 04</span>
+        <h2 class="feature-story__headline" id="feature-story-title">The cloth that remembers every wearing.</h2>
+        <p class="feature-story__excerpt">Some garments arrive finished. Ours arrive ready to begin. Over months of wear, hand-loomed cotton and Jamdani muslin develop a patina that no factory process can replicate — a record of the life lived inside them.</p>
+        <p class="feature-story__meta">By Laila Rahman &nbsp;·&nbsp; 8 min read</p>
+        <a href="#" class="feature-story__cta">Read the story &nbsp;→</a>
+      </div>
     </section>
 
     <!-- ─── Campaign Break — SS26 Dark Editorial ───────────
@@ -1093,6 +1118,46 @@
       </div>
     </section>
 
+    <!-- ─── Worn By — Community Portrait Triptych ──────────────
+         Three real customers. Name, city, piece they wear.
+         Sits between the brand promises and the gallery.
+    ─────────────────────────────────────────────────────── -->
+    <section class="worn-by" aria-labelledby="worn-by-title">
+      <div class="worn-by__inner">
+
+        <div class="worn-by__header">
+          <em class="worn-by__eyebrow">Worn by real people</em>
+          <h2 class="worn-by__headline" id="worn-by-title">Clothes that enter a life.</h2>
+        </div>
+
+        <div class="worn-by__grid">
+
+          <div class="worn-by__item">
+            <div class="worn-by__portrait worn-portrait--1" role="img" aria-label="Soraya, architect from Dhaka, wearing the Kantha Wrap Jacket in sage"></div>
+            <p class="worn-by__name">Soraya A.</p>
+            <p class="worn-by__role">Architect &middot; Dhaka</p>
+            <p class="worn-by__piece">Wearing the <a href="/products/kantha-wrap-jacket">Kantha Wrap Jacket</a> in Sage — owned 2 years</p>
+          </div>
+
+          <div class="worn-by__item">
+            <div class="worn-by__portrait worn-portrait--2" role="img" aria-label="Celeste, editor from London, wearing the Jamdani Evening Dress in ivory"></div>
+            <p class="worn-by__name">Celeste M.</p>
+            <p class="worn-by__role">Editor &middot; London</p>
+            <p class="worn-by__piece">Wearing the <a href="/products/jamdani-evening-dress">Jamdani Evening Dress</a> in Ivory — owned 1 year</p>
+          </div>
+
+          <div class="worn-by__item">
+            <div class="worn-by__portrait worn-portrait--3" role="img" aria-label="Priti, stylist from Singapore, wearing the Pleated Muslin Dress in dusty rose"></div>
+            <p class="worn-by__name">Priti S.</p>
+            <p class="worn-by__role">Stylist &middot; Singapore</p>
+            <p class="worn-by__piece">Wearing the <a href="/products/pleated-muslin-dress">Pleated Muslin Dress</a> in Dusty Rose — owned 6 months</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
     <!-- ─── Lived-In Gallery ───────────────────────────────── -->
     <section class="gallery" aria-labelledby="gallery-title">
       <div class="gallery__inner">
@@ -1380,6 +1445,19 @@
     </div>
   </div>
 
+  <!-- ── Wishlist Drawer ──────────────────────────────────── -->
+  <div class="wishlist-drawer" id="wishlist-drawer" role="dialog" aria-modal="true" aria-label="Your wishlist" hidden>
+    <div class="wishlist-drawer__header">
+      <h2 class="wishlist-drawer__title">Wishlist</h2>
+      <button class="wishlist-drawer__close" id="btn-wishlist-close" aria-label="Close wishlist">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
+        </svg>
+      </button>
+    </div>
+    <div class="wishlist-body" id="wishlist-body"></div>
+  </div>
+
   <!-- ─── Size Picker — Bottom-sheet popup ───────────────────
        Slides up when user clicks "Quick Add" on a product card.
        JS controls .is-open on .size-picker and .size-picker-scrim.
@@ -1408,6 +1486,6 @@
 
   <script src="js/products.js?v=2"></script>
   <script src="js/main.js?v=2"></script>
-  <script src="js/interactions.js?v=2"></script>
+  <script src="js/interactions.js?v=3"></script>
 </body>
 </html>
