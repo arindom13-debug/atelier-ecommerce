@@ -44,7 +44,23 @@
       "Bash(rm -f .tmp_craft/*)",
       "Bash(rmdir .tmp_craft)",
       "Bash(powershell -NoProfile -Command \"\\(Get-Content js/interactions.js | Measure-Object -Line\\).Lines\")",
-      "Bash(git revert *)"
+      "Bash(git revert *)",
+      "Bash(npx vercel *)",
+      "Bash(curl -v --max-time 10 https://atelier-ecommerce-qcup-72ofgfodl.vercel.app/)",
+      "Bash(nslookup vercel.com)",
+      "Bash(nslookup atelier-ecommerce-qcup.vercel.app)",
+      "Bash(curl -s -o /dev/null -w \"GitHub Pages: HTTP %{http_code}\\\\n\" --max-time 8 https://pages.github.com)",
+      "Bash(curl -s -o /dev/null -w \"Cloudflare Pages: HTTP %{http_code}\\\\n\" --max-time 8 https://pages.cloudflare.com)",
+      "Bash(curl -s -o /dev/null -w \"Netlify: HTTP %{http_code}\\\\n\" --max-time 8 https://netlify.com)",
+      "Bash(curl -s -o /dev/null -w \"atelier-ecommerce.pages.dev → HTTP %{http_code} in %{time_total}s\\\\n\" --max-time 15 https://atelier-ecommerce.pages.dev/)",
+      "Bash(curl -s -o /dev/null -w \"atelier-ecommerce-sigma.vercel.app → HTTP %{http_code}\\\\n\" --max-time 8 https://atelier-ecommerce-sigma.vercel.app/)",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(npx kill-port *)",
+      "Bash(curl -s --max-time 12 \"https://atelier-ecommerce.pages.dev/products/kantha-wrap-jacket\")",
+      "Bash(ls \"C:\\\\Users\\\\User\\\\Desktop\\\\e-commerce website\" /B)",
+      "Bash(dir \"C:\\\\Users\\\\User\\\\Desktop\\\\e-commerce website\" /B)",
+      "Bash(git push *)",
+      "Bash(npx wrangler *)"
     ]
   }
 }
