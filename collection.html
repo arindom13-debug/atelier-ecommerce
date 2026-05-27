@@ -61,7 +61,7 @@
       document.title = 'Atelier — ' + collection.name;
       var products = window.getProductsByCollection(collection.slug);
       var cards = products.map(function (p) {
-        return '<a class="cstub__card" href="/products/' + p.slug + '">' +
+        return '<a class="cstub__card" href="/products/' + p.slug + '?slug=' + p.slug + '">' +
           '<div class="cstub__img" style="background-image:url(' + p.images.primary + ')"></div>' +
           '<p class="cstub__name">' + p.name + '</p>' +
           '<p class="cstub__price">$' + p.price + '</p>' +

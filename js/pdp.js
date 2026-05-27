@@ -264,7 +264,7 @@
 
   if (related.length) {
     var relCards = related.map(function (p) {
-      return '<a class="pdp-rel-card" href="/products/' + esc(p.slug) + '">' +
+      return '<a class="pdp-rel-card" href="/products/' + esc(p.slug) + '?slug=' + esc(p.slug) + '">' +
         '<div class="pdp-rel-card__img"><img src="' + esc(p.images.primary) + '" alt="' + esc(p.name) + '" loading="lazy"></div>' +
         '<h3 class="pdp-rel-card__name">' + esc(p.name) + '</h3>' +
         '<p class="pdp-rel-card__material">' + esc(p.material) + '</p>' +
